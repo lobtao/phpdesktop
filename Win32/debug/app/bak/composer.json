@@ -1,0 +1,15 @@
+{
+    "name": "yssoft/cef",
+    "authors": [
+        {
+            "name": "lobtao",
+            "email": "lobtao@qq.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/"
+        }
+    }
+}

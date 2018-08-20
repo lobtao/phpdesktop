@@ -1,0 +1,60 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{CBEDE52B-BBD7-449F-870B-4EF24F00EC7D}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="niu_new.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="server_php\server_php.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="server_db\server_db.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="niu_new">
+			<MSBuild Projects="niu_new.dproj"/>
+		</Target>
+		<Target Name="niu_new:Clean">
+			<MSBuild Targets="Clean" Projects="niu_new.dproj"/>
+		</Target>
+		<Target Name="niu_new:Make">
+			<MSBuild Targets="Make" Projects="niu_new.dproj"/>
+		</Target>
+		<Target Name="server_php">
+			<MSBuild Projects="server_php\server_php.dproj"/>
+		</Target>
+		<Target Name="server_php:Clean">
+			<MSBuild Targets="Clean" Projects="server_php\server_php.dproj"/>
+		</Target>
+		<Target Name="server_php:Make">
+			<MSBuild Targets="Make" Projects="server_php\server_php.dproj"/>
+		</Target>
+		<Target Name="server_db">
+			<MSBuild Projects="server_db\server_db.dproj"/>
+		</Target>
+		<Target Name="server_db:Clean">
+			<MSBuild Targets="Clean" Projects="server_db\server_db.dproj"/>
+		</Target>
+		<Target Name="server_db:Make">
+			<MSBuild Targets="Make" Projects="server_db\server_db.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="niu_new;server_php;server_db"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="niu_new:Clean;server_php:Clean;server_db:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="niu_new:Make;server_php:Make;server_db:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>

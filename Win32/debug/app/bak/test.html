@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<button type="button" onclick="test()">测试</button>
+
+<div id="dResult"></div>
+</div>
+
+<script src="static/jquery-1.11.3.min.js"></script>
+<script>
+    function test() {
+        var ret = app.invoke('index.php', 'test_test', '[{"name":"远思软件"}]');
+        ret = JSON.parse(ret);
+        $('#dResult').html(JSON.stringify(ret));
+    }
+</script>
+
+</body>
+</html>

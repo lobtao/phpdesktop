@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2018/08/04 20:50:53.108.dproj,D:\work\niu_new\niu.dproj=D:\work\niu_new\niu_new.dproj</Transaction>
+    <Transaction>2018/08/06 07:00:12.960.pas,D:\work\niu_new\Unit1.pas=D:\work\niu_new\ufrmModel.pas</Transaction>
+    <Transaction>2018/08/06 07:00:12.960.dfm,D:\work\niu_new\Unit1.dfm=D:\work\niu_new\ufrmModel.dfm</Transaction>
+    <Transaction>2018/08/06 07:49:39.422.pas,D:\work\niu_new\ufrmModel.pas=D:\work\niu_new\ufrmModal.pas</Transaction>
+    <Transaction>2018/08/06 07:49:39.422.dfm,D:\work\niu_new\ufrmModel.dfm=D:\work\niu_new\ufrmModal.dfm</Transaction>
+  </Transactions>
+</BorlandProject>
