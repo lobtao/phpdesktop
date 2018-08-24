@@ -19,11 +19,10 @@ type
   private
     { Private declarations }
     FUrl: string;
-    FInstance: TfrmModal;
   protected
   public
     { Public declarations }
-    constructor Create(Caption: string; Url: string; width, height: Integer); overload;
+    procedure setInfo(Caption: string; Url: string; width, height: Integer);
   end;
 
 var
@@ -31,21 +30,16 @@ var
 
 implementation
 
+uses
+   unMoudle;
+
 
 {$R *.dfm}
 { TfrmModel }
 
-constructor TfrmModal.Create(Caption: string;Url: string; width, height: Integer);
-begin
-  inherited Create(Application);
-  Self.Caption := Trim(Caption);
-  Self.width := width;
-  Self.height := height;
-  Self.FUrl := Url;
-end;
-
 procedure TfrmModal.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
+
   Action := caFree;
 end;
 
@@ -80,6 +74,14 @@ begin
   tmpTitle := Trim(title);
   if (tmpTitle <> '') and (tmpTitle <> 'about:blank') then
     Self.Caption := tmpTitle;
+end;
+
+procedure TfrmModal.setInfo(Caption, Url: string; width, height: Integer);
+begin
+  Self.Caption := Trim(Caption);
+  Self.width := width;
+  Self.height := height;
+  Self.FUrl := Url;
 end;
 
 end.

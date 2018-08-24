@@ -67,6 +67,13 @@
 				<DesignClass>TFrame</DesignClass>
 			</DCCReference>
 			<DCCReference Include="unV8Extension.pas"/>
+			<DCCReference Include="ufrmPHPLog.pas">
+				<Form> frmPHPLog </Form>
+			</DCCReference>
+			<DCCReference Include="unMoudle.pas">
+				<Form>dbMoudle</Form>
+				<DesignClass>TDataModule</DesignClass>
+			</DCCReference>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>

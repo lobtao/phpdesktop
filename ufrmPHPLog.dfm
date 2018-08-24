@@ -1,53 +1,48 @@
-object frmModal: TfrmModal
+object frmPHPLog: TfrmPHPLog
   Left = 0
   Top = 0
   BorderIcons = []
-  ClientHeight = 600
-  ClientWidth = 830
+  Caption = 'PHP'#26085#24535
+  ClientHeight = 511
+  ClientWidth = 693
   Color = clBtnFace
-  DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  FormStyle = fsStayOnTop
   OldCreateOrder = False
-  Position = poScreenCenter
-  Scaled = False
-  OnClose = FormClose
-  OnCloseQuery = FormCloseQuery
-  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  inline frameChrome1: TframeChrome
+  object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 830
-    Height = 600
+    Width = 693
+    Height = 511
     Align = alClient
+    Caption = 'Panel1'
+    Color = clWindow
+    ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 830
-    ExplicitHeight = 600
-    inherited Splitter1: TSplitter
-      Left = 727
-      Height = 600
-      ExplicitLeft = 727
-      ExplicitHeight = 600
-    end
-    inherited CEFWindowParent1: TCEFWindowParent
-      Width = 727
-      Height = 600
-      ExplicitWidth = 727
-      ExplicitHeight = 600
-    end
-    inherited DevTools: TCEFWindowParent
-      Left = 730
-      Height = 600
-      ExplicitLeft = 730
-      ExplicitHeight = 600
-    end
-    inherited Chromium1: TChromium
-      OnTitleChange = frameChrome1Chromium1TitleChange
+    object Memo1: TMemo
+      AlignWithMargins = True
+      Left = 4
+      Top = 6
+      Width = 685
+      Height = 499
+      Margins.Top = 5
+      Margins.Bottom = 5
+      Align = alClient
+      BorderStyle = bsNone
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = #24494#36719#38597#40657
+      Font.Style = []
+      ParentFont = False
+      ScrollBars = ssBoth
+      TabOrder = 0
     end
   end
   object DSF: TspDynamicSkinForm

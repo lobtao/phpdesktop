@@ -3,10 +3,11 @@ unit unPHPModule;
 interface
 
 uses
-  SysUtils, Classes, diocp_ex_httpServer, Contnrs, PHPCommon, php4delphi,
+  SysUtils, Classes, Windows, diocp_ex_httpServer, Contnrs, PHPCommon,
+  php4delphi,
   zendAPI,
   phpAPI, PHPCustomLibrary, utils_strings, diocp_ex_httpClient,
-  CnIni, CnCommon, utils_dvalue, Dialogs, unConfig, PHPTypes;
+  CnIni, CnCommon, utils_dvalue, Dialogs, PHPTypes, utils_dvalue_json;
 
 const
   PHP_SESSIONID = 'PHPSESSID';
@@ -22,6 +23,7 @@ type
     { Private declarations }
 
     FHttpServer: TDiocpHttpServer;
+    FLogHandle: HWND;
 
     // 请求响应
     procedure OnHttpSvrRequest(pvRequest: TDiocpHttpRequest);
@@ -34,7 +36,7 @@ type
   public
     { Public declarations }
 
-    procedure start(iPort: Integer);
+    procedure start(iPort: Integer; logHandle: HWND);
     procedure stop();
   end;
 
@@ -45,6 +47,8 @@ implementation
 
 {$R *.dfm}
 { TDataModule1 }
+
+uses unConfig;
 
 procedure TPHPModule.createTmpPath;
 var
@@ -93,8 +97,21 @@ end;
 
 procedure TPHPModule.FPHPEngineScriptError(Sender: TObject; AText: AnsiString;
   AType: TPHPErrorType; AFileName: AnsiString; ALineNo: Integer);
+var
+  strTmp: string;
+  dvTmp: TDValue;
 begin
-//
+  dvTmp := TDValue.Create(vntObject);
+  try
+    dvTmp.AddVar('AFileName', AFileName);
+    dvTmp.AddVar('ALineNo', ALineNo);
+    dvTmp.AddVar('AText', AText);
+    dvTmp.AddVar('AType', Ord(AType));
+    strTmp := JSONEncode(dvTmp);
+    PostMessage(Self.FLogHandle, YS_BROWSER_APP_PHPERROR, Integer((strTmp)), 0);
+  finally
+    dvTmp.Free;
+  end;
 end;
 
 procedure TPHPModule.OnHttpSvrRequest(pvRequest: TDiocpHttpRequest);
@@ -129,31 +146,37 @@ begin
   end;
 
   psvPhpOne := TpsvPHP.Create(nil);
-  if pvRequest.RequestMethod = 'GET' then
-    psvPhpOne.RequestType := prtGet
-  else
-    psvPhpOne.RequestType := prtPost;
-
-  // PHP_SELF参数
-  with psvPhpOne.Variables.Add do
-  begin
-    Name := 'PHP_SELF';
-    Value := UTF8Encode(PHPFileName);
-  end;
-  // 1.解析参数
-  parseParams(psvPhpOne, pvRequest);
   try
-    // 2.执行PHP文件
-    strHtml := psvPhpOne.Execute(PHPFileName);
-    // 3.获取执行完成结果
-    parseSessionID(psvPhpOne, pvRequest);
-  finally
-    psvPhpOne.Free;
-  end;
+    if pvRequest.RequestMethod = 'GET' then
+      psvPhpOne.RequestType := prtGet
+    else
+      psvPhpOne.RequestType := prtPost;
 
-  pvRequest.Response.ResponseCode := 200;
-  pvRequest.Response.WriteString(UTF8Decode(strHtml)); //
-  pvRequest.ResponseEnd();
+    // PHP_SELF参数
+    with psvPhpOne.Variables.Add do
+    begin
+      Name := 'PHP_SELF';
+      Value := UTF8Encode(PHPFileName);
+    end;
+    // 1.解析参数
+    parseParams(psvPhpOne, pvRequest);
+    try
+      // 2.执行PHP文件
+      strHtml := psvPhpOne.Execute(PHPFileName);
+      // 3.获取执行完成结果
+      parseSessionID(psvPhpOne, pvRequest);
+    finally
+      psvPhpOne.Free;
+    end;
+
+    pvRequest.Response.ResponseCode := 200;
+    pvRequest.Response.WriteString(UTF8Decode(strHtml)); //
+    pvRequest.ResponseEnd();
+  except
+    pvRequest.Response.ResponseCode := 200;
+    pvRequest.Response.WriteString('执行异常'); //
+    pvRequest.ResponseEnd();
+  end;
 
 end;
 
@@ -228,11 +251,12 @@ begin
 
 end;
 
-procedure TPHPModule.start(iPort: Integer);
+procedure TPHPModule.start(iPort: Integer; logHandle: HWND);
 begin
   FHttpServer.DefaultListenAddress := FHost;
   FHttpServer.Port := iPort;
   Self.FHttpServer.Active := True;
+  Self.FLogHandle := logHandle;
 end;
 
 procedure TPHPModule.stop;

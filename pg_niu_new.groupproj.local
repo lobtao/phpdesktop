@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Default.Personality>
-		<Projects ActiveProject="niu_new.exe"/>
+		<Projects ActiveProject="server_php.dll"/>
 	</Default.Personality>
 	<Transactions>
     <Transaction>2018/08/04 20:37:05.747.groupproj,D:\work\niu_new\pg_niu.groupproj=D:\work\niu_new\pg_niu_new.groupproj</Transaction>

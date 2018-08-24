@@ -33,12 +33,13 @@ type
     procedure Chromium1BeforePopup(Sender: TObject; const browser: ICefBrowser;
       const frame: ICefFrame; const targetUrl, targetFrameName: ustring;
       targetDisposition: TCefWindowOpenDisposition; userGesture: Boolean;
-      const popupFeatures: TCefPopupFeatures; var windowInfo: TCefWindowInfo;
-      var client: ICefClient; var settings: TCefBrowserSettings;
-      var noJavascriptAccess, Result: Boolean);
-    procedure Chromium1BeforeBrowse(Sender: TObject; const browser: ICefBrowser;
-      const frame: ICefFrame; const request: ICefRequest; isRedirect: Boolean;
-      out Result: Boolean);
+      const popupFeatures: TCefPopupFeatures;
+      var windowInfo: TCefWindowInfo; var client: ICefClient;
+      var settings: TCefBrowserSettings; var noJavascriptAccess,
+      Result: Boolean);
+    procedure Chromium1BeforeBrowse(Sender: TObject;
+      const browser: ICefBrowser; const frame: ICefFrame;
+      const request: ICefRequest; isRedirect: Boolean; out Result: Boolean);
   private
     { Private declarations }
     FCaption: string;
@@ -60,6 +61,7 @@ type
     procedure ShowForm(var aMessage: TMessage); message YS_BROWSER_APP_SHOW;
     procedure ShowModalForm(var aMessage: TMessage);
       message YS_BROWSER_APP_SHOWMODAL;
+    procedure ShowPHPLog(var aMessage: TMessage); message YS_BROWSER_APP_PHPLOG;
 
     procedure BrowserDestroyMsg(var aMessage: TMessage); message CEF_DESTROY;
 
@@ -81,7 +83,7 @@ implementation
 { TframeChrome }
 
 uses
-  ufrmModal;
+  ufrmModal, ufrmPHPLog;
 
 procedure TframeChrome.BrowserCreatedMsg(var aMessage: TMessage);
 begin
@@ -107,7 +109,7 @@ procedure TframeChrome.Chromium1BeforeBrowse(Sender: TObject;
   const browser: ICefBrowser; const frame: ICefFrame;
   const request: ICefRequest; isRedirect: Boolean; out Result: Boolean);
 begin
-  //ShowMessage(request.Url);
+  // ShowMessage(request.Url);
 end;
 
 procedure TframeChrome.Chromium1BeforeClose(Sender: TObject;
@@ -122,7 +124,7 @@ procedure TframeChrome.Chromium1BeforeContextMenu(Sender: TObject;
   const params: ICefContextMenuParams; const model: ICefMenuModel);
 begin
   // 非调试模式下，无右键菜单
-  if FDebug = 0 then
+  if unConfig.FDebug = 0 then
   begin
     model.Clear;
     Exit;
@@ -130,9 +132,10 @@ begin
 
   model.AddSeparator;
   if DevTools.Visible then
-    model.AddItem(YS_BROWSER_CONTEXTMENU_HIDEDEVTOOLS, '关闭开发工具')
+    model.AddItem(YS_BROWSER_CONTEXTMENU_HIDEDEVTOOLS, '关闭前端调试')
   else
-    model.AddItem(YS_BROWSER_CONTEXTMENU_SHOWDEVTOOLS, '显示开发工具');
+    model.AddItem(YS_BROWSER_CONTEXTMENU_SHOWDEVTOOLS, '显示前端调试');
+  model.AddItem(YS_BROWSER_CONTEXTMENU_PHPLOG, '显示PHP日志');
   model.AddItem(YS_BROWSER_CONTEXTMENU_REFRESH, '刷新(&R)');
 end;
 
@@ -143,7 +146,7 @@ procedure TframeChrome.Chromium1BeforePopup(Sender: TObject;
   var windowInfo: TCefWindowInfo; var client: ICefClient;
   var settings: TCefBrowserSettings; var noJavascriptAccess, Result: Boolean);
 begin
-  //拦截链接行为，弹出新窗口
+  // 拦截链接行为，弹出新窗口
   Self.FCaption := targetFrameName;
   Self.FUrl := targetUrl;
   if popupFeatures.widthSet = 1 then
@@ -155,7 +158,7 @@ begin
   else
     Self.FHeight := unConfig.FHeight;
 
-  if popupFeatures.dialog = 1 then//弹出窗口
+  if popupFeatures.dialog = 1 then // 弹出窗口
     PostMessage(Handle, YS_BROWSER_APP_SHOWMODAL, 0, 0)
   else
     PostMessage(Handle, YS_BROWSER_APP_SHOW, 0, 0);
@@ -191,6 +194,8 @@ begin
       end;
     YS_BROWSER_CONTEXTMENU_REFRESH:
       PostMessage(Handle, YS_BROWSER_APP_REFRESH, 0, 0);
+    YS_BROWSER_CONTEXTMENU_PHPLOG:
+      PostMessage(Handle, YS_BROWSER_APP_PHPLOG, 0, 0);
   end;
 
 end;
@@ -215,7 +220,8 @@ begin
   Chromium1.CloseDevTools(DevTools);
   Splitter1.Visible := false;
   DevTools.Visible := false;
-  DevTools.Width := 0;
+  DevTools.width := 0;
+
 end;
 
 procedure TframeChrome.HideDevToolsMsg(var aMessage: TMessage);
@@ -234,7 +240,7 @@ begin
   Self.FUrl := url;
   Self.FCanClose := false;
   Self.FClosing := false;
-  if not (Chromium1.CreateBrowser(CEFWindowParent1, '')) then
+  if not(Chromium1.CreateBrowser(CEFWindowParent1, '')) then
     Timer1.Enabled := True;
 end;
 
@@ -252,8 +258,9 @@ procedure TframeChrome.ShowDevTools(aPoint: TPoint);
 begin
   Splitter1.Visible := True;
   DevTools.Visible := True;
-  DevTools.Width := Width div 4;
+  DevTools.width := width div 4;
   Chromium1.ShowDevTools(aPoint, DevTools);
+
 end;
 
 procedure TframeChrome.ShowDevToolsMsg(var aMessage: TMessage);
@@ -267,8 +274,8 @@ end;
 
 procedure TframeChrome.ShowForm(var aMessage: TMessage);
 begin
-  frmModal := TfrmModal.Create(Self.FCaption, Self.FUrl, Self.FWidth,
-    Self.FHeight);
+  frmModal := TfrmModal.Create(nil);
+  frmModal.setInfo(Self.FCaption, Self.FUrl, Self.FWidth, Self.FHeight);
   frmModal.Show;
 end;
 
@@ -276,19 +283,24 @@ procedure TframeChrome.ShowModalForm(var aMessage: TMessage);
 var
   frmModal1: TfrmModal;
 begin
-  frmModal1 := TfrmModal.Create(Self.FCaption, Self.FUrl, Self.FWidth,
-    Self.FHeight);
+  frmModal1 := TfrmModal.Create(nil);
+  frmModal.setInfo(Self.FCaption, Self.FUrl, Self.FWidth, Self.FHeight);
   frmModal1.ShowModal;
   frmModal1.Free;
+end;
+
+procedure TframeChrome.ShowPHPLog(var aMessage: TMessage);
+begin
+  if (unConfig.FDebug = 1) and (Assigned(frmPHPLog)) then
+    frmPHPLog.Show;
 end;
 
 procedure TframeChrome.Timer1Timer(Sender: TObject);
 begin
   TTimer(Sender).Enabled := false;
-  if not (Chromium1.CreateBrowser(CEFWindowParent1, '')) and not
+  if not(Chromium1.CreateBrowser(CEFWindowParent1, '')) and not
     (Chromium1.Initialized) then
     TTimer(Sender).Enabled := True;
 end;
 
 end.
-

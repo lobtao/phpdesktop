@@ -315,7 +315,7 @@ object frmMain: TfrmMain
     000000FF0000FF80400001FF0000FF80F80F01FF0000FFC1FFFF81FF0000FFC1
     FFFFC1FF0000FFC3FFFFC3FF0000FFE3FFFFE3FF0000FFE7FFFFE3FF0000}
   OldCreateOrder = False
-  Position = poDesktopCenter
+  Position = poScreenCenter
   Scaled = False
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
@@ -349,22 +349,6 @@ object frmMain: TfrmMain
       ExplicitLeft = 939
       ExplicitHeight = 781
     end
-  end
-  object spSkinData1: TspSkinData
-    DlgTreeViewDrawSkin = False
-    DlgTreeViewItemSkinDataName = 'listbox'
-    DlgListViewDrawSkin = False
-    DlgListViewItemSkinDataName = 'listbox'
-    AnimationForAllWindows = False
-    ShowLayeredBorders = True
-    SkinnableForm = True
-    EnableSkinEffects = False
-    AeroBlurEnabled = False
-    ShowButtonGlowFrames = False
-    ShowCaptionButtonGlowFrames = False
-    SkinIndex = 0
-    Left = 72
-    Top = 96
   end
   object DSF: TspDynamicSkinForm
     UseRibbon = False
@@ -424,7 +408,7 @@ object frmMain: TfrmMain
     MenusAlphaBlend = False
     MenusAlphaBlendAnimation = False
     MenusAlphaBlendValue = 200
-    SkinData = spSkinData1
+    SkinData = dbMoudle.spSkinData1
     MinHeight = 0
     MinWidth = 0
     MaxHeight = 0

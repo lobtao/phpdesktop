@@ -12,18 +12,21 @@ const
   YS_BROWSER_APP_REFRESH = WM_APP + $103; // 刷新
   YS_BROWSER_APP_SHOW = WM_APP + $104; // 显示窗口
   YS_BROWSER_APP_SHOWMODAL = WM_APP + $105; // modal显示窗口
+  YS_BROWSER_APP_PHPERROR = WM_APP + $106; // php异常消息
+  YS_BROWSER_APP_PHPLOG = WM_APP + $107; // 显示PHP日志
 
   // 右键菜单发送消息
   YS_BROWSER_CONTEXTMENU_SHOWDEVTOOLS = MENU_ID_USER_FIRST + 1; // 显示开发工具
   YS_BROWSER_CONTEXTMENU_HIDEDEVTOOLS = MENU_ID_USER_FIRST + 2; // 隐藏开发工具
   YS_BROWSER_CONTEXTMENU_REFRESH = MENU_ID_USER_FIRST + 3; // 刷新
+  YS_BROWSER_CONTEXTMENU_PHPLOG = MENU_ID_USER_FIRST + 4; // 显示PHP日志
 
   // 拓展发送消息
   YS_BROWSER_EXTENSION_SHOW = 'extension_show'; // 显示窗口
   YS_BROWSER_EXTENSION_SHOWMODAL = 'extension_showmodal'; // modal显示窗口
 
 var
-  FIndexUrl:string;//主程序网址
+  FIndexUrl: string; // 主程序网址
   FAppPath: string; // 应用目录
   FSkinFile: string; // 皮肤文件路径
   FDataBaseFile: string; // 数据库文件路径
@@ -39,9 +42,6 @@ implementation
 
 const
   jsonFile: string = 'config.json';
-
-var
-  lvData: TDValue;
 
 function getValue(key: string): string;
 var
@@ -75,7 +75,8 @@ FCaption := unConfig.getValue('title');
 FHost := unConfig.getValue('host');
 FDataPort := StrToIntDef(unConfig.getValue('data_port'), 46151);
 FWebPort := StrToIntDef(unConfig.getValue('web_port'), 46150);
-FIndexUrl := Format('http://127.0.0.1:%d/%s',[FWebPort,unConfig.getValue('url')]) ;
+FIndexUrl := Format('http://127.0.0.1:%d/%s',
+  [FWebPort, unConfig.getValue('url')]);
 
 finalization
 

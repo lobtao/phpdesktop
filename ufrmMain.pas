@@ -3,7 +3,7 @@ unit ufrmMain;
 interface
 
 uses
-  SysUtils,
+  SysUtils, Windows,
   Classes,
   Controls, Forms, SkinData, DynamicSkinForm,
   uCEFChromium,
@@ -11,7 +11,6 @@ uses
 
 type
   TfrmMain = class(TForm)
-    spSkinData1: TspSkinData;
     frameChrome1: TframeChrome;
     DSF: TspDynamicSkinForm;
     procedure FormCreate(Sender: TObject);
@@ -37,14 +36,14 @@ procedure CreateGlobalCEFApp;
 implementation
 
 uses
-  unConfig, ufrmSplash, ufrmModal, unV8Extension;
+  unConfig, ufrmSplash, ufrmModal, unV8Extension, ufrmPHPLog, unMoudle;
 {$R *.dfm}
-
 // phpf服务器
 
 procedure create_php_server(); stdcall; external 'server_php.dll';
 
-procedure php_server_start(iPort: Integer); stdcall; external 'server_php.dll';
+procedure php_server_start(iPort: Integer; logHandle: HWND); stdcall;
+external 'server_php.dll';
 
 procedure php_server_stop(); stdcall; external 'server_php.dll';
 
@@ -80,26 +79,24 @@ begin
     GlobalCEFApp.FlashEnabled := True;
   GlobalCEFApp.EnableGPU := False;
   GlobalCEFApp.DisableWebSecurity := True;
-//    GlobalCEFApp.MuteAudio := True;//开启后会导致flash播放没有声音
-//  GlobalCEFApp.FastUnload := True;
-//  GlobalCEFApp.DisableSafeBrowsing := True;
-//  GlobalCEFApp.LogFile := 'log\debug.log';
-//  GlobalCEFApp.LogSeverity := LOGSEVERITY_INFO;
+  // GlobalCEFApp.MuteAudio := True;//开启后会导致flash播放没有声音
+  // GlobalCEFApp.FastUnload := True;
+  // GlobalCEFApp.DisableSafeBrowsing := True;
+  // GlobalCEFApp.LogFile := 'log\debug.log';
+  // GlobalCEFApp.LogSeverity := LOGSEVERITY_INFO;
   GlobalCEFApp.EnableMediaStream := True;
-//  GlobalCEFApp.EnableSpeechInput := False;
-//  GlobalCEFApp.NoSandbox := False;
-//  GlobalCEFApp.SingleProcess := True;
-// GlobalCEFApp.Cookies := 'cookies';
+  // GlobalCEFApp.EnableSpeechInput := False;
+  // GlobalCEFApp.NoSandbox := False;
+  // GlobalCEFApp.SingleProcess := True;
+  // GlobalCEFApp.Cookies := 'cookies';
   GlobalCEFApp.Cache := 'cache';
 end;
-
-
 
 procedure TfrmMain.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
 begin
   CanClose := frameChrome1.FCanClose;
 
-  if not (frameChrome1.FClosing) then
+  if not(frameChrome1.FClosing) then
   begin
     frameChrome1.FClosing := True;
     Visible := False;
@@ -113,15 +110,18 @@ begin
   try
     frmSplash.Show;
 
+    if unConfig.FDebug = 1 then
+      frmPHPLog := TfrmPHPLog.Create(Application);
+
     application.ProcessMessages;
     // 1.加载配置
     loadMainConfig();
     // 2.加载皮肤
     if FileExists(unConfig.FSkinFile) then
-      spSkinData1.LoadFromCompressedFile(FSkinFile);
+      dbMoudle.spSkinData1.LoadFromCompressedFile(FSkinFile);
     // 3.启动服务器
     create_php_server();
-    php_server_start(unConfig.FWebPort);
+    php_server_start(unConfig.FWebPort, frmPHPLog.Handle);
     create_db_server();
     db_server_start(unConfig.FDataPort);
 
@@ -138,12 +138,12 @@ begin
   // 停止Abs数据服务器
   db_server_stop();
   free_db_server();
-
 end;
 
 procedure TfrmMain.FormShow(Sender: TObject);
 begin
   frameChrome1.setInfo(Self, unConfig.FIndexUrl);
+
 end;
 
 procedure TfrmMain.loadMainConfig;
@@ -157,4 +157,3 @@ end;
 initialization
 
 end.
-

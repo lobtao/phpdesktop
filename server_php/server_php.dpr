@@ -12,7 +12,7 @@ library server_php;
 
 uses
   SysUtils,
-  Classes,
+  Classes, Windows,
   unPHPModule in 'unPHPModule.pas',
   unConfig in '..\unConfig.pas';
 
@@ -28,9 +28,9 @@ begin
   phpServer.Free;
 end;
 
-procedure php_server_start(iPort: Integer); stdcall;
+procedure php_server_start(iPort: Integer; logHandle: HWND); stdcall;
 begin
-  phpServer.start(iPort);
+  phpServer.start(iPort,logHandle);
 end;
 
 procedure php_server_stop; stdcall;
