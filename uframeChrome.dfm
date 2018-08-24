@@ -3,6 +3,8 @@ object frameChrome: TframeChrome
   Top = 0
   Width = 798
   Height = 572
+  DoubleBuffered = False
+  ParentDoubleBuffered = False
   TabOrder = 0
   object Splitter1: TSplitter
     Left = 695
@@ -21,6 +23,10 @@ object frameChrome: TframeChrome
     Height = 572
     Align = alClient
     TabOrder = 0
+    DoubleBuffered = False
+    ParentDoubleBuffered = False
+    ExplicitLeft = 88
+    ExplicitTop = 80
   end
   object DevTools: TCEFWindowParent
     Left = 698

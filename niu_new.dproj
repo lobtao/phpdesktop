@@ -71,7 +71,7 @@
 				<Form> frmPHPLog </Form>
 			</DCCReference>
 			<DCCReference Include="unMoudle.pas">
-				<Form>dbMoudle</Form>
+				<Form> dbMoudle</Form>
 				<DesignClass>TDataModule</DesignClass>
 			</DCCReference>
 			<BuildConfiguration Include="Base">

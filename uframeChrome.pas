@@ -1,5 +1,9 @@
 unit uframeChrome;
 
+{
+关闭窗口的DoubleBuffered可解决子窗口快速移除窗外带来了黑屏问题
+}
+
 interface
 
 uses

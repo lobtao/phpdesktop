@@ -3,8 +3,8 @@ object frmPHPLog: TfrmPHPLog
   Top = 0
   BorderIcons = []
   Caption = 'PHP'#26085#24535
-  ClientHeight = 511
-  ClientWidth = 693
+  ClientHeight = 245
+  ClientWidth = 593
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,24 +13,27 @@ object frmPHPLog: TfrmPHPLog
   Font.Style = []
   FormStyle = fsStayOnTop
   OldCreateOrder = False
+  Position = poScreenCenter
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 693
-    Height = 511
+    Width = 593
+    Height = 245
     Align = alClient
     Caption = 'Panel1'
     Color = clWindow
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 693
+    ExplicitHeight = 511
     object Memo1: TMemo
       AlignWithMargins = True
       Left = 4
       Top = 6
-      Width = 685
-      Height = 499
+      Width = 585
+      Height = 233
       Margins.Top = 5
       Margins.Bottom = 5
       Align = alClient
@@ -43,6 +46,8 @@ object frmPHPLog: TfrmPHPLog
       ParentFont = False
       ScrollBars = ssBoth
       TabOrder = 0
+      ExplicitWidth = 685
+      ExplicitHeight = 499
     end
   end
   object DSF: TspDynamicSkinForm

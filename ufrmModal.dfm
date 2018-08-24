@@ -5,12 +5,12 @@ object frmModal: TfrmModal
   ClientHeight = 600
   ClientWidth = 830
   Color = clBtnFace
-  DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  FormStyle = fsStayOnTop
   OldCreateOrder = False
   Position = poScreenCenter
   Scaled = False
@@ -25,6 +25,8 @@ object frmModal: TfrmModal
     Width = 830
     Height = 600
     Align = alClient
+    DoubleBuffered = False
+    ParentDoubleBuffered = False
     TabOrder = 0
     ExplicitWidth = 830
     ExplicitHeight = 600

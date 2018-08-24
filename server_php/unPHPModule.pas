@@ -74,8 +74,8 @@ end;
 
 procedure TPHPModule.DataModuleCreate(Sender: TObject);
 begin
-  FPHPEngine.DLLFolder := AppPath;
-  FPHPEngine.IniPath := AppPath;
+  FPHPEngine.DLLFolder := AppPath + 'php_5.3.5\';
+  FPHPEngine.IniPath := AppPath + 'php_5.3.5\';
   FPHPEngine.StartupEngine;
 
   createTmpPath;

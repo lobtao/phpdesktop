@@ -329,6 +329,8 @@ object frmMain: TfrmMain
     Width = 1039
     Height = 781
     Align = alClient
+    DoubleBuffered = False
+    ParentDoubleBuffered = False
     TabOrder = 0
     ExplicitWidth = 1039
     ExplicitHeight = 781

@@ -87,7 +87,7 @@ begin
   GlobalCEFApp.EnableMediaStream := True;
   // GlobalCEFApp.EnableSpeechInput := False;
   // GlobalCEFApp.NoSandbox := False;
-  // GlobalCEFApp.SingleProcess := True;
+//   GlobalCEFApp.SingleProcess := True;
   // GlobalCEFApp.Cookies := 'cookies';
   GlobalCEFApp.Cache := 'cache';
 end;

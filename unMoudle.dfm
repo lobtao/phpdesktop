@@ -3,17 +3,17 @@ object dbMoudle: TdbMoudle
   Height = 274
   Width = 403
   object spSkinData1: TspSkinData
-    DlgTreeViewDrawSkin = True
+    DlgTreeViewDrawSkin = False
     DlgTreeViewItemSkinDataName = 'listbox'
-    DlgListViewDrawSkin = True
+    DlgListViewDrawSkin = False
     DlgListViewItemSkinDataName = 'listbox'
     AnimationForAllWindows = False
     ShowLayeredBorders = True
     SkinnableForm = True
-    EnableSkinEffects = True
-    AeroBlurEnabled = True
-    ShowButtonGlowFrames = True
-    ShowCaptionButtonGlowFrames = True
+    EnableSkinEffects = False
+    AeroBlurEnabled = False
+    ShowButtonGlowFrames = False
+    ShowCaptionButtonGlowFrames = False
     SkinIndex = 0
     Left = 72
     Top = 96
