@@ -1,5 +1,7 @@
 # php_desktop  像开发网站一样开发桌面应用软件
 
+# 特性
+
 1. 支持php5.3.5
 
 2. 支持winxp系统
@@ -23,7 +25,7 @@
 11、支持启动页面为首页,启动页没有返回操作
 
 
-编译步骤
+# 编译步骤
 1. delphi 2010
 2. 依赖组件 DIOCP5   https://github.com/ymofen/diocp-v5
 3. 依赖H5神器组件 OldCEF4Delphi https://github.com/salvadordf/OldCEF4Delphi
@@ -32,7 +34,7 @@
 6. 依赖组件 php4delphi.7.2   https://sourceforge.net/projects/psvlib/files/PHP4Delphi/PHP4Delphi%207.2/
 7. 依赖组件 cnvcl  http://www.cnpack.org/showdetail.php?id=830&lang=zh-cn
 
-FAQ
+# FAQ
 
 1. 为什么用delphi编译
 
@@ -46,4 +48,4 @@ FAQ
 
 答：php简单高效，修改代码不需要重启应用，可达到热修复更新系统应用逻辑。目前php_desktop支持界面skin编辑，美观上比nw.js高N个档次
 
-QQ交流群：423332770
+# QQ交流群：423332770
