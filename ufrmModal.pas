@@ -16,6 +16,8 @@ type
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
     procedure frameChrome1Chromium1TitleChange(Sender: TObject;
       const browser: ICefBrowser; const title: ustring);
+    procedure FormDestroy(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
     FUrl: string;
@@ -31,15 +33,12 @@ var
 implementation
 
 uses
-   unMoudle;
-
-
+  unMoudle, unChromeMessage;
 {$R *.dfm}
 { TfrmModel }
 
 procedure TfrmModal.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-
   Action := caFree;
 end;
 
@@ -55,12 +54,26 @@ begin
   end;
 end;
 
+procedure TfrmModal.FormCreate(Sender: TObject);
+begin
+  // ×¢²á¼àÌý
+//  if Assigned(subject) then
+//    subject.attach(Self.Handle);
+end;
+
+procedure TfrmModal.FormDestroy(Sender: TObject);
+begin
+  // ·´×¢²á¼àÌý
+//  if Assigned(subject) then
+//    subject.unAttach(Self.Handle);
+end;
+
 procedure TfrmModal.FormShow(Sender: TObject);
 begin
   frameChrome1.setInfo(Self, Self.FUrl);
 
-  if fsModal in self.FormState then
-     Self.FormStyle := fsNormal;
+  if fsModal in Self.FormState then
+    Self.FormStyle := fsNormal;
 end;
 
 procedure TfrmModal.frameChrome1Chromium1TitleChange(Sender: TObject;

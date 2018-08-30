@@ -25,8 +25,6 @@ object frameChrome: TframeChrome
     TabOrder = 0
     DoubleBuffered = False
     ParentDoubleBuffered = False
-    ExplicitLeft = 88
-    ExplicitTop = 80
   end
   object DevTools: TCEFWindowParent
     Left = 698

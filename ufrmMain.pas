@@ -7,7 +7,8 @@ uses
   Classes,
   Controls, Forms, SkinData, DynamicSkinForm,
   uCEFChromium,
-  StdCtrls, uframeChrome, uCEFv8Handler, uCEFApplication, uCEFConstants;
+  uframeChrome,
+  Dialogs;
 
 type
   TfrmMain = class(TForm)
@@ -31,66 +32,13 @@ type
 var
   frmMain: TfrmMain;
 
-procedure CreateGlobalCEFApp;
-
 implementation
 
 uses
-  unConfig, ufrmSplash, ufrmModal, unV8Extension, ufrmPHPLog, unMoudle;
+  unConfig, ufrmSplash, ufrmPHPLog, unMoudle, unChromeMessage, unCmdCli;
+
 {$R *.dfm}
-// phpf服务器
 
-procedure create_php_server(); stdcall; external 'server_php.dll';
-
-procedure php_server_start(iPort: Integer; logHandle: HWND); stdcall;
-external 'server_php.dll';
-
-procedure php_server_stop(); stdcall; external 'server_php.dll';
-
-procedure free_php_server(); stdcall; external 'server_php.dll';
-
-// abs数据库服务器
-
-procedure create_db_server(); stdcall; external 'server_db.dll';
-
-procedure db_server_start(iPort: Integer); stdcall; external 'server_db.dll';
-
-procedure db_server_stop(); stdcall; external 'server_db.dll';
-
-procedure free_db_server(); stdcall; external 'server_db.dll';
-
-procedure GlobalCEFApp_OnWebKitInitializedEvent;
-begin
-  TCefRTTIExtension.Register('app', TV8Extension);
-end;
-
-procedure CreateGlobalCEFApp;
-var
-  strFlashPath: string;
-begin
-  GlobalCEFApp := TCefApplication.Create;
-  GlobalCEFApp.OnWebKitInitialized := GlobalCEFApp_OnWebKitInitializedEvent;
-
-  GlobalCEFApp.Locale := 'zh-CN';
-  strFlashPath := unConfig.FAppPath + 'PepperFlash';
-  if DirectoryExists(strFlashPath) then
-    GlobalCEFApp.CustomFlashPath := strFlashPath
-  else
-    GlobalCEFApp.FlashEnabled := True;
-  GlobalCEFApp.EnableGPU := False;
-  GlobalCEFApp.DisableWebSecurity := True;
-  // GlobalCEFApp.MuteAudio := True;//开启后会导致flash播放没有声音
-  // GlobalCEFApp.FastUnload := True;
-  // GlobalCEFApp.DisableSafeBrowsing := True;
-  // GlobalCEFApp.LogFile := 'log\debug.log';
-  // GlobalCEFApp.LogSeverity := LOGSEVERITY_INFO;
-  GlobalCEFApp.EnableMediaStream := True;
-  // GlobalCEFApp.EnableSpeechInput := False;
-  // GlobalCEFApp.NoSandbox := False;
-//   GlobalCEFApp.SingleProcess := True;
-  // GlobalCEFApp.Cookies := 'cookies';
-  GlobalCEFApp.Cache := 'cache';
-end;
 
 procedure TfrmMain.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
 begin
@@ -113,7 +61,7 @@ begin
     if unConfig.FDebug = 1 then
       frmPHPLog := TfrmPHPLog.Create(Application);
 
-    application.ProcessMessages;
+    Application.ProcessMessages;
     // 1.加载配置
     loadMainConfig();
     // 2.加载皮肤
@@ -124,6 +72,8 @@ begin
     php_server_start(unConfig.FWebPort, frmPHPLog.Handle);
     create_db_server();
     db_server_start(unConfig.FDataPort);
+    // 4.启动workerman服务
+//    cmdCli := TCmdCli.Create;
 
   finally
     frmSplash.Free;
@@ -138,6 +88,8 @@ begin
   // 停止Abs数据服务器
   db_server_stop();
   free_db_server();
+  // 停止workerman服务
+//  cmdCli.Free;
 end;
 
 procedure TfrmMain.FormShow(Sender: TObject);

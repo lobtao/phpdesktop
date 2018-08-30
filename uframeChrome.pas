@@ -1,7 +1,7 @@
 unit uframeChrome;
 
 {
-关闭窗口的DoubleBuffered可解决子窗口快速移除窗外带来了黑屏问题
+  关闭窗口的DoubleBuffered可解决子窗口快速移除窗外带来了黑屏问题
 }
 
 interface
@@ -9,7 +9,7 @@ interface
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms,
   ExtCtrls, uCEFChromium, uCEFWindowParent, uCEFInterfaces, uCEFConstants,
-  unConfig, uCEFTypes, Dialogs;
+  unConfig, uCEFTypes, Dialogs, StdCtrls, uCEFProcessMessage, uCEFv8Context;
 
 type
   TframeChrome = class(TFrame)
@@ -68,6 +68,8 @@ type
     procedure ShowPHPLog(var aMessage: TMessage); message YS_BROWSER_APP_PHPLOG;
 
     procedure BrowserDestroyMsg(var aMessage: TMessage); message CEF_DESTROY;
+    //窗口间消息传递
+    procedure NofityWindowMsg(var aMessage: TMessage); message YS_BROWSER_APP_WINDOW_MSG;
 
   protected
     procedure ShowDevTools(aPoint: TPoint); overload;
@@ -87,7 +89,7 @@ implementation
 { TframeChrome }
 
 uses
-  ufrmModal, ufrmPHPLog;
+  ufrmModal, ufrmPHPLog, unChromeMessage;
 
 procedure TframeChrome.BrowserCreatedMsg(var aMessage: TMessage);
 begin
@@ -107,6 +109,7 @@ begin
   else
     SendMessage(browser.Host.WindowHandle, WM_SETICON, 1,
       application.Icon.Handle);
+
 end;
 
 procedure TframeChrome.Chromium1BeforeBrowse(Sender: TObject;
@@ -188,18 +191,36 @@ begin
   Result := false;
   case commandId of
     YS_BROWSER_CONTEXTMENU_HIDEDEVTOOLS:
-      PostMessage(Handle, YS_BROWSER_APP_HIDEDEVTOOLS, 0, 0);
-
+      begin
+        PostMessage(Handle, YS_BROWSER_APP_HIDEDEVTOOLS, 0, 0);
+        Result := True;
+      end;
     YS_BROWSER_CONTEXTMENU_SHOWDEVTOOLS:
       begin
         TempParam := ((params.XCoord and $FFFF) shl 16) or
           (params.YCoord and $FFFF);
         PostMessage(Handle, YS_BROWSER_APP_SHOWDEVTOOLS, TempParam, 0);
+        Result := True;
       end;
     YS_BROWSER_CONTEXTMENU_REFRESH:
-      PostMessage(Handle, YS_BROWSER_APP_REFRESH, 0, 0);
+      begin
+        PostMessage(Handle, YS_BROWSER_APP_REFRESH, 0, 0);
+        Result := True;
+      end;
     YS_BROWSER_CONTEXTMENU_PHPLOG:
-      PostMessage(Handle, YS_BROWSER_APP_PHPLOG, 0, 0);
+      begin
+        PostMessage(Handle, YS_BROWSER_APP_PHPLOG, 0, 0);
+        Result := True;
+      end;
+    MENU_ID_VIEW_SOURCE: // 查看源代码
+      begin
+        FUrl := 'view-source:'+frame.url;
+        FWidth := 800;
+        FHeight := 600;
+
+        PostMessage(Handle, YS_BROWSER_APP_SHOW, 0, 0);
+        Result := True;
+      end;
   end;
 
 end;
@@ -207,7 +228,16 @@ end;
 procedure TframeChrome.Chromium1ProcessMessageReceived(Sender: TObject;
   const browser: ICefBrowser; sourceProcess: TCefProcessId;
   const message: ICefProcessMessage; out Result: Boolean);
+var
+  strMsg, strFunc: string;
+  i: Integer;
+  listStr: TStrings;
 begin
+  if message.Name = YS_BROWSER_EXTENSION_WINDOW_MSG then
+  begin
+    subject.notifyAll(message.ArgumentList.GetString(0), message.ArgumentList.GetString(1));
+    Exit;
+  end;
   // 拓展消息响应
   FUrl := message.ArgumentList.GetString(0);
   FWidth := message.ArgumentList.GetInt(1);
@@ -244,8 +274,12 @@ begin
   Self.FUrl := url;
   Self.FCanClose := false;
   Self.FClosing := false;
+  Chromium1.DefaultUrl := Self.FUrl;//修改默认首页about:blank为Self.FUrl，第一次显示页面不会有返回
   if not(Chromium1.CreateBrowser(CEFWindowParent1, '')) then
     Timer1.Enabled := True;
+
+  if Assigned(subject) then
+    subject.attach(Self.Chromium1);
 end;
 
 procedure TframeChrome.ShowDevTools;
@@ -277,18 +311,20 @@ begin
 end;
 
 procedure TframeChrome.ShowForm(var aMessage: TMessage);
+var
+  frmModal1: TfrmModal;
 begin
-  frmModal := TfrmModal.Create(nil);
-  frmModal.setInfo(Self.FCaption, Self.FUrl, Self.FWidth, Self.FHeight);
-  frmModal.Show;
+  frmModal1 := TfrmModal.Create(Application);
+  frmModal1.setInfo(Self.FCaption, Self.FUrl, Self.FWidth, Self.FHeight);
+  frmModal1.Show;
 end;
 
 procedure TframeChrome.ShowModalForm(var aMessage: TMessage);
 var
   frmModal1: TfrmModal;
 begin
-  frmModal1 := TfrmModal.Create(nil);
-  frmModal.setInfo(Self.FCaption, Self.FUrl, Self.FWidth, Self.FHeight);
+  frmModal1 := TfrmModal.Create(Application);
+  frmModal1.setInfo(Self.FCaption, Self.FUrl, Self.FWidth, Self.FHeight);
   frmModal1.ShowModal;
   frmModal1.Free;
 end;
@@ -305,6 +341,16 @@ begin
   if not(Chromium1.CreateBrowser(CEFWindowParent1, '')) and not
     (Chromium1.Initialized) then
     TTimer(Sender).Enabled := True;
+end;
+
+procedure TframeChrome.NofityWindowMsg(var aMessage: TMessage);
+var
+  strMsg: string;
+begin
+  strMsg := StrPas(PChar(aMessage.WParam));
+  Chromium1.ExecuteJavaScript(strMsg, Chromium1.DocumentURL, '');
+
+//  ShowMessage(strMsg);
 end;
 
 end.

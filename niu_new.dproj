@@ -26,11 +26,11 @@
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Base)'!=''">
 			<DCC_UsePackage>vcl;rtl;vclx;vclimg;vclactnband;dbrtl;vcldb;vcldbx;bdertl;vcltouch;xmlrtl;dsnap;dsnapcon;vclib;ibxpress;adortl;IndyCore;IndySystem;IndyProtocols;VclSmp;vclie;inet;websnap;webdsnap;inetdb;inetdbbde;inetdbxpress;soaprtl;vclribbon;dbexpress;DbxCommonDriver;DataSnapIndy10ServerTransport;DataSnapProviderClient;DbxClientDriver;DataSnapServer;DBXInterBaseDriver;DBXMySQLDriver;dbxcds;DBXFirebirdDriver;DBXSybaseASEDriver;DBXSybaseASADriver;DBXOracleDriver;DBXMSSQLDriver;DBXInformixDriver;DBXDb2Driver;vclAbsDBd15;php4DelphiR2010;CnPack_D2010;DCEF_D7;skinpackd2010</DCC_UsePackage>
-			<DCC_DependencyCheckOutputName>Win32\Debug\niu_new.exe</DCC_DependencyCheckOutputName>
+			<DCC_DependencyCheckOutputName>C:\niu_new.exe</DCC_DependencyCheckOutputName>
 			<SanitizedProjectName>niu</SanitizedProjectName>
 			<DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
 			<Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
-			<DCC_ExeOutput>Win32\Debug\</DCC_ExeOutput>
+			<DCC_ExeOutput>C:\</DCC_ExeOutput>
 			<DCC_E>false</DCC_E>
 			<DCC_N>false</DCC_N>
 			<DCC_S>false</DCC_S>
@@ -38,13 +38,15 @@
 			<DCC_K>false</DCC_K>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<DCC_DependencyCheckOutputName>Win32\Debug\niu_new.exe</DCC_DependencyCheckOutputName>
 			<DCC_MapFile>3</DCC_MapFile>
 			<DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
 			<DCC_ExeOutput>Win32\Debug\</DCC_ExeOutput>
 			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_2)'!=''">
-			<DCC_ExeOutput>Win32\Debug\</DCC_ExeOutput>
+			<DCC_DependencyCheckOutputName>Win32\debug\niu_new.exe</DCC_DependencyCheckOutputName>
+			<DCC_ExeOutput>Win32\debug\</DCC_ExeOutput>
 			<DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
 		</PropertyGroup>
 		<ItemGroup>
@@ -74,6 +76,9 @@
 				<Form> dbMoudle</Form>
 				<DesignClass>TDataModule</DesignClass>
 			</DCCReference>
+			<DCCReference Include="unChromeMessage.pas"/>
+			<DCCReference Include="unCmdCli.pas"/>
+			<DCCReference Include="unCEF.pas"/>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>

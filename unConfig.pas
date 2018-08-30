@@ -3,7 +3,7 @@ unit unConfig;
 interface
 
 uses utils_dvalue, utils_dvalue_json, StrUtils, SysUtils, Messages,
-  uCEFConstants, Forms;
+  uCEFConstants, Forms,Windows;
 
 const
   // APP响应消息
@@ -14,6 +14,7 @@ const
   YS_BROWSER_APP_SHOWMODAL = WM_APP + $105; // modal显示窗口
   YS_BROWSER_APP_PHPERROR = WM_APP + $106; // php异常消息
   YS_BROWSER_APP_PHPLOG = WM_APP + $107; // 显示PHP日志
+  YS_BROWSER_APP_WINDOW_MSG = WM_APP + $108; // 窗口间消息传递
 
   // 右键菜单发送消息
   YS_BROWSER_CONTEXTMENU_SHOWDEVTOOLS = MENU_ID_USER_FIRST + 1; // 显示开发工具
@@ -24,6 +25,7 @@ const
   // 拓展发送消息
   YS_BROWSER_EXTENSION_SHOW = 'extension_show'; // 显示窗口
   YS_BROWSER_EXTENSION_SHOWMODAL = 'extension_showmodal'; // modal显示窗口
+  YS_BROWSER_EXTENSION_WINDOW_MSG = 'windows_msg';
 
 var
   FIndexUrl: string; // 主程序网址
@@ -38,16 +40,40 @@ var
   FDataPort: Integer; // 数据库端口
   FWebPort: Integer; // web端口
 
+// phpf服务器
+
+procedure create_php_server(); stdcall; external 'server_php.dll';
+
+procedure php_server_start(iPort: Integer; logHandle: HWND); stdcall;
+external 'server_php.dll';
+
+procedure php_server_stop(); stdcall; external 'server_php.dll';
+
+procedure free_php_server(); stdcall; external 'server_php.dll';
+
+// abs数据库服务器
+
+procedure create_db_server(); stdcall; external 'server_db.dll';
+
+procedure db_server_start(iPort: Integer); stdcall; external 'server_db.dll';
+
+procedure db_server_stop(); stdcall; external 'server_db.dll';
+
+procedure free_db_server(); stdcall; external 'server_db.dll';
+
+function getWorkerman(): TDValue;
+
+
 implementation
 
 const
-  jsonFile: string = 'config.json';
+  jsonConfigFile: string = 'config.json';
 
 function getValue(key: string): string;
 var
   lvData, lvTmp: TDValue;
 begin
-  if not FileExists('config.json') then
+  if not FileExists(jsonConfigFile) then
   begin
     Result := '';
     Exit;
@@ -55,12 +81,39 @@ begin
 
   lvData := TDValue.Create();
   try
-    JSONParseFromUtf8NoBOMFile('config.json', lvData);
-    lvTmp := lvData.FindByPath(key);
-    Result := IfThen(Assigned(lvTmp), lvTmp.AsString, '');
+    JSONParseFromUtf8NoBOMFile(jsonConfigFile, lvData);
+    lvTmp := lvData.FindByName(key);
+    if Assigned(lvTmp) then
+      Result := lvTmp.AsString
+    else
+      Result := '';
   finally
     lvData.Free;
   end;
+end;
+
+function getWorkerman(): TDValue;
+var
+  lvData, lvTmp: TDValue;
+begin
+  if not FileExists(jsonConfigFile) then
+  begin
+    Result := TDValue.Create(vntArray);
+    Exit;
+  end;
+
+  lvData := TDValue.Create();
+  try
+    JSONParseFromUtf8NoBOMFile(jsonConfigFile, lvData);
+    lvTmp := lvData.FindByName('workerman');
+    if Assigned(lvTmp) then
+      Result := lvTmp.AsArray.Clone()
+    else
+      Result := TDValue.Create(vntArray);
+  finally
+    lvData.Free;
+  end;
+
 end;
 
 initialization

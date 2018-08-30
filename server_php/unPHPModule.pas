@@ -108,7 +108,7 @@ begin
     dvTmp.AddVar('AText', AText);
     dvTmp.AddVar('AType', Ord(AType));
     strTmp := JSONEncode(dvTmp);
-    PostMessage(Self.FLogHandle, YS_BROWSER_APP_PHPERROR, Integer((strTmp)), 0);
+    PostMessage(Self.FLogHandle, YS_BROWSER_APP_PHPERROR, Integer(strTmp), 0);
   finally
     dvTmp.Free;
   end;
@@ -253,7 +253,8 @@ end;
 
 procedure TPHPModule.start(iPort: Integer; logHandle: HWND);
 begin
-  FHttpServer.DefaultListenAddress := FHost;
+  if (unConfig.FHost = '127.0.0.1') then//只有设置了127.0.0.1，才监听本地端口，其它值为网络端口，可做为服务端
+    FHttpServer.DefaultListenAddress := unConfig.FHost;
   FHttpServer.Port := iPort;
   Self.FHttpServer.Active := True;
   Self.FLogHandle := logHandle;

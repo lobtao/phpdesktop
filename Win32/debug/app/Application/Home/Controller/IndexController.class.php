@@ -51,7 +51,7 @@ class IndexController extends Controller {
     function sqlite() {
         echo '<pre>';
         $db_filename = dirname(dirname($_SERVER[ 'PHP_SELF' ])) . '\\database\\test.db';
-        echo $db_filename.'<br>';
+        echo $db_filename . '<br>';
         C('DB_TYPE', 'sqlite');
         C('DB_DSN', 'sqlite:' . $db_filename);
         $Model = M('tb_student'); // 实例化一个model对象 没有对应任何数据表
@@ -59,7 +59,19 @@ class IndexController extends Controller {
         print_r($data);
     }
 
-    function error(){
+    function error() {
         throw  new \Exception('抛个错误给你');
+    }
+
+    public function msg1() {
+        $this->show();
+    }
+
+    function msg2() {
+        $this->show();
+    }
+
+    function iframe() {
+        $this->show();
     }
 }

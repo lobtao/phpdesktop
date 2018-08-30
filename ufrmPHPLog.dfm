@@ -2,7 +2,7 @@ object frmPHPLog: TfrmPHPLog
   Left = 0
   Top = 0
   BorderIcons = []
-  Caption = 'PHP'#26085#24535
+  Caption = 'PHP'#24322#24120#26085#24535
   ClientHeight = 245
   ClientWidth = 593
   Color = clBtnFace
@@ -26,8 +26,6 @@ object frmPHPLog: TfrmPHPLog
     Color = clWindow
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 693
-    ExplicitHeight = 511
     object Memo1: TMemo
       AlignWithMargins = True
       Left = 4
@@ -46,8 +44,6 @@ object frmPHPLog: TfrmPHPLog
       ParentFont = False
       ScrollBars = ssBoth
       TabOrder = 0
-      ExplicitWidth = 685
-      ExplicitHeight = 499
     end
   end
   object DSF: TspDynamicSkinForm

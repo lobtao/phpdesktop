@@ -43,7 +43,7 @@ begin
   JSONParser(strTmp, dValue);
   try
     AType := dValue.FindByPath('AType').AsInteger;
-    AText := 'Òì³££º' + dValue.FindByPath('AText').AsString;
+    AText := 'ÃèÊö£º' + dValue.FindByPath('AText').AsString;
     ALineNo := 'ÐÐÊý£º' + dValue.FindByPath('ALineNo').AsString;
     AFileName := dValue.FindByPath('AFileName').AsString;
 

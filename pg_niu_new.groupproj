@@ -4,12 +4,15 @@
 		</PropertyGroup>
 		<ItemGroup>
 			<Projects Include="niu_new.dproj">
-				<Dependencies/>
+				<Dependencies>browse\browse.dproj</Dependencies>
 			</Projects>
 			<Projects Include="server_php\server_php.dproj">
 				<Dependencies/>
 			</Projects>
 			<Projects Include="server_db\server_db.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="browse\browse.dproj">
 				<Dependencies/>
 			</Projects>
 		</ItemGroup>
@@ -20,13 +23,13 @@
 				<Default.Personality/>
 			</BorlandProject>
 		</ProjectExtensions>
-		<Target Name="niu_new">
+		<Target DependsOnTargets="browse" Name="niu_new">
 			<MSBuild Projects="niu_new.dproj"/>
 		</Target>
-		<Target Name="niu_new:Clean">
+		<Target DependsOnTargets="browse:Clean" Name="niu_new:Clean">
 			<MSBuild Targets="Clean" Projects="niu_new.dproj"/>
 		</Target>
-		<Target Name="niu_new:Make">
+		<Target DependsOnTargets="browse:Make" Name="niu_new:Make">
 			<MSBuild Targets="Make" Projects="niu_new.dproj"/>
 		</Target>
 		<Target Name="server_php">
@@ -47,14 +50,23 @@
 		<Target Name="server_db:Make">
 			<MSBuild Targets="Make" Projects="server_db\server_db.dproj"/>
 		</Target>
+		<Target Name="browse">
+			<MSBuild Projects="browse\browse.dproj"/>
+		</Target>
+		<Target Name="browse:Clean">
+			<MSBuild Targets="Clean" Projects="browse\browse.dproj"/>
+		</Target>
+		<Target Name="browse:Make">
+			<MSBuild Targets="Make" Projects="browse\browse.dproj"/>
+		</Target>
 		<Target Name="Build">
-			<CallTarget Targets="niu_new;server_php;server_db"/>
+			<CallTarget Targets="niu_new;server_php;server_db;browse"/>
 		</Target>
 		<Target Name="Clean">
-			<CallTarget Targets="niu_new:Clean;server_php:Clean;server_db:Clean"/>
+			<CallTarget Targets="niu_new:Clean;server_php:Clean;server_db:Clean;browse:Clean"/>
 		</Target>
 		<Target Name="Make">
-			<CallTarget Targets="niu_new:Make;server_php:Make;server_db:Make"/>
+			<CallTarget Targets="niu_new:Make;server_php:Make;server_db:Make;browse:Make"/>
 		</Target>
 		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 	</Project>
