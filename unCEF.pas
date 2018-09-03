@@ -32,12 +32,12 @@ begin
   GlobalCEFApp.DisableWebSecurity := True;
   // GlobalCEFApp.MuteAudio := True;//开启后会导致flash播放没有声音
   // GlobalCEFApp.FastUnload := True;
-  // GlobalCEFApp.DisableSafeBrowsing := True;
+   GlobalCEFApp.DisableSafeBrowsing := True;
   // GlobalCEFApp.LogFile := 'log\debug.log';
   // GlobalCEFApp.LogSeverity := LOGSEVERITY_INFO;
   GlobalCEFApp.EnableMediaStream := True;
   // GlobalCEFApp.EnableSpeechInput := False;
-  // GlobalCEFApp.NoSandbox := False;
+   GlobalCEFApp.NoSandbox := False;
   // GlobalCEFApp.SingleProcess := True;
   // GlobalCEFApp.Cookies := 'cookies';
   GlobalCEFApp.Cache := 'cache';

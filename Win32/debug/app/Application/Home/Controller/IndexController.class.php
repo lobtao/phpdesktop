@@ -74,4 +74,8 @@ class IndexController extends Controller {
     function iframe() {
         $this->show();
     }
+
+    function input(){
+        $this->show();
+    }
 }

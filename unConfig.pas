@@ -3,7 +3,7 @@ unit unConfig;
 interface
 
 uses utils_dvalue, utils_dvalue_json, StrUtils, SysUtils, Messages,
-  uCEFConstants, Forms,Windows;
+  uCEFConstants, Forms, Windows;
 
 const
   // APP响应消息
@@ -39,8 +39,10 @@ var
   FHost: string; // 监听IP
   FDataPort: Integer; // 数据库端口
   FWebPort: Integer; // web端口
+  FWsPort: Integer; // websocket服务端口
+  FWsPHPUrl: string; // websocket服务处理PHP路径
 
-// phpf服务器
+  // php服务器
 
 procedure create_php_server(); stdcall; external 'server_php.dll';
 
@@ -61,8 +63,16 @@ procedure db_server_stop(); stdcall; external 'server_db.dll';
 
 procedure free_db_server(); stdcall; external 'server_db.dll';
 
-function getWorkerman(): TDValue;
+// websocket服务器
+procedure create_ws_server(); stdcall; external 'server_ws.dll';
 
+procedure ws_server_start(iPort: Integer;iHttpPort: Integer); stdcall; external 'server_ws.dll';
+
+procedure ws_server_stop(); stdcall; external 'server_ws.dll';
+
+procedure free_ws_server(); stdcall; external 'server_ws.dll';
+
+function getWorkerman(): TDValue;
 
 implementation
 
@@ -130,6 +140,8 @@ FDataPort := StrToIntDef(unConfig.getValue('data_port'), 46151);
 FWebPort := StrToIntDef(unConfig.getValue('web_port'), 46150);
 FIndexUrl := Format('http://127.0.0.1:%d/%s',
   [FWebPort, unConfig.getValue('url')]);
+FWsPort := StrToIntDef(unConfig.getValue('ws_port'), 46152);
+FWsPHPUrl := unConfig.getValue('ws_php_url');
 
 finalization
 

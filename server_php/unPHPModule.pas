@@ -254,8 +254,8 @@ end;
 procedure TPHPModule.start(iPort: Integer; logHandle: HWND);
 begin
   if (unConfig.FHost = '127.0.0.1') then//只有设置了127.0.0.1，才监听本地端口，其它值为网络端口，可做为服务端
-    FHttpServer.DefaultListenAddress := unConfig.FHost;
-  FHttpServer.Port := iPort;
+    Self.FHttpServer.DefaultListenAddress := unConfig.FHost;
+  Self.FHttpServer.Port := iPort;
   Self.FHttpServer.Active := True;
   Self.FLogHandle := logHandle;
 end;

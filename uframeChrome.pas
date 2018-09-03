@@ -9,7 +9,8 @@ interface
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms,
   ExtCtrls, uCEFChromium, uCEFWindowParent, uCEFInterfaces, uCEFConstants,
-  unConfig, uCEFTypes, Dialogs, StdCtrls, uCEFProcessMessage, uCEFv8Context;
+  unConfig, uCEFTypes, Dialogs, StdCtrls, uCEFProcessMessage, uCEFv8Context,
+  StrUtils;
 
 type
   TframeChrome = class(TFrame)
@@ -18,6 +19,7 @@ type
     Splitter1: TSplitter;
     DevTools: TCEFWindowParent;
     Timer1: TTimer;
+    OpenDialog1: TOpenDialog;
     procedure Chromium1AfterCreated(Sender: TObject;
       const browser: ICefBrowser);
     procedure Chromium1BeforeContextMenu(Sender: TObject;
@@ -44,6 +46,10 @@ type
     procedure Chromium1BeforeBrowse(Sender: TObject;
       const browser: ICefBrowser; const frame: ICefFrame;
       const request: ICefRequest; isRedirect: Boolean; out Result: Boolean);
+    procedure Chromium1FileDialog(Sender: TObject; const browser: ICefBrowser;
+      mode: Cardinal; const title, defaultFilePath: ustring;
+      const acceptFilters: TStrings; selectedAcceptFilter: Integer;
+      const callback: ICefFileDialogCallback; out Result: Boolean);
   private
     { Private declarations }
     FCaption: string;
@@ -81,6 +87,7 @@ type
     FCanClose: Boolean; // Set to True in TChromium.OnBeforeClose
 
     procedure setInfo(parentForm: TForm; url: string);
+    procedure Cont(selectedAcceptFilter: Integer; const filePaths: TStrings);
   end;
 
 implementation
@@ -225,6 +232,46 @@ begin
 
 end;
 
+procedure TframeChrome.Chromium1FileDialog(Sender: TObject;
+  const browser: ICefBrowser; mode: Cardinal; const title,
+  defaultFilePath: ustring; const acceptFilters: TStrings;
+  selectedAcceptFilter: Integer; const callback: ICefFileDialogCallback;
+  out Result: Boolean);
+var
+  filePaths: TStringList;
+  strFunc, files: string;
+  i: Integer;
+begin
+  filePaths := TStringList.Create;
+  try
+    //OpenDialog1.Filter := 'jpg|*.jpg|jpep|*.jpeg|gif|*.gif|png|*.png';
+    if OpenDialog1.Execute(Self.FParentForm.Handle) then
+    begin
+      for i := 0 to OpenDialog1.Files.Count - 1 do
+      begin
+        files := files + OpenDialog1.Files[i] + ',';
+        filePaths.Add(OpenDialog1.Files[i]);
+      end;
+      if Pos(',', files) > -1 then
+        files := LeftStr(files, Length(files)-1);
+
+      strFunc := 'if(window.onFile) window.onFile("' + files + '")';
+      strFunc := StringReplace(strFunc, '\', '\\', [rfReplaceAll]);
+      browser.FocusedFrame.ExecuteJavaScript(strFunc,browser.FocusedFrame.Url,0);
+      callback.Cont(selectedAcceptFilter, filePaths);
+
+      Result := True;
+    end
+    else
+    begin
+      callback.Cancel;
+      Result := False;
+    end;
+  finally
+    filePaths.Free;
+  end;
+end;
+
 procedure TframeChrome.Chromium1ProcessMessageReceived(Sender: TObject;
   const browser: ICefBrowser; sourceProcess: TCefProcessId;
   const message: ICefProcessMessage; out Result: Boolean);
@@ -247,6 +294,12 @@ begin
     PostMessage(Handle, YS_BROWSER_APP_SHOW, 0, 0)
   else if (message.Name = YS_BROWSER_EXTENSION_SHOWMODAL) then
     PostMessage(Handle, YS_BROWSER_APP_SHOWMODAL, 0, 0);
+end;
+
+procedure TframeChrome.Cont(selectedAcceptFilter: Integer;
+  const filePaths: TStrings);
+begin
+
 end;
 
 procedure TframeChrome.HideDevTools;

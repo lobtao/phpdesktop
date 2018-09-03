@@ -44,6 +44,7 @@ object frameChrome: TframeChrome
     OnBeforeClose = Chromium1BeforeClose
     OnClose = Chromium1Close
     OnBeforeBrowse = Chromium1BeforeBrowse
+    OnFileDialog = Chromium1FileDialog
     Left = 72
     Top = 144
   end
@@ -53,5 +54,10 @@ object frameChrome: TframeChrome
     OnTimer = Timer1Timer
     Left = 72
     Top = 192
+  end
+  object OpenDialog1: TOpenDialog
+    Options = [ofHideReadOnly, ofAllowMultiSelect, ofFileMustExist, ofEnableSizing]
+    Left = 72
+    Top = 232
   end
 end

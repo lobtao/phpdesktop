@@ -8,7 +8,7 @@ uses
   Controls, Forms, SkinData, DynamicSkinForm,
   uCEFChromium,
   uframeChrome,
-  Dialogs;
+  Dialogs, StdCtrls;
 
 type
   TfrmMain = class(TForm)
@@ -36,9 +36,7 @@ implementation
 
 uses
   unConfig, ufrmSplash, ufrmPHPLog, unMoudle, unChromeMessage, unCmdCli;
-
 {$R *.dfm}
-
 
 procedure TfrmMain.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
 begin
@@ -67,14 +65,16 @@ begin
     // 2.加载皮肤
     if FileExists(unConfig.FSkinFile) then
       dbMoudle.spSkinData1.LoadFromCompressedFile(FSkinFile);
-    // 3.启动服务器
+    // 3.启动php web服务器
     create_php_server();
     php_server_start(unConfig.FWebPort, frmPHPLog.Handle);
+    // 4.启动db数据服务器
     create_db_server();
     db_server_start(unConfig.FDataPort);
-    // 4.启动workerman服务
-//    cmdCli := TCmdCli.Create;
-
+    // 5.启动ws服务器
+    create_ws_server();
+    ws_server_start(unConfig.FWsPort,unConfig.FWebPort);
+    // cmdCli := TCmdCli.Create;
   finally
     frmSplash.Free;
   end;
@@ -88,8 +88,11 @@ begin
   // 停止Abs数据服务器
   db_server_stop();
   free_db_server();
+  // 停止ws服务器
+  ws_server_stop();
+  free_ws_server();
   // 停止workerman服务
-//  cmdCli.Free;
+  // cmdCli.Free;
 end;
 
 procedure TfrmMain.FormShow(Sender: TObject);
