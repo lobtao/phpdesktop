@@ -43,7 +43,7 @@ end;
 
 procedure TwsModule.DataModuleDestroy(Sender: TObject);
 begin
-  //
+  FTcpServer.Free;
 end;
 
 function TwsModule.getPHPWeb(strData: string): string;
@@ -53,12 +53,8 @@ var
 begin
   httpClient :=  TDiocpHttpClient.Create(nil);
   try
-    strUrl := Self.FHttpServerUrl+'&data='+strData;
+    strUrl := Self.FHttpServerUrl+'&data='+URLEncode(UTF8Encode(strData));
     httpClient.Get(strUrl);
-//    httpClient.DirectPost();
-//    httpClient.SetRequestBodyAsString('data='+(strData),False);
-    //httpClient.RequestHeader.Add(strData);
-//    httpClient.Post(Self.FHttpServerUrl);
     Result := httpClient.GetResponseBodyAsString;
   finally
     httpClient.Free;

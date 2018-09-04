@@ -1,0 +1,1145 @@
+[ 2018-09-04T08:59:25+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001337s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002090s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002174s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::error() should be compatible with that of Think\Controller::error() C:\work\niu_new\Win32\debug\app\Application\Home\Controller\IndexController.class.php 第 81 行.
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in C:\work\niu_new\Win32\debug\app\Application\Home\Controller\IndexController.class.php on line 11 and defined C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000387s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000769s ]
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020850s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020919s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001407s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001469s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002192s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002274s ]
+
+[ 2018-09-04T08:59:25+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000688s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001216s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001317s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001721s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002020s ]
+
+[ 2018-09-04T08:59:25+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000817s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001352s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001432s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001466s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001543s ]
+
+[ 2018-09-04T09:00:56+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000580s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000782s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000826s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000832s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000886s ]
+
+[ 2018-09-04T09:03:46+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001024s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001851s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001975s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001519s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001630s ]
+
+[ 2018-09-04T09:45:01+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000953s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001565s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001657s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001478s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001598s ]
+
+[ 2018-09-04T09:45:46+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000600s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001435s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001512s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::error() should be compatible with that of Think\Controller::error() C:\work\niu_new\Win32\debug\app\Application\Home\Controller\IndexController.class.php 第 81 行.
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in C:\work\niu_new\Win32\debug\app\Application\Home\Controller\IndexController.class.php on line 11 and defined C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000042s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000094s ]
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011965s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012009s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000820s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000860s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001133s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001173s ]
+
+[ 2018-09-04T09:45:46+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000432s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000750s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000796s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001381s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001703s ]
+
+[ 2018-09-04T09:45:46+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000684s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001019s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001083s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001134s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001210s ]
+
+[ 2018-09-04T09:45:52+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000509s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000765s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000811s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000759s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000805s ]
+
+[ 2018-09-04T09:45:56+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000429s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000760s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000805s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000941s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001007s ]
+
+[ 2018-09-04T09:46:05+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000742s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000789s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000777s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000838s ]
+
+[ 2018-09-04T09:46:26+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000558s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000782s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000829s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000769s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000817s ]
+
+[ 2018-09-04T09:46:51+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000424s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000743s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000787s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000770s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000820s ]
+
+[ 2018-09-04T09:47:23+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000629s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001107s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001166s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::error() should be compatible with that of Think\Controller::error() C:\work\niu_new\Win32\debug\app\Application\Home\Controller\IndexController.class.php 第 81 行.
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in C:\work\niu_new\Win32\debug\app\Application\Home\Controller\IndexController.class.php on line 11 and defined C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000043s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000093s ]
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011788s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011833s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000708s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000745s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001022s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001060s ]
+
+[ 2018-09-04T09:47:23+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000437s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000759s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000806s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001077s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001415s ]
+
+[ 2018-09-04T09:47:23+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001942s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001588s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001119s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001179s ]
+
+[ 2018-09-04T09:47:42+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000626s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000945s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000991s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::error() should be compatible with that of Think\Controller::error() C:\work\niu_new\Win32\debug\app\Application\Home\Controller\IndexController.class.php 第 81 行.
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in C:\work\niu_new\Win32\debug\app\Application\Home\Controller\IndexController.class.php on line 11 and defined C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000042s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000088s ]
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011304s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011348s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000707s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000745s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001112s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001151s ]
+
+[ 2018-09-04T09:47:42+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000430s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000802s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000872s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001080s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001395s ]
+
+[ 2018-09-04T09:47:42+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000897s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003998s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004091s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001093s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001154s ]
+
+[ 2018-09-04T09:47:59+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000667s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001237s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001347s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000842s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000901s ]
+
+[ 2018-09-04T09:48:03+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000442s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001117s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001201s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001150s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001225s ]
+
+[ 2018-09-04T09:48:49+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000713s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001158s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001229s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001135s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001211s ]
+
+[ 2018-09-04T09:48:54+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000431s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000803s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000868s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000755s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000800s ]
+
+[ 2018-09-04T09:49:34+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000621s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000775s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000821s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000859s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000906s ]
+
+[ 2018-09-04T09:50:04+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000562s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000942s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000991s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001340s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001427s ]
+
+[ 2018-09-04T09:50:40+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000708s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001865s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002046s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001261s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001372s ]
+
+[ 2018-09-04T09:54:03+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000624s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000999s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001069s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::error() should be compatible with that of Think\Controller::error() C:\work\niu_new\Win32\debug\app\Application\Home\Controller\IndexController.class.php 第 81 行.
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in C:\work\niu_new\Win32\debug\app\Application\Home\Controller\IndexController.class.php on line 11 and defined C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000039s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000087s ]
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011590s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011633s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000723s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000760s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001062s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001100s ]
+
+[ 2018-09-04T09:54:07+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000684s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000780s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000835s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001318s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001631s ]
+
+[ 2018-09-04T09:54:07+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000711s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001177s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001262s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001873s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001950s ]
+
+[ 2018-09-04T09:55:29+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000934s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001618s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001770s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001394s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001515s ]
+
+[ 2018-09-04T09:55:36+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000603s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001086s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001178s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001319s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001440s ]
+
+[ 2018-09-04T09:57:32+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000919s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002104s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002224s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001684s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001803s ]
+
+[ 2018-09-04T09:58:30+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000567s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000979s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001027s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::error() should be compatible with that of Think\Controller::error() C:\work\niu_new\Win32\debug\app\Application\Home\Controller\IndexController.class.php 第 81 行.
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in C:\work\niu_new\Win32\debug\app\Application\Home\Controller\IndexController.class.php on line 11 and defined C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000056s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000127s ]
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012130s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012188s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000696s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000735s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001029s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001067s ]
+
+[ 2018-09-04T09:58:30+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000624s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000756s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000802s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001011s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001325s ]
+
+[ 2018-09-04T09:58:30+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000851s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005272s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005362s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001262s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001347s ]
+
+[ 2018-09-04T09:59:31+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000614s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000998s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001043s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::error() should be compatible with that of Think\Controller::error() C:\work\niu_new\Win32\debug\app\Application\Home\Controller\IndexController.class.php 第 81 行.
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in C:\work\niu_new\Win32\debug\app\Application\Home\Controller\IndexController.class.php on line 11 and defined C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000085s ]
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011507s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011553s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000723s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000761s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001063s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001101s ]
+
+[ 2018-09-04T09:59:32+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000561s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000759s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000806s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001326s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001660s ]
+
+[ 2018-09-04T09:59:32+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000764s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.018125s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.018220s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001121s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001182s ]
+
+[ 2018-09-04T10:03:41+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000727s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000997s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::error() should be compatible with that of Think\Controller::error() C:\work\niu_new\Win32\debug\app\Application\Home\Controller\IndexController.class.php 第 81 行.
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in C:\work\niu_new\Win32\debug\app\Application\Home\Controller\IndexController.class.php on line 11 and defined C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000082s ]
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011227s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011271s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000767s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000805s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001055s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001095s ]
+
+[ 2018-09-04T10:03:42+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000616s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000775s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000826s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001153s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001474s ]
+
+[ 2018-09-04T10:03:42+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000785s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000916s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000964s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001116s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001176s ]
+
+[ 2018-09-04T10:04:06+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000778s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000817s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000881s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001220s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001318s ]
+
+[ 2018-09-04T10:04:14+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000699s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001592s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001760s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001272s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001341s ]
+
+[ 2018-09-04T10:04:56+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000627s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000930s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000976s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::error() should be compatible with that of Think\Controller::error() C:\work\niu_new\Win32\debug\app\Application\Home\Controller\IndexController.class.php 第 81 行.
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in C:\work\niu_new\Win32\debug\app\Application\Home\Controller\IndexController.class.php on line 11 and defined C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000040s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000088s ]
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011440s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011482s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000692s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000730s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001014s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001054s ]
+
+[ 2018-09-04T10:04:58+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000842s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001212s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001316s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001624s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001998s ]
+
+[ 2018-09-04T10:04:58+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000771s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000912s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000966s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001107s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001180s ]
+
+[ 2018-09-04T10:05:18+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000783s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001356s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001486s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002185s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002354s ]
+
+[ 2018-09-04T10:06:04+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000860s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001460s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001577s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002046s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002295s ]
+
+[ 2018-09-04T10:06:52+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000612s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000939s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000985s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::error() should be compatible with that of Think\Controller::error() C:\work\niu_new\Win32\debug\app\Application\Home\Controller\IndexController.class.php 第 81 行.
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in C:\work\niu_new\Win32\debug\app\Application\Home\Controller\IndexController.class.php on line 11 and defined C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000039s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000083s ]
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011354s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011397s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000707s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000745s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001075s ]
+
+[ 2018-09-04T10:06:52+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000478s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000779s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000830s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001199s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001552s ]
+
+[ 2018-09-04T10:06:52+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000750s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001280s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001358s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001626s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001713s ]
+
+[ 2018-09-04T10:07:00+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000666s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001215s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001307s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000824s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000879s ]
+
+[ 2018-09-04T10:07:22+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000798s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001639s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001556s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001675s ]
+
+[ 2018-09-04T10:07:41+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000436s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000767s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000813s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::error() should be compatible with that of Think\Controller::error() C:\work\niu_new\Win32\debug\app\Application\Home\Controller\IndexController.class.php 第 81 行.
+SQL: PRAGMA table_info( tb_student ) [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: field C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Db\Driver\Sqlite.class.php 第 42 行.
+NOTIC: [8] Undefined index: field C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Db\Driver\Sqlite.class.php 第 43 行.
+NOTIC: [8] Undefined index: null C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Db\Driver\Sqlite.class.php 第 45 行.
+NOTIC: [8] Undefined index: default C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Db\Driver\Sqlite.class.php 第 46 行.
+NOTIC: [8] Undefined index: dey C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Db\Driver\Sqlite.class.php 第 47 行.
+NOTIC: [8] Undefined index: extra C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Db\Driver\Sqlite.class.php 第 48 行.
+NOTIC: [8] Undefined index: field C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Db\Driver\Sqlite.class.php 第 42 行.
+NOTIC: [8] Undefined index: field C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Db\Driver\Sqlite.class.php 第 43 行.
+NOTIC: [8] Undefined index: null C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Db\Driver\Sqlite.class.php 第 45 行.
+NOTIC: [8] Undefined index: default C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Db\Driver\Sqlite.class.php 第 46 行.
+NOTIC: [8] Undefined index: dey C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Db\Driver\Sqlite.class.php 第 47 行.
+NOTIC: [8] Undefined index: extra C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Db\Driver\Sqlite.class.php 第 48 行.
+SQL: SELECT * FROM tb_student  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000788s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000828s ]
+
+[ 2018-09-04T10:07:48+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000513s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000810s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000860s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::error() should be compatible with that of Think\Controller::error() C:\work\niu_new\Win32\debug\app\Application\Home\Controller\IndexController.class.php 第 81 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000992s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001248s ]
+
+[ 2018-09-04T10:07:50+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000620s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001162s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001252s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000945s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001227s ]
+
+[ 2018-09-04T10:07:50+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000593s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000996s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001112s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001113s ]
+
+[ 2018-09-04T10:07:55+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000420s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000741s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000788s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::error() should be compatible with that of Think\Controller::error() C:\work\niu_new\Win32\debug\app\Application\Home\Controller\IndexController.class.php 第 81 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001024s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001272s ]
+
+[ 2018-09-04T10:08:11+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000473s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000862s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000910s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000970s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001228s ]
+
+[ 2018-09-04T10:08:11+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000434s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000792s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000839s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001057s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001131s ]
+
+[ 2018-09-04T10:08:19+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000425s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000840s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000890s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::error() should be compatible with that of Think\Controller::error() C:\work\niu_new\Win32\debug\app\Application\Home\Controller\IndexController.class.php 第 81 行.
+SQL: PRAGMA table_info( tb_student ) [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: field C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Db\Driver\Sqlite.class.php 第 42 行.
+NOTIC: [8] Undefined index: field C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Db\Driver\Sqlite.class.php 第 43 行.
+NOTIC: [8] Undefined index: null C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Db\Driver\Sqlite.class.php 第 45 行.
+NOTIC: [8] Undefined index: default C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Db\Driver\Sqlite.class.php 第 46 行.
+NOTIC: [8] Undefined index: dey C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Db\Driver\Sqlite.class.php 第 47 行.
+NOTIC: [8] Undefined index: extra C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Db\Driver\Sqlite.class.php 第 48 行.
+NOTIC: [8] Undefined index: field C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Db\Driver\Sqlite.class.php 第 42 行.
+NOTIC: [8] Undefined index: field C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Db\Driver\Sqlite.class.php 第 43 行.
+NOTIC: [8] Undefined index: null C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Db\Driver\Sqlite.class.php 第 45 行.
+NOTIC: [8] Undefined index: default C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Db\Driver\Sqlite.class.php 第 46 行.
+NOTIC: [8] Undefined index: dey C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Db\Driver\Sqlite.class.php 第 47 行.
+NOTIC: [8] Undefined index: extra C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Db\Driver\Sqlite.class.php 第 48 行.
+SQL: SELECT * FROM tb_student  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000804s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000844s ]
+
+[ 2018-09-04T10:09:41+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000557s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001137s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001193s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000985s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001046s ]
+
+[ 2018-09-04T10:10:21+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000461s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000759s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000806s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000748s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000792s ]
+
+[ 2018-09-04T10:10:30+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000427s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000752s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000800s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000747s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000793s ]
+
+[ 2018-09-04T10:11:30+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000684s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000972s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001017s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::error() should be compatible with that of Think\Controller::error() C:\work\niu_new\Win32\debug\app\Application\Home\Controller\IndexController.class.php 第 81 行.
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in C:\work\niu_new\Win32\debug\app\Application\Home\Controller\IndexController.class.php on line 11 and defined C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000040s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000089s ]
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+NOTIC: [8] Undefined index: HTTP_HOST C:\work\niu_new\Win32\debug\app\ThinkPHP\Common\functions.php 第 900 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011493s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011539s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000703s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000740s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001046s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001085s ]
+
+[ 2018-09-04T10:11:30+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000435s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000759s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000806s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001422s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001752s ]
+
+[ 2018-09-04T10:11:30+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000536s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001226s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001308s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001105s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001175s ]
+
+[ 2018-09-04T10:11:36+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000424s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000752s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000798s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001268s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001360s ]
+
+[ 2018-09-04T10:11:42+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000598s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001119s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001220s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001240s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001302s ]
+
+[ 2018-09-04T10:11:59+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000544s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000824s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000894s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001241s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001342s ]
+
+[ 2018-09-04T10:12:10+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000432s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000752s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000800s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000750s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000798s ]
+
+[ 2018-09-04T10:12:11+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000663s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001114s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001195s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000785s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000839s ]
+
+[ 2018-09-04T10:12:11+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000434s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000770s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000824s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000969s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001024s ]
+
+[ 2018-09-04T10:12:23+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000439s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000801s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000851s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000822s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000880s ]
+
+[ 2018-09-04T10:12:31+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000563s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000772s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000823s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000814s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000872s ]
+
+[ 2018-09-04T10:12:31+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000440s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001226s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001295s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001181s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001259s ]
+
+[ 2018-09-04T10:12:32+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000440s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000772s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000822s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000788s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000838s ]
+
+[ 2018-09-04T10:12:32+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000483s ]
+NOTIC: [8] Undefined index: REQUEST_URI C:\work\niu_new\Win32\debug\app\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000761s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000809s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000757s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000804s ]
+
