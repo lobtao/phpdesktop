@@ -13,10 +13,9 @@
  "ws_php_url":"index.php?m=home&c=ws&a=index",
  "workerman":{
  	"enable":1,
- 	"servers":[{
-	 	"php_cmd":"php_5.3.5\\php.exe app\\workerman\\http.php"
-	 },{
-	 	"php_cmd":""
-	 }]
+ 	"servers":[
+ 		"php_5.3.5\\php.exe app\\workerman\\http.php",
+ 		"php_5.3.5\\php.exe app\\workerman\\websocket.php"
+	 ]
  }
 }

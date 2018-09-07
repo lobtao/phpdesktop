@@ -72,9 +72,11 @@ begin
     create_db_server();
     db_server_start(unConfig.FDataPort);
     // 5.启动ws服务器
-    create_ws_server();
-    ws_server_start(unConfig.FWsPort,unConfig.FWebPort);
-    // cmdCli := TCmdCli.Create;
+//    create_ws_server();
+//    ws_server_start(unConfig.FWsPort,unConfig.FWebPort);
+    // 6.启动workerman
+     cmdCli := TCmdCli.Create;
+
   finally
     frmSplash.Free;
   end;
@@ -89,10 +91,10 @@ begin
   db_server_stop();
   free_db_server();
   // 停止ws服务器
-  ws_server_stop();
-  free_ws_server();
+//  ws_server_stop();
+//  free_ws_server();
   // 停止workerman服务
-  // cmdCli.Free;
+   cmdCli.Free;
 end;
 
 procedure TfrmMain.FormShow(Sender: TObject);

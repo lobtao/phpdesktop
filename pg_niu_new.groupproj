@@ -15,9 +15,6 @@
 			<Projects Include="browse\browse.dproj">
 				<Dependencies/>
 			</Projects>
-			<Projects Include="server_ws\server_ws.dproj">
-				<Dependencies/>
-			</Projects>
 		</ItemGroup>
 		<ProjectExtensions>
 			<Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -62,23 +59,14 @@
 		<Target Name="browse:Make">
 			<MSBuild Targets="Make" Projects="browse\browse.dproj"/>
 		</Target>
-		<Target Name="server_ws">
-			<MSBuild Projects="server_ws\server_ws.dproj"/>
-		</Target>
-		<Target Name="server_ws:Clean">
-			<MSBuild Targets="Clean" Projects="server_ws\server_ws.dproj"/>
-		</Target>
-		<Target Name="server_ws:Make">
-			<MSBuild Targets="Make" Projects="server_ws\server_ws.dproj"/>
-		</Target>
 		<Target Name="Build">
-			<CallTarget Targets="niu_new;server_php;server_db;browse;server_ws"/>
+			<CallTarget Targets="niu_new;server_php;server_db;browse"/>
 		</Target>
 		<Target Name="Clean">
-			<CallTarget Targets="niu_new:Clean;server_php:Clean;server_db:Clean;browse:Clean;server_ws:Clean"/>
+			<CallTarget Targets="niu_new:Clean;server_php:Clean;server_db:Clean;browse:Clean"/>
 		</Target>
 		<Target Name="Make">
-			<CallTarget Targets="niu_new:Make;server_php:Make;server_db:Make;browse:Make;server_ws:Make"/>
+			<CallTarget Targets="niu_new:Make;server_php:Make;server_db:Make;browse:Make"/>
 		</Target>
 		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 	</Project>

@@ -39,8 +39,8 @@ var
   FHost: string; // 监听IP
   FDataPort: Integer; // 数据库端口
   FWebPort: Integer; // web端口
-  FWsPort: Integer; // websocket服务端口
-  FWsPHPUrl: string; // websocket服务处理PHP路径
+//  FWsPort: Integer; // websocket服务端口
+//  FWsPHPUrl: string; // websocket服务处理PHP路径
 
   // php服务器
 
@@ -64,13 +64,13 @@ procedure db_server_stop(); stdcall; external 'server_db.dll';
 procedure free_db_server(); stdcall; external 'server_db.dll';
 
 // websocket服务器
-procedure create_ws_server(); stdcall; external 'server_ws.dll';
-
-procedure ws_server_start(iPort: Integer;iHttpPort: Integer); stdcall; external 'server_ws.dll';
-
-procedure ws_server_stop(); stdcall; external 'server_ws.dll';
-
-procedure free_ws_server(); stdcall; external 'server_ws.dll';
+//procedure create_ws_server(); stdcall; external 'server_ws.dll';
+//
+//procedure ws_server_start(iPort: Integer;iHttpPort: Integer); stdcall; external 'server_ws.dll';
+//
+//procedure ws_server_stop(); stdcall; external 'server_ws.dll';
+//
+//procedure free_ws_server(); stdcall; external 'server_ws.dll';
 
 function getWorkerman(): TDValue;
 
@@ -117,9 +117,9 @@ begin
     JSONParseFromUtf8NoBOMFile(jsonConfigFile, lvData);
     lvTmp := lvData.FindByName('workerman');
     if Assigned(lvTmp) then
-      Result := lvTmp.AsArray.Clone()
+      Result := lvTmp.Clone()
     else
-      Result := TDValue.Create(vntArray);
+      Result := TDValue.Create(vntObject);
   finally
     lvData.Free;
   end;
@@ -140,8 +140,8 @@ FDataPort := StrToIntDef(unConfig.getValue('data_port'), 46151);
 FWebPort := StrToIntDef(unConfig.getValue('web_port'), 46150);
 FIndexUrl := Format('http://127.0.0.1:%d/%s',
   [FWebPort, unConfig.getValue('url')]);
-FWsPort := StrToIntDef(unConfig.getValue('ws_port'), 46152);
-FWsPHPUrl := unConfig.getValue('ws_php_url');
+//FWsPort := StrToIntDef(unConfig.getValue('ws_port'), 46152);
+//FWsPHPUrl := unConfig.getValue('ws_php_url');
 
 finalization
 
