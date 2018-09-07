@@ -9,8 +9,6 @@
  "data_port": "46151",
  "skin": "skin\\niu.skn", 
  "debug": 1,
- "ws_port":"46152",
- "ws_php_url":"index.php?m=home&c=ws&a=index",
  "workerman":{
  	"enable":1,
  	"servers":[
