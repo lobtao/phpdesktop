@@ -20,6 +20,7 @@
 1、app目录下是一个单入口PHP项目
 
 2、config.json里配置
+
     debug: 1开启调试默认 0关闭调试，开启调试后，右键菜单有调试菜单项
     
     url：配置PHP项目启动首页
@@ -46,7 +47,7 @@
         
         servers：wokerman服务启动命令列表
         
-# 正式发布时建议关闭debug，右键菜单，workerman控制台将隐藏
+## 正式发布时建议关闭debug，右键菜单，workerman控制台将隐藏
 
 
 # 编译步骤
