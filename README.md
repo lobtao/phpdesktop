@@ -15,22 +15,37 @@
 11. 支持启动页面为首页,启动页没有返回操作
 12. 支持多workerman服务
 
-简要使用说明
+# 简要使用说明
+
 1、app目录下是一个单入口PHP项目
+
 2、config.json里配置
-    url：配置PHP项目启动首页
-    width：窗口打开的默认宽度，链接打开窗口宽度设置可用window.open传宽度参数
-    height：窗口打开的默认高度，链接打开窗口高度设置可用window.open传高度参数
-    title：主窗口打开的标题，其它窗口的标题根据网页titile自动调整
-    host：如果配置为127.0.0.1，只能本机访问，如果配置为0.0.0.0，则可以局域网访问
-    web_port：PHP项目访问服务端口号
-    database：内置数据库相对路径，管理工具tools\数据库查询分析器.exe
-    data_port：内置数据库访问服务端口号
-    skin：系统默认皮肤文件，tools\皮肤编辑器.exe可编辑自定义皮肤，群共享里分享了N套皮肤，也可在原有皮肤基础上进行修改
     debug: 1开启调试默认 0关闭调试，开启调试后，右键菜单有调试菜单项
+    
+    url：配置PHP项目启动首页
+    
+    width：窗口打开的默认宽度，链接打开窗口宽度设置可用window.open传宽度参数
+    
+    height：窗口打开的默认高度，链接打开窗口高度设置可用window.open传高度参数
+    
+    title：主窗口打开的标题，其它窗口的标题根据网页titile自动调整
+    
+    host：如果配置为127.0.0.1，只能本机访问，如果配置为0.0.0.0，则可以局域网访问
+    
+    web_port：PHP项目访问服务端口号
+    
+    database：内置数据库相对路径，管理工具tools\数据库查询分析器.exe
+    
+    data_port：内置数据库访问服务端口号
+    
+    skin：系统默认皮肤文件，tools\皮肤编辑器.exe可编辑自定义皮肤，群共享里分享了N套皮肤，也可在原有皮肤基础上进行修改
+       
     workerman可启动多个服务，如http,websocket,tcp同时支持
+    
         enable：是否启动workerman服务
+        
         servers：wokerman服务启动命令列表
+        
 # 正式发布时建议关闭debug，右键菜单，workerman控制台将隐藏
 
 
