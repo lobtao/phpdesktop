@@ -67,7 +67,10 @@ begin
       dbMoudle.spSkinData1.LoadFromCompressedFile(FSkinFile);
     // 3.启动php web服务器
     create_php_server();
-    php_server_start(unConfig.FWebPort, frmPHPLog.Handle);
+    if unConfig.FDebug = 1 then
+      php_server_start(unConfig.FWebPort, frmPHPLog.Handle)
+    else
+      php_server_start(unConfig.FWebPort, 0);
     // 4.启动db数据服务器
     create_db_server();
     db_server_start(unConfig.FDataPort);
