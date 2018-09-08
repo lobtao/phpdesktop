@@ -40,7 +40,7 @@
     
     skin：系统默认皮肤文件，tools\皮肤编辑器.exe可编辑自定义皮肤，群共享里分享了N套皮肤，也可在原有皮肤基础上进行修改
        
-    workerman可启动多个服务，如http,websocket,tcp同时支持
+    workerman：可启动多个服务，如http,websocket,tcp同时支持
     
         enable：是否启动workerman服务
         
