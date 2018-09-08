@@ -48,8 +48,14 @@ type
       const request: ICefRequest; isRedirect: Boolean; out Result: Boolean);
     procedure Chromium1FileDialog(Sender: TObject; const browser: ICefBrowser;
       mode: Cardinal; const title, defaultFilePath: ustring;
-      const acceptFilters: TStrings; selectedAcceptFilter: Integer;
-      const callback: ICefFileDialogCallback; out Result: Boolean);
+      const acceptFilters: TStrings;
+      selectedAcceptFilter: Integer; const callback: ICefFileDialogCallback;
+      out Result: Boolean);
+    procedure Chromium1Jsdialog(Sender: TObject; const browser: ICefBrowser;
+      const originUrl, accept_lang: ustring; dialogType: TCefJsDialogType;
+      const messageText, defaultPromptText: ustring;
+      const callback: ICefJsDialogCallback; out suppressMessage,
+      Result: Boolean);
   private
     { Private declarations }
     FCaption: string;
@@ -72,10 +78,12 @@ type
     procedure ShowModalForm(var aMessage: TMessage);
       message YS_BROWSER_APP_SHOWMODAL;
     procedure ShowPHPLog(var aMessage: TMessage); message YS_BROWSER_APP_PHPLOG;
+    procedure RunWork(var aMessage: TMessage); message YS_BROWSER_APP_RUNWORK;
 
     procedure BrowserDestroyMsg(var aMessage: TMessage); message CEF_DESTROY;
-    //窗口间消息传递
-    procedure NofityWindowMsg(var aMessage: TMessage); message YS_BROWSER_APP_WINDOW_MSG;
+    // 窗口间消息传递
+    procedure NofityWindowMsg(var aMessage: TMessage);
+      message YS_BROWSER_APP_WINDOW_MSG;
 
   protected
     procedure ShowDevTools(aPoint: TPoint); overload;
@@ -96,7 +104,7 @@ implementation
 { TframeChrome }
 
 uses
-  ufrmModal, ufrmPHPLog, unChromeMessage;
+  ufrmModal, ufrmPHPLog, unChromeMessage, unCmdCli;
 
 procedure TframeChrome.BrowserCreatedMsg(var aMessage: TMessage);
 begin
@@ -149,6 +157,7 @@ begin
     model.AddItem(YS_BROWSER_CONTEXTMENU_HIDEDEVTOOLS, '关闭前端调试')
   else
     model.AddItem(YS_BROWSER_CONTEXTMENU_SHOWDEVTOOLS, '显示前端调试');
+  model.AddItem(YS_BROWSER_CONTEXTMENU_RUNWORK, '启动Worker服务');
   model.AddItem(YS_BROWSER_CONTEXTMENU_PHPLOG, '显示PHP日志');
   model.AddItem(YS_BROWSER_CONTEXTMENU_REFRESH, '刷新(&R)');
 end;
@@ -219,15 +228,21 @@ begin
         PostMessage(Handle, YS_BROWSER_APP_PHPLOG, 0, 0);
         Result := True;
       end;
+    YS_BROWSER_CONTEXTMENU_RUNWORK:
+      begin
+        PostMessage(Handle, YS_BROWSER_APP_RUNWORK, 0, 0);
+        Result := True;
+      end;
     MENU_ID_VIEW_SOURCE: // 查看源代码
       begin
-        FUrl := 'view-source:'+frame.url;
+        FUrl := 'view-source:' + frame.url;
         FWidth := 800;
         FHeight := 600;
 
         PostMessage(Handle, YS_BROWSER_APP_SHOW, 0, 0);
         Result := True;
       end;
+
   end;
 
 end;
@@ -235,8 +250,8 @@ end;
 procedure TframeChrome.Chromium1FileDialog(Sender: TObject;
   const browser: ICefBrowser; mode: Cardinal; const title,
   defaultFilePath: ustring; const acceptFilters: TStrings;
-  selectedAcceptFilter: Integer; const callback: ICefFileDialogCallback;
-  out Result: Boolean);
+  selectedAcceptFilter: Integer;
+  const callback: ICefFileDialogCallback; out Result: Boolean);
 var
   filePaths: TStringList;
   strFunc, files: string;
@@ -244,20 +259,21 @@ var
 begin
   filePaths := TStringList.Create;
   try
-    //OpenDialog1.Filter := 'jpg|*.jpg|jpep|*.jpeg|gif|*.gif|png|*.png';
+    // OpenDialog1.Filter := 'jpg|*.jpg|jpep|*.jpeg|gif|*.gif|png|*.png';
     if OpenDialog1.Execute(Self.FParentForm.Handle) then
     begin
-      for i := 0 to OpenDialog1.Files.Count - 1 do
+      for i := 0 to OpenDialog1.files.Count - 1 do
       begin
-        files := files + OpenDialog1.Files[i] + ',';
-        filePaths.Add(OpenDialog1.Files[i]);
+        files := files + OpenDialog1.files[i] + ',';
+        filePaths.Add(OpenDialog1.files[i]);
       end;
       if Pos(',', files) > -1 then
-        files := LeftStr(files, Length(files)-1);
+        files := LeftStr(files, Length(files) - 1);
 
       strFunc := 'if(window.onFile) window.onFile("' + files + '")';
       strFunc := StringReplace(strFunc, '\', '\\', [rfReplaceAll]);
-      browser.FocusedFrame.ExecuteJavaScript(strFunc,browser.FocusedFrame.Url,0);
+      browser.FocusedFrame.ExecuteJavaScript(strFunc, browser.FocusedFrame.url,
+        0);
       callback.Cont(selectedAcceptFilter, filePaths);
 
       Result := True;
@@ -265,11 +281,24 @@ begin
     else
     begin
       callback.Cancel;
-      Result := False;
+      Result := false;
     end;
   finally
     filePaths.Free;
   end;
+end;
+
+procedure TframeChrome.Chromium1Jsdialog(Sender: TObject;
+  const browser: ICefBrowser; const originUrl, accept_lang: ustring;
+  dialogType: TCefJsDialogType; const messageText, defaultPromptText: ustring;
+  const callback: ICefJsDialogCallback; out suppressMessage, Result: Boolean);
+begin
+  if dialogType = JSDIALOGTYPE_ALERT then
+  begin
+    MessageBox(FParentForm.Handle, PChar(messageText),PChar(Application.Title),MB_OK);
+    Result := True;
+  end;
+
 end;
 
 procedure TframeChrome.Chromium1ProcessMessageReceived(Sender: TObject;
@@ -282,7 +311,8 @@ var
 begin
   if message.Name = YS_BROWSER_EXTENSION_WINDOW_MSG then
   begin
-    subject.notifyAll(message.ArgumentList.GetString(0), message.ArgumentList.GetString(1));
+    subject.notifyAll(message.ArgumentList.GetString(0),
+        message.ArgumentList.GetString(1));
     Exit;
   end;
   // 拓展消息响应
@@ -321,13 +351,20 @@ begin
   Chromium1.ReloadIgnoreCache;
 end;
 
+procedure TframeChrome.RunWork(var aMessage: TMessage);
+begin
+  if not Assigned(cmdCli) then
+    cmdCli := TCmdCli.Create;
+  cmdCli.RunWork;
+end;
+
 procedure TframeChrome.setInfo(parentForm: TForm; url: string);
 begin
   Self.FParentForm := parentForm;
   Self.FUrl := url;
   Self.FCanClose := false;
   Self.FClosing := false;
-  Chromium1.DefaultUrl := Self.FUrl;//修改默认首页about:blank为Self.FUrl，第一次显示页面不会有返回
+  Chromium1.DefaultUrl := Self.FUrl; // 修改默认首页about:blank为Self.FUrl，第一次显示页面不会有返回
   if not(Chromium1.CreateBrowser(CEFWindowParent1, '')) then
     Timer1.Enabled := True;
 
@@ -367,7 +404,7 @@ procedure TframeChrome.ShowForm(var aMessage: TMessage);
 var
   frmModal1: TfrmModal;
 begin
-  frmModal1 := TfrmModal.Create(Application);
+  frmModal1 := TfrmModal.Create(application);
   frmModal1.setInfo(Self.FCaption, Self.FUrl, Self.FWidth, Self.FHeight);
   frmModal1.Show;
 end;
@@ -376,7 +413,7 @@ procedure TframeChrome.ShowModalForm(var aMessage: TMessage);
 var
   frmModal1: TfrmModal;
 begin
-  frmModal1 := TfrmModal.Create(Application);
+  frmModal1 := TfrmModal.Create(application);
   frmModal1.setInfo(Self.FCaption, Self.FUrl, Self.FWidth, Self.FHeight);
   frmModal1.ShowModal;
   frmModal1.Free;
@@ -403,7 +440,7 @@ begin
   strMsg := StrPas(PChar(aMessage.WParam));
   Chromium1.ExecuteJavaScript(strMsg, Chromium1.DocumentURL, '');
 
-//  ShowMessage(strMsg);
+  // ShowMessage(strMsg);
 end;
 
 end.

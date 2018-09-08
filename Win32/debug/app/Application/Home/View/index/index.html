@@ -82,9 +82,15 @@
 
     <div id="dRet"></div>
 
-
     <hr>
-    <a href="<?php echo U('index/input');?>"  target="_blank">表单测试</a>
+    Workerman通讯使用 <br>
+    <button onclick="runRorkerman()">worker示例</button>
+    <div></div>
+    <hr>
+    表单input type=file 本地路径获取<br>
+    <a href="<?php echo U('index/input');?>" target="_blank">表单测试</a>
+
+
 </div>
 
 <div id="timer">
@@ -175,23 +181,27 @@
         app.sendMsg(JSON.stringify({
             msgID: 2,
             msg: '啦啦，消息1来了'
-        }),'');
+        }), '');
     }
 
     function sendMsg3() {
         app.sendMsg(JSON.stringify({
             msgID: 3,
             msg: '啦啦，消息1来了'
-        }),'iframeTest');
+        }), 'iframeTest');
+    }
+
+    function runRorkerman() {
+        window.open('<?php echo U("index/workerman",array(),true,true);?>', 'workerman示例', 'width=600,height=400');
     }
 
     $(function () {
         window.onMsg = function (aMsg) {
 
             var jsObj = JSON.parse(aMsg);
-            if(jsObj.msgID == 0){
-                $('#dRet').html( aMsg + '<br>' + $('#dRet').html() );
-                console.log('我是主窗口: '+jsObj.msg);
+            if (jsObj.msgID == 0) {
+                $('#dRet').html(aMsg + '<br>' + $('#dRet').html());
+                console.log('我是主窗口: ' + jsObj.msg);
             }
         }
     })

@@ -78,4 +78,8 @@ class IndexController extends Controller {
     function input(){
         $this->show();
     }
+
+    function workerman(){
+        $this->show();
+    }
 }

@@ -24,9 +24,9 @@ type
     constructor Create;
     destructor Destroy; override;
     // 启动workerman进程
-    procedure runExe();
+    procedure runWork();
     // 关闭workerman进程
-    procedure killExe();
+    procedure killWork();
   end;
 
 var
@@ -45,19 +45,19 @@ begin
 
   listProgress := TList<TProcessInformation>.Create;
   FWorkerman := unConfig.getWorkerman();
-  Self.runExe;
+  Self.runWork;
 end;
 
 destructor TCmdCli.Destroy;
 begin
-  Self.killExe;
+  Self.killWork;
   FWorkerman.Free;
   listProgress.Free;
 
   inherited;
 end;
 
-procedure TCmdCli.killExe;
+procedure TCmdCli.killWork;
 var
   i: integer;
 begin
@@ -65,7 +65,7 @@ begin
     TerminateProcess(listProgress.Items[i].hProcess, 0);
 end;
 
-procedure TCmdCli.runExe;
+procedure TCmdCli.runWork;
 var
   arrPHPCmd: TDValue;
   i: integer;
@@ -80,9 +80,9 @@ begin
 
   for i := 0 to arrPHPCmd.Count - 1 do
   begin
-    if FDebug = 1 then
+    if FDebug = 1 then //调试可查看调试日志
       progress := Self.winExecute(arrPHPCmd.Items[i].AsString, SW_SHOWNORMAL)
-    else
+    else // 非调试模式隐藏控制台
       progress := Self.winExecute(arrPHPCmd.Items[i].AsString, SW_HIDE);
     listProgress.Add(progress);
   end;
