@@ -17,13 +17,15 @@ type
     FWorkerman: TDValue;
     listProgress: TList<TProcessInformation>;
 
-    function winExecute(const FileName: string; Visibility: integer = SW_NORMAL)
-  : TProcessInformation;
+    function winExecute(const FileName: string;
+      Visibility: integer = SW_NORMAL): TProcessInformation;
 
   public
     constructor Create;
     destructor Destroy; override;
+    // 启动workerman进程
     procedure runExe();
+    // 关闭workerman进程
     procedure killExe();
   end;
 
@@ -57,7 +59,7 @@ end;
 
 procedure TCmdCli.killExe;
 var
-  i: Integer;
+  i: integer;
 begin
   for i := 0 to listProgress.Count - 1 do
     TerminateProcess(listProgress.Items[i].hProcess, 0);
@@ -66,7 +68,7 @@ end;
 procedure TCmdCli.runExe;
 var
   arrPHPCmd: TDValue;
-  i: Integer;
+  i: integer;
   progress: TProcessInformation;
 begin
   if FWorkerman.FindByPath('enable').AsInteger <> 1 then
@@ -78,7 +80,10 @@ begin
 
   for i := 0 to arrPHPCmd.Count - 1 do
   begin
-    progress := Self.winExecute(arrPHPCmd.Items[i].AsString, SW_HIDE);
+    if FDebug = 1 then
+      progress := Self.winExecute(arrPHPCmd.Items[i].AsString, SW_SHOWNORMAL)
+    else
+      progress := Self.winExecute(arrPHPCmd.Items[i].AsString, SW_HIDE);
     listProgress.Add(progress);
   end;
 end;
