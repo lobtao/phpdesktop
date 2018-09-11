@@ -76,6 +76,9 @@ class IndexController extends Controller {
     }
 
     function input(){
+        echo '<pre>';
+        print_r($_REQUEST);
+        echo '</pre>';
         $this->show();
     }
 

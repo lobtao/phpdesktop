@@ -8,11 +8,10 @@
 <body>
 
 <div>
-    <form method="get" id="fform" enctype="multipart/form-data">
+    <form method="post" id="fform" enctype="multipart/form-data"  action="<?php echo U('index/input');?>">
         <p><input id="ffile" type="file" name="ffile"  multiple /></p>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="提交" />
     </form>
-    <button id="btTest">提交</button>
 </div>
 
 <div id="timer">
