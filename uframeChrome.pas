@@ -157,7 +157,7 @@ begin
     model.AddItem(YS_BROWSER_CONTEXTMENU_HIDEDEVTOOLS, '关闭前端调试')
   else
     model.AddItem(YS_BROWSER_CONTEXTMENU_SHOWDEVTOOLS, '显示前端调试');
-  model.AddItem(YS_BROWSER_CONTEXTMENU_RUNWORK, '启动Worker服务');
+  model.AddItem(YS_BROWSER_CONTEXTMENU_RUNWORK, '重启Worker服务');
   model.AddItem(YS_BROWSER_CONTEXTMENU_PHPLOG, '显示PHP日志');
   model.AddItem(YS_BROWSER_CONTEXTMENU_REFRESH, '刷新(&R)');
 end;
