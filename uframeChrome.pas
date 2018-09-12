@@ -10,7 +10,7 @@ uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms,
   ExtCtrls, uCEFChromium, uCEFWindowParent, uCEFInterfaces, uCEFConstants,
   unConfig, uCEFTypes, Dialogs, StdCtrls, uCEFProcessMessage, uCEFv8Context,
-  StrUtils;
+  StrUtils, spSkinShellCtrls, spMessages;
 
 type
   TframeChrome = class(TFrame)
@@ -355,6 +355,7 @@ procedure TframeChrome.RunWork(var aMessage: TMessage);
 begin
   if not Assigned(cmdCli) then
     cmdCli := TCmdCli.Create;
+  cmdCli.killWork;
   cmdCli.RunWork;
 end;
 
