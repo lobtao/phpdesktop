@@ -35,7 +35,7 @@ var
 implementation
 
 uses
-  unConfig, ufrmSplash, ufrmPHPLog, unMoudle, unChromeMessage, unCmdCli;
+  unConfig, ufrmSplash, unMoudle, unChromeMessage, unCmdCli;
 {$R *.dfm}
 
 procedure TfrmMain.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
@@ -56,21 +56,13 @@ begin
   try
     frmSplash.Show;
 
-    if unConfig.FDebug = 1 then
-      frmPHPLog := TfrmPHPLog.Create(Application);
-
     Application.ProcessMessages;
     // 1.加载配置
     loadMainConfig();
     // 2.加载皮肤
     if FileExists(unConfig.FSkinFile) then
       dbMoudle.spSkinData1.LoadFromCompressedFile(FSkinFile);
-    // 3.启动php web服务器
-    create_php_server();
-    if unConfig.FDebug = 1 then
-      php_server_start(unConfig.FWebPort, frmPHPLog.Handle)
-    else
-      php_server_start(unConfig.FWebPort, 0);
+
     // 4.启动db数据服务器
     create_db_server();
     db_server_start(unConfig.FDataPort);
@@ -87,9 +79,6 @@ end;
 
 procedure TfrmMain.FormDestroy(Sender: TObject);
 begin
-  // 停止PHP服务器
-  php_server_stop();
-  free_php_server();
   // 停止Abs数据服务器
   db_server_stop();
   free_db_server();

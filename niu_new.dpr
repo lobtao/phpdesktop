@@ -14,7 +14,6 @@ uses
   ufrmModal in 'ufrmModal.pas' { frmModal },
   uframeChrome in 'uframeChrome.pas' { frameChrome: TFrame},
   unV8Extension in 'unV8Extension.pas',
-  ufrmPHPLog in 'ufrmPHPLog.pas' { frmPHPLog },
   unMoudle in 'unMoudle.pas' { dbMoudle: TDataModule},
   unChromeMessage in 'unChromeMessage.pas',
   unCmdCli in 'unCmdCli.pas',

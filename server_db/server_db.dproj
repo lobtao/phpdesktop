@@ -76,8 +76,7 @@
 						<Parameters Name="UseLauncher">False</Parameters>
 						<Parameters Name="LoadAllSymbols">True</Parameters>
 						<Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
-						<Parameters Name="HostApplication">E:\work\niu_new\Win32\debug\niu_new.exe</Parameters>
-						<Parameters Name="DebugCWD">E:\work\niu_new\Win32\debug</Parameters>
+						<Parameters Name="HostApplication">C:\work\niu_new\Win32\debug\niu_new.exe</Parameters>
 					</Parameters>
 					<VersionInfo>
 						<VersionInfo Name="IncludeVerInfo">False</VersionInfo>

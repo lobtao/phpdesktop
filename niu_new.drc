@@ -8,55 +8,56 @@
   resources were bound to the produced executable.
 */
 
-#define spconst_SP_RESTORE_HINT 65200
-#define pnglang_EInvalidSpec 65216
-#define JConsts_sChangeJPGSize 65217
-#define JConsts_sJPEGError 65218
-#define JConsts_sJPEGImageFile 65219
-#define spconst_SP_MI_MINCAPTION 65220
-#define spconst_SP_MI_MAXCAPTION 65221
-#define spconst_SP_MI_CLOSECAPTION 65222
-#define spconst_SP_MI_RESTORECAPTION 65223
-#define spconst_SP_MI_MINTOTRAYCAPTION 65224
-#define spconst_SP_MI_ROLLUPCAPTION 65225
-#define spconst_SP_MINBUTTON_HINT 65226
-#define spconst_SP_MAXBUTTON_HINT 65227
-#define spconst_SP_CLOSEBUTTON_HINT 65228
-#define spconst_SP_TRAYBUTTON_HINT 65229
-#define spconst_SP_ROLLUPBUTTON_HINT 65230
-#define spconst_SP_MENUBUTTON_HINT 65231
-#define pnglang_EPNGIHDRNotFirstText 65232
-#define pnglang_EPNGSizeExceedsText 65233
-#define pnglang_EPNGUnknownPalEntryText 65234
-#define pnglang_EPNGUnknownCriticalChunkText 65235
-#define pnglang_EPNGUnknownCompressionText 65236
-#define pnglang_EPNGUnknownInterlaceText 65237
-#define pnglang_EPNGCannotAssignChunkText 65238
-#define pnglang_EPNGUnexpectedEndText 65239
-#define pnglang_EPNGNoImageDataText 65240
-#define pnglang_EPNGCannotAddChunkText 65241
-#define pnglang_EPNGCannotAddInvalidImageText 65242
-#define pnglang_EPNGCouldNotLoadResourceText 65243
-#define pnglang_EPNGOutMemoryText 65244
-#define pnglang_EPNGCannotChangeTransparentText 65245
-#define pnglang_EPNGHeaderNotPresentText 65246
-#define pnglang_EInvalidNewSize 65247
+#define spconst_SP_MENUBUTTON_HINT 65200
+#define spconst_SP_RESTORE_HINT 65201
+#define pnglang_EInvalidNewSize 65216
+#define pnglang_EInvalidSpec 65217
+#define JConsts_sChangeJPGSize 65218
+#define JConsts_sJPEGError 65219
+#define JConsts_sJPEGImageFile 65220
+#define spconst_SP_MI_MINCAPTION 65221
+#define spconst_SP_MI_MAXCAPTION 65222
+#define spconst_SP_MI_CLOSECAPTION 65223
+#define spconst_SP_MI_RESTORECAPTION 65224
+#define spconst_SP_MI_MINTOTRAYCAPTION 65225
+#define spconst_SP_MI_ROLLUPCAPTION 65226
+#define spconst_SP_MINBUTTON_HINT 65227
+#define spconst_SP_MAXBUTTON_HINT 65228
+#define spconst_SP_CLOSEBUTTON_HINT 65229
+#define spconst_SP_TRAYBUTTON_HINT 65230
+#define spconst_SP_ROLLUPBUTTON_HINT 65231
+#define pnglang_EPNGInvalidFileHeaderText 65232
+#define pnglang_EPNGIHDRNotFirstText 65233
+#define pnglang_EPNGSizeExceedsText 65234
+#define pnglang_EPNGUnknownPalEntryText 65235
+#define pnglang_EPNGUnknownCriticalChunkText 65236
+#define pnglang_EPNGUnknownCompressionText 65237
+#define pnglang_EPNGUnknownInterlaceText 65238
+#define pnglang_EPNGCannotAssignChunkText 65239
+#define pnglang_EPNGUnexpectedEndText 65240
+#define pnglang_EPNGNoImageDataText 65241
+#define pnglang_EPNGCannotAddChunkText 65242
+#define pnglang_EPNGCannotAddInvalidImageText 65243
+#define pnglang_EPNGCouldNotLoadResourceText 65244
+#define pnglang_EPNGOutMemoryText 65245
+#define pnglang_EPNGCannotChangeTransparentText 65246
+#define pnglang_EPNGHeaderNotPresentText 65247
 #define Consts_SDockedCtlNeedsName 65248
 #define Consts_SDockTreeRemoveError 65249
 #define Consts_SDockZoneNotFound 65250
 #define Consts_SDockZoneHasNoCtl 65251
 #define Consts_SDockZoneVersionConflict 65252
-#define utils_dvalue_SValueNotArray 65253
-#define utils_dvalue_SConvertError 65254
-#define utils_dvalue_SOutOfBound 65255
-#define utils_dvalue_SItemNotFound 65256
-#define utils_dvalue_json_SCharNeeded 65257
-#define pnglang_EPngInvalidCRCText 65258
-#define pnglang_EPNGInvalidIHDRText 65259
-#define pnglang_EPNGMissingMultipleIDATText 65260
-#define pnglang_EPNGZLIBErrorText 65261
-#define pnglang_EPNGInvalidPaletteText 65262
-#define pnglang_EPNGInvalidFileHeaderText 65263
+#define Consts_SWindowsVistaRequired 65253
+#define utils_dvalue_SValueNotArray 65254
+#define utils_dvalue_SConvertError 65255
+#define utils_dvalue_SOutOfBound 65256
+#define utils_dvalue_SItemNotFound 65257
+#define utils_dvalue_json_SCharNeeded 65258
+#define pnglang_EPngInvalidCRCText 65259
+#define pnglang_EPNGInvalidIHDRText 65260
+#define pnglang_EPNGMissingMultipleIDATText 65261
+#define pnglang_EPNGZLIBErrorText 65262
+#define pnglang_EPNGInvalidPaletteText 65263
 #define Consts_SmkcHome 65264
 #define Consts_SmkcLeft 65265
 #define Consts_SmkcUp 65266
@@ -331,7 +332,9 @@
 #define SysConst_SOverflow 65535
 STRINGTABLE
 BEGIN
+	spconst_SP_MENUBUTTON_HINT,	"System menu"
 	spconst_SP_RESTORE_HINT,	"Restore"
+	pnglang_EInvalidNewSize,	"The new size provided for image resizing is invalid."
 	pnglang_EInvalidSpec,	"The \"Portable Network Graphics\" could not be created because invalid image type parameters have being provided."
 	JConsts_sChangeJPGSize,	"Cannot change the size of a JPEG image"
 	JConsts_sJPEGError,	"JPEG error #%d"
@@ -347,7 +350,7 @@ BEGIN
 	spconst_SP_CLOSEBUTTON_HINT,	"Close"
 	spconst_SP_TRAYBUTTON_HINT,	"Minimize to Tray"
 	spconst_SP_ROLLUPBUTTON_HINT,	"Roll Up"
-	spconst_SP_MENUBUTTON_HINT,	"System menu"
+	pnglang_EPNGInvalidFileHeaderText,	"The file being read is not a valid \"Portable Network Graphics\" image because it contains an invalid header. This file may be corrupted, try obtaining it again"
 	pnglang_EPNGIHDRNotFirstText,	"This \"Portable Network Graphics\" image is not supported or it might be invalid.\r\n(IHDR chunk is not the first)"
 	pnglang_EPNGSizeExceedsText,	"This \"Portable Network Graphics\" image is not supported because either it's width or height exceeds the maximum size, which is 65535 pixels length."
 	pnglang_EPNGUnknownPalEntryText,	"There is no such palette entry."
@@ -363,12 +366,12 @@ BEGIN
 	pnglang_EPNGOutMemoryText,	"Some operation could not be performed because the system is out of resources. Close some windows and try again."
 	pnglang_EPNGCannotChangeTransparentText,	"Setting bit transparency color is not allowed for png images containing alpha value for each pixel (COLOR_RGBALPHA and COLOR_GRAYSCALEALPHA)"
 	pnglang_EPNGHeaderNotPresentText,	"This operation is not valid because the current image contains no valid header."
-	pnglang_EInvalidNewSize,	"The new size provided for image resizing is invalid."
 	Consts_SDockedCtlNeedsName,	"Docked control must have a name"
 	Consts_SDockTreeRemoveError,	"Error removing control from dock tree"
 	Consts_SDockZoneNotFound,	" - Dock zone not found"
 	Consts_SDockZoneHasNoCtl,	" - Dock zone has no control"
 	Consts_SDockZoneVersionConflict,	"Error loading dock zone from the stream. Expecting version %d, but found %d."
+	Consts_SWindowsVistaRequired,	"%s requires Windows Vista or later"
 	utils_dvalue_SValueNotArray,	"当前值不是数组类型，无法按数组方式访问。"
 	utils_dvalue_SConvertError,	"无法将 %s 转换为 %s 类型的值。"
 	utils_dvalue_SOutOfBound,	"访问[%d]超出范围(0..%d)"
@@ -379,7 +382,6 @@ BEGIN
 	pnglang_EPNGMissingMultipleIDATText,	"This \"Portable Network Graphics\" image is invalid because it has missing image parts."
 	pnglang_EPNGZLIBErrorText,	"Could not decompress the image because it contains invalid compressed data.\r\n Description: "
 	pnglang_EPNGInvalidPaletteText,	"The \"Portable Network Graphics\" image contains an invalid palette."
-	pnglang_EPNGInvalidFileHeaderText,	"The file being read is not a valid \"Portable Network Graphics\" image because it contains an invalid header. This file may be corrupted, try obtaining it again"
 	Consts_SmkcHome,	"Home"
 	Consts_SmkcLeft,	"Left"
 	Consts_SmkcUp,	"Up"

@@ -6,9 +6,6 @@
 			<Projects Include="niu_new.dproj">
 				<Dependencies>browse\browse.dproj</Dependencies>
 			</Projects>
-			<Projects Include="server_php\server_php.dproj">
-				<Dependencies/>
-			</Projects>
 			<Projects Include="server_db\server_db.dproj">
 				<Dependencies/>
 			</Projects>
@@ -32,15 +29,6 @@
 		<Target DependsOnTargets="browse:Make" Name="niu_new:Make">
 			<MSBuild Targets="Make" Projects="niu_new.dproj"/>
 		</Target>
-		<Target Name="server_php">
-			<MSBuild Projects="server_php\server_php.dproj"/>
-		</Target>
-		<Target Name="server_php:Clean">
-			<MSBuild Targets="Clean" Projects="server_php\server_php.dproj"/>
-		</Target>
-		<Target Name="server_php:Make">
-			<MSBuild Targets="Make" Projects="server_php\server_php.dproj"/>
-		</Target>
 		<Target Name="server_db">
 			<MSBuild Projects="server_db\server_db.dproj"/>
 		</Target>
@@ -60,13 +48,13 @@
 			<MSBuild Targets="Make" Projects="browse\browse.dproj"/>
 		</Target>
 		<Target Name="Build">
-			<CallTarget Targets="niu_new;server_php;server_db;browse"/>
+			<CallTarget Targets="niu_new;server_db;browse"/>
 		</Target>
 		<Target Name="Clean">
-			<CallTarget Targets="niu_new:Clean;server_php:Clean;server_db:Clean;browse:Clean"/>
+			<CallTarget Targets="niu_new:Clean;server_db:Clean;browse:Clean"/>
 		</Target>
 		<Target Name="Make">
-			<CallTarget Targets="niu_new:Make;server_php:Make;server_db:Make;browse:Make"/>
+			<CallTarget Targets="niu_new:Make;server_db:Make;browse:Make"/>
 		</Target>
 		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 	</Project>

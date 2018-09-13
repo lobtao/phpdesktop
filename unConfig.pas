@@ -13,7 +13,7 @@ const
   YS_BROWSER_APP_SHOW = WM_APP + $104; // 显示窗口
   YS_BROWSER_APP_SHOWMODAL = WM_APP + $105; // modal显示窗口
   YS_BROWSER_APP_PHPERROR = WM_APP + $106; // php异常消息
-  YS_BROWSER_APP_PHPLOG = WM_APP + $107; // 显示PHP日志
+//  YS_BROWSER_APP_PHPLOG = WM_APP + $107; // 显示PHP日志
   YS_BROWSER_APP_WINDOW_MSG = WM_APP + $108; // 窗口间消息传递
   YS_BROWSER_APP_RUNWORK = WM_APP + $109; // 响应启动Work消息
 
@@ -21,7 +21,7 @@ const
   YS_BROWSER_CONTEXTMENU_SHOWDEVTOOLS = MENU_ID_USER_FIRST + 1; // 显示开发工具
   YS_BROWSER_CONTEXTMENU_HIDEDEVTOOLS = MENU_ID_USER_FIRST + 2; // 隐藏开发工具
   YS_BROWSER_CONTEXTMENU_REFRESH = MENU_ID_USER_FIRST + 3; // 刷新
-  YS_BROWSER_CONTEXTMENU_PHPLOG = MENU_ID_USER_FIRST + 4; // 显示PHP日志
+//  YS_BROWSER_CONTEXTMENU_PHPLOG = MENU_ID_USER_FIRST + 4; // 显示PHP日志
   YS_BROWSER_CONTEXTMENU_RUNWORK = MENU_ID_USER_FIRST + 5; // 启动Workerman
 
   // 拓展发送消息
@@ -43,17 +43,6 @@ var
   FWebPort: Integer; // web端口
 //  FWsPort: Integer; // websocket服务端口
 //  FWsPHPUrl: string; // websocket服务处理PHP路径
-
-  // php服务器
-
-procedure create_php_server(); stdcall; external 'server_php.dll';
-
-procedure php_server_start(iPort: Integer; logHandle: HWND); stdcall;
-external 'server_php.dll';
-
-procedure php_server_stop(); stdcall; external 'server_php.dll';
-
-procedure free_php_server(); stdcall; external 'server_php.dll';
 
 // abs数据库服务器
 

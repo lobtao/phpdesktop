@@ -2,7 +2,7 @@
 		<PropertyGroup>
 			<ProjectGuid>{6B39105E-3B26-415E-91E0-D1F4DB8608CC}</ProjectGuid>
 			<MainSource>browse.dpr</MainSource>
-			<Config Condition="'$(Config)'==''">Debug</Config>
+			<Config Condition="'$(Config)'==''">Release</Config>
 			<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
 			<ProjectVersion>12.0</ProjectVersion>
 		</PropertyGroup>

@@ -77,7 +77,6 @@ type
     procedure ShowForm(var aMessage: TMessage); message YS_BROWSER_APP_SHOW;
     procedure ShowModalForm(var aMessage: TMessage);
       message YS_BROWSER_APP_SHOWMODAL;
-    procedure ShowPHPLog(var aMessage: TMessage); message YS_BROWSER_APP_PHPLOG;
     procedure RunWork(var aMessage: TMessage); message YS_BROWSER_APP_RUNWORK;
 
     procedure BrowserDestroyMsg(var aMessage: TMessage); message CEF_DESTROY;
@@ -104,7 +103,7 @@ implementation
 { TframeChrome }
 
 uses
-  ufrmModal, ufrmPHPLog, unChromeMessage, unCmdCli;
+  ufrmModal, unChromeMessage, unCmdCli;
 
 procedure TframeChrome.BrowserCreatedMsg(var aMessage: TMessage);
 begin
@@ -158,7 +157,6 @@ begin
   else
     model.AddItem(YS_BROWSER_CONTEXTMENU_SHOWDEVTOOLS, '显示前端调试');
   model.AddItem(YS_BROWSER_CONTEXTMENU_RUNWORK, '重启Worker服务');
-  model.AddItem(YS_BROWSER_CONTEXTMENU_PHPLOG, '显示PHP日志');
   model.AddItem(YS_BROWSER_CONTEXTMENU_REFRESH, '刷新(&R)');
 end;
 
@@ -223,11 +221,7 @@ begin
         PostMessage(Handle, YS_BROWSER_APP_REFRESH, 0, 0);
         Result := True;
       end;
-    YS_BROWSER_CONTEXTMENU_PHPLOG:
-      begin
-        PostMessage(Handle, YS_BROWSER_APP_PHPLOG, 0, 0);
-        Result := True;
-      end;
+
     YS_BROWSER_CONTEXTMENU_RUNWORK:
       begin
         PostMessage(Handle, YS_BROWSER_APP_RUNWORK, 0, 0);
@@ -418,12 +412,6 @@ begin
   frmModal1.setInfo(Self.FCaption, Self.FUrl, Self.FWidth, Self.FHeight);
   frmModal1.ShowModal;
   frmModal1.Free;
-end;
-
-procedure TframeChrome.ShowPHPLog(var aMessage: TMessage);
-begin
-  if (unConfig.FDebug = 1) and (Assigned(frmPHPLog)) then
-    frmPHPLog.Show;
 end;
 
 procedure TframeChrome.Timer1Timer(Sender: TObject);

@@ -1,6 +1,6 @@
 {
- "debug": 0,
- "url": "index.php?m=home&c=index&a=index",
+ "debug": 1,
+ "url": "index/index/index",
  "width": 1024,
  "height": 768,
  "title": "客户端软件 -- 标题可以配置修改",
@@ -12,8 +12,8 @@
  "workerman":{
  	"enable":1,
  	"servers":[
- 		"php_5.3.5\\php.exe app\\workerman\\http.php",
- 		"php_5.3.5\\php.exe app\\workerman\\websocket.php"
+ 		"php_5.6.24\\php.exe app\\think worker",
+ 		"php_5.6.24\\php.exe app\\think worker:server"
 	 ]
  }
 }
