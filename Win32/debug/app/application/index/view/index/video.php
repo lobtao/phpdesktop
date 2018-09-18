@@ -1,0 +1,1 @@
+<embed src='http://player.youku.com/player.php/sid/XMzA4OTg3Njc1Mg==/v.swf' allowFullScreen='true' quality='high' width='480' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>

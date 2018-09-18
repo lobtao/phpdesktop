@@ -59,10 +59,14 @@ end;
 
 procedure TCmdCli.killWork;
 var
-  i: integer;
+  i,iCount: integer;
 begin
-  for i := 0 to listProgress.Count - 1 do
+  iCount := listProgress.Count-1;
+  for i := iCount downto 0 do
+  begin
     TerminateProcess(listProgress.Items[i].hProcess, 0);
+    listProgress.Remove(listProgress.Items[i]);
+  end;
 end;
 
 procedure TCmdCli.runWork;

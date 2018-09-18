@@ -10,4 +10,5 @@ return array(
     'think\\composer\\' => array($vendorDir . '/topthink/think-installer/src'),
     'app\\' => array($baseDir . '/application'),
     'Workerman\\' => array($vendorDir . '/workerman/workerman'),
+    'GatewayWorker\\' => array($vendorDir . '/workerman/gateway-worker/src'),
 );

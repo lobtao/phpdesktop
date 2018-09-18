@@ -37,15 +37,26 @@ return [
     },
     // onConnect
     'onConnect'      => function ($connection) {
-
+        echo "New connection\n";
+        $timer = \Workerman\Lib\Timer::add(1, function () use ($connection) {
+            $connection->send(json_encode(array(
+                'id'   => 1,
+                'data' => date('Y-m-d H:i:s', time()),
+            )));
+        });
     },
     // onMessage
     'onMessage'      => function ($connection, $data) {
-        $connection->send('receive success');
+        // Send hello $data
+        //throw  new Exception('远思软件');
+        $connection->send(json_encode(array(
+            'id'   => 0,
+            'data' => 'hello ' . $data,
+        )));
     },
     // onClose
     'onClose'        => function ($connection) {
-
+        echo "Connection closed\n";
     },
     // onError
     'onError'        => function ($connection, $code, $msg) {
