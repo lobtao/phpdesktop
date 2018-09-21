@@ -1,5 +1,5 @@
 # php_desktop  像开发网站一样开发桌面应用软件
- ![](res/php_desktop.jpg)
+ ![](res/php_desktop.png)
 # 特性
 
 1. 支持php5.3.5
