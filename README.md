@@ -15,9 +15,11 @@
 
 # 简要使用说明
 
-1、app目录下是一个单入口PHP项目
+1、运行演示程序 Win32\debug\niu_new.exe 
 
-2、config.json里配置
+2、app目录下是一个单入口PHP项目
+
+3、config.json里配置
 
     debug: 1开启调试默认 0关闭调试，开启调试后，右键菜单有调试菜单项
     
