@@ -52,10 +52,10 @@
             height: 100%;
             width: 100%;
         }
-        .layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-nav-child dd.layui-this a, .layui-nav-tree .layui-this, .layui-nav-tree .layui-this>a, .layui-nav-tree .layui-this>a:hover {
-            background-color: #4974A4;
-            color: #fff;
-        }
+        /*.layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-nav-child dd.layui-this a, .layui-nav-tree .layui-this, .layui-nav-tree .layui-this>a, .layui-nav-tree .layui-this>a:hover {*/
+            /*background-color: #4974A4;*/
+            /*color: #fff;*/
+        /*}*/
     </style>
 </head>
 <body>
