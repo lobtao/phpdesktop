@@ -7,6 +7,7 @@ use think\exception\HttpException;
 
 class Index extends Controller {
     public function index() {
+//        U('index/index');
         return $this->fetch('index', [
             'name' => 'hello 远思软件1',
             'sex'  => '男',
