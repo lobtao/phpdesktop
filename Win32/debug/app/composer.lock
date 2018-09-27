@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "58e2825c03c2146379937f54de0da18e",
+    "content-hash": "761f4a29ac0b6b3a29a0c3b77840722e",
     "packages": [
         {
             "name": "topthink/framework",
