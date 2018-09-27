@@ -56,6 +56,7 @@
 5. 依赖组件 Absolute Database v.7.50  ftp://uploads@uploads.2ccc.com/Absolute%20Database%20v.7.50%20-%20Multi-User%20Edition.rar
 6. 依赖组件 php4delphi.7.2   https://sourceforge.net/projects/psvlib/files/PHP4Delphi/PHP4Delphi%207.2/
 7. 依赖组件 cnvcl  http://www.cnpack.org/showdetail.php?id=830&lang=zh-cn
+8. 依赖组件 线程库OTL https://github.com/gabr42/OmniThreadLibrary/archive/release-3.07.5.zip
 
 # FAQ
 
