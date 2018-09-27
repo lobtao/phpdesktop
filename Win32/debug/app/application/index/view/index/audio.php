@@ -7,4 +7,3 @@
 &frontColor=ffffff&songVolume=90"
            type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
 </object>
-

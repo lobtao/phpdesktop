@@ -1,4 +1,4 @@
-unit ufrmMain;
+ï»¿unit ufrmMain;
 
 interface
 
@@ -20,7 +20,7 @@ type
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
   private
     { Private declarations }
-    // ¼ÓÔØÖ÷Ò³£¬ÒòÎª²»ÄÜÖ±½Ó¼ÓÔØPHP£¬
+    // åŠ è½½ä¸»é¡µï¼Œå› ä¸ºä¸èƒ½ç›´æ¥åŠ è½½PHPï¼Œ
     procedure loadMainConfig();
 
   protected
@@ -36,6 +36,7 @@ implementation
 
 uses
   unConfig, ufrmSplash, unMoudle, unChromeMessage, unCmdCli;
+
 {$R *.dfm}
 
 procedure TfrmMain.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
@@ -57,19 +58,19 @@ begin
     frmSplash.Show;
 
     Application.ProcessMessages;
-    // 1.¼ÓÔØÅäÖÃ
+    // 1.åŠ è½½é…ç½®
     loadMainConfig();
-    // 2.¼ÓÔØÆ¤·ô
+    // 2.åŠ è½½çš®è‚¤
     if FileExists(unConfig.FSkinFile) then
       dbMoudle.spSkinData1.LoadFromCompressedFile(FSkinFile);
 
-    // 4.Æô¶¯dbÊı¾İ·şÎñÆ÷
+    // 4.å¯åŠ¨dbæ•°æ®æœåŠ¡å™¨
     create_db_server();
     db_server_start(unConfig.FDataPort);
-    // 5.Æô¶¯ws·şÎñÆ÷
+    // 5.å¯åŠ¨wsæœåŠ¡å™¨
 //    create_ws_server();
 //    ws_server_start(unConfig.FWsPort,unConfig.FWebPort);
-    // 6.Æô¶¯workerman
+    // 6.å¯åŠ¨workerman
      cmdCli := TCmdCli.Create;
 
   finally
@@ -79,13 +80,13 @@ end;
 
 procedure TfrmMain.FormDestroy(Sender: TObject);
 begin
-  // Í£Ö¹AbsÊı¾İ·şÎñÆ÷
+  // åœæ­¢Absæ•°æ®æœåŠ¡å™¨
   db_server_stop();
   free_db_server();
-  // Í£Ö¹ws·şÎñÆ÷
+  // åœæ­¢wsæœåŠ¡å™¨
 //  ws_server_stop();
 //  free_ws_server();
-  // Í£Ö¹workerman·şÎñ
+  // åœæ­¢workermanæœåŠ¡
    cmdCli.Free;
 end;
 

@@ -42,8 +42,8 @@ begin
 {$ENDIF}
       Application.Title := FCaption;
       Application.CreateForm(TdbMoudle, dbMoudle);
-  Application.CreateForm(TfrmMain, frmMain);
-  Application.Run;
+      Application.CreateForm(TfrmMain, frmMain);
+      Application.Run;
     end;
   finally // 必须finally里释放，防止unRunOne.AppHasRun退出后不释放子进程
     DestroyGlobalCEFApp;
