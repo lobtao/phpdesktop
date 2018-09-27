@@ -1,1 +1,2 @@
 *.pas linguist-language=php
+*.dfm linguist-language=php
