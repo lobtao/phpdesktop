@@ -11,7 +11,7 @@
 
 return [
     // 数据库类型
-    'type'            => 'mysql',
+    'type'            => 'sqlite',
     // 服务器地址
     'hostname'        => '127.0.0.1',
     // 数据库名
@@ -23,7 +23,7 @@ return [
     // 端口
     'hostport'        => '',
     // 连接dsn
-    'dsn'             => '',
+    'dsn'             => 'sqlite:'.dirname( dirname(  __DIR__) ). '/database/northwind.db',
     // 数据库连接参数
     'params'          => [],
     // 数据库编码默认采用utf8

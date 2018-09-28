@@ -25,6 +25,7 @@
             </li>
             <li class="layui-nav-item " data-url="<?= url('index/file') ?>"><a href="javascript:;"> <i
                             class="icon icon-copy"></i> 本地文件 </a></li>
+            <li class="layui-nav-item " data-url="<?= url('index/sqlite') ?>"><a href="javascript:;"> <i class="icon icon-server"></i> Sqlite </a></li>
         </ul>
     </div>
 </div>

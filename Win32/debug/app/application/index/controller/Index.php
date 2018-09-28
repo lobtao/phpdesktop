@@ -2,7 +2,9 @@
 
 namespace app\index\controller;
 
+use think\Config;
 use think\Controller;
+use think\Db;
 use think\exception\HttpException;
 
 class Index extends Controller {
@@ -58,7 +60,22 @@ class Index extends Controller {
         return $this->fetch();
     }
 
-    function http(){
+    function http() {
         return 'http返回字符串';
+    }
+
+    function sqlite_data() {
+        $ds = Db::query('select EmployeeID,FirstName,LastName,Title,BirthDate,City from Employees');
+        $data = [
+            "code"  => 0,
+            "msg"   => "",
+            "count" => count($ds),
+            "data"  => $ds,
+        ];
+        return json($data, JSON_UNESCAPED_UNICODE);
+    }
+
+    function sqlite() {
+        return $this->fetch('sqlite');
     }
 }
