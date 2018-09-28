@@ -2,7 +2,10 @@
 {block name="title"}窗口间消息通讯{/block}
 
 {block name="body"}
-<div style="padding: 20px">
+<div style="padding: 15px">
+    <blockquote class="layui-elem-quote">
+        <p>文件选择表单：<em>文件选择表单，获取当地文件完整路径</em></p>
+    </blockquote>
 
     <div>
         <form method="post" id="fform" enctype="multipart/form-data" action="#">

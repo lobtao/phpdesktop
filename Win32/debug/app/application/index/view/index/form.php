@@ -2,7 +2,11 @@
 {block name="title"}窗口间消息通讯{/block}
 
 {block name="body"}
-<div style="padding: 20px">
+<div style="padding: 15px">
+    <blockquote class="layui-elem-quote">
+        <p>窗口通讯：<em>窗口间消息通讯，不走后台</em></p>
+    </blockquote>
+
     <a class="layui-btn" onclick="onMsg1()">监听消息1</a>
     <a class="layui-btn" onclick="onMsg2()">监听消息2</a>
     <a class="layui-btn" onclick="sendMsg1()">发送消息1</a>

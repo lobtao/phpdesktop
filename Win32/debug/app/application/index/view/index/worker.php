@@ -2,7 +2,10 @@
 {block name="title"}窗口间消息通讯{/block}
 {block name="body"}
 
-<div style="padding: 20px">
+<div style="padding: 15px">
+    <blockquote class="layui-elem-quote">
+        <p>Workerman：<em>后台websocket推送时间，http、websocket收发消息</em></p>
+    </blockquote>
 
     <a class="layui-btn" type="button" id="btHttp">http通讯</a>
     <a class="layui-btn" type="button" id="btWebsocket">WebSocket通讯</a>

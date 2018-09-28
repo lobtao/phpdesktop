@@ -1,5 +1,5 @@
 {extend name="layout" /}
-{block name="title"}窗口间消息通讯{/block}
+{block name="title"}查询Employees表{/block}
 
 {block name="body"}
 
