@@ -1,10 +1,5 @@
 
-__history/ufrmMain.pas.~1~
-__history/ufrmModal.pas.~1~
-__history/ufrmModal.pas.~2~
-__history/unConfig.pas.~1~
-__history/unConfig.pas.~2~
-__history/unConfig.pas.~3~
+__history
 *.dcu
 Win32/debug/app/runtime/*
 Win32/debug/cache/*
@@ -13,3 +8,10 @@ niu_new.identcache
 __history/ufrmModal.pas.~4~
 __history/ufrmModal.pas.~3~
 browse/browse.dproj.local
+browse/browse.identcache
+niu_new.identcache
+pg_niu_new.groupproj.local
+server_db/server_db.identcache
+Win32/debug/app/Application/runtime
+Win32/debug/app/runtime
+Win32/debug/log
