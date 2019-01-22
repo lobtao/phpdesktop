@@ -12,3 +12,4 @@ Win32/debug/log
 niu_new.identcache
 server_db/server_db.identcache
 server_php/server_php.identcache
+browse/browse.identcache
