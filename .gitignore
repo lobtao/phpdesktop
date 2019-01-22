@@ -1,2 +1,12 @@
 
 Win32/debug/app/workerman/vendor/workerman/workerman/
+Win32/debug/cache
+__history
+*.dcu
+Win32/debug/app/runtime
+Win32/debug/app/vendor/workerman/workerman.log
+*.local
+*.identcache
+niu_new.identcache
+server_db/server_db.identcache
+server_php/server_php.identcache
