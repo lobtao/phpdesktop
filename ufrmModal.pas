@@ -33,7 +33,7 @@ var
 implementation
 
 uses
-  unMoudle, unChromeMessage;
+  unMoudle, unChromeMessage, unConfig;
 {$R *.dfm}
 { TfrmModel }
 
@@ -56,6 +56,8 @@ end;
 
 procedure TfrmModal.FormCreate(Sender: TObject);
 begin
+    if FileExists(unConfig.FIcon) then
+      Self.Icon.LoadFromFile(unConfig.FIcon);
   // ×¢²á¼àÌý
 //  if Assigned(subject) then
 //    subject.attach(Self.Handle);

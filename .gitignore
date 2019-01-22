@@ -4,7 +4,9 @@ Win32/debug/cache
 __history
 *.dcu
 Win32/debug/app/runtime
+Win32/debug/app/Application/Runtime
 Win32/debug/app/vendor/workerman/workerman.log
+Win32/debug/log
 *.local
 *.identcache
 niu_new.identcache

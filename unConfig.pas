@@ -41,6 +41,7 @@ var
   FHost: string; // 监听IP
   FDataPort: Integer; // 数据库端口
   FWebPort: Integer; // web端口
+  FIcon: string;// 窗口icon
 //  FWsPort: Integer; // websocket服务端口
 //  FWsPHPUrl: string; // websocket服务处理PHP路径
 
@@ -132,6 +133,7 @@ initialization
 
 FAppPath := ExtractFilePath(Application.ExeName);
 FSkinFile := FAppPath + unConfig.getValue('skin');
+FIcon := FAppPath + unConfig.getValue('icon');
 FDataBaseFile := FAppPath + unConfig.getValue('database');
 FDebug := StrToIntDef(unConfig.getValue('debug'), 0);
 FWidth := StrToIntDef(unConfig.getValue('width'), 1024);
