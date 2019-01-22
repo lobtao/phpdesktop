@@ -1,0 +1,14 @@
+
+__history/ufrmMain.pas.~1~
+__history/ufrmModal.pas.~1~
+__history/ufrmModal.pas.~2~
+__history/unConfig.pas.~1~
+__history/unConfig.pas.~2~
+__history/unConfig.pas.~3~
+*.dcu
+Win32/debug/app/runtime/*
+Win32/debug/cache/*
+niu_new.dproj.local
+niu_new.identcache
+__history/ufrmModal.pas.~4~
+__history/ufrmModal.pas.~3~

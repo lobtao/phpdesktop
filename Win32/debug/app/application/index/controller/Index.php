@@ -21,7 +21,7 @@ class Index extends Controller {
     }
 
     function audio2() {
-        $this->redirect('http://web.kugou.com/');
+        $this->redirect('http://www.kugou.com/song/70n9db.html?frombaidu#hash=089B020FBCCE50716835341067B91EAA&album_id=0');
     }
 
     function video1() {

@@ -55,6 +55,8 @@ procedure TfrmMain.FormCreate(Sender: TObject);
 begin
   frmSplash := TfrmSplash.Create(nil);
   try
+    if FileExists(unConfig.FIcon) then
+      Self.Icon.LoadFromFile(unConfig.FIcon);
     frmSplash.Show;
 
     Application.ProcessMessages;
