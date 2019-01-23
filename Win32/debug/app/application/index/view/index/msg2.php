@@ -3,6 +3,8 @@
 {block name="body"}
 
 <div style="padding: 20px">
+    <a class="layui-btn" onclick="app.closeWin()">关闭窗口</a>
+    <hr>
     监听消息2
     <div id="dRet"></div>
 </div>

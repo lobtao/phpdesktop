@@ -2,6 +2,9 @@
 {block name="title"}窗口间消息通讯{/block}
 {block name="body"}
 <div style="padding: 20px">
+
+    <a class="layui-btn" onclick="app.closeWin()">关闭窗口</a>
+    <hr>
     监听消息1
     <div id="dRet"></div>
 
@@ -18,6 +21,7 @@
                 console.log('我是消息1: ' + jsObj.msg);
             }
         }
-    })
+    });
+
 </script>
 {/block}

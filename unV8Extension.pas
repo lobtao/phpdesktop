@@ -13,6 +13,8 @@ type
     class procedure show(url: string; width: Integer; height: Integer);
     // modal显示窗口
     class procedure showmodal(url: string; width: Integer; height: Integer);
+    // 关闭窗口
+    class procedure closeWin();
     // 向其它窗口发送消息
     class procedure sendMsg(aMsg,aFrameName: string);
   end;
@@ -20,6 +22,15 @@ type
 implementation
 
 { TV8Extension }
+
+class procedure TV8Extension.closeWin;
+var
+  msg: ICefProcessMessage;
+begin
+  msg := TCefProcessMessageRef.New(YS_BROWSER_EXTENSION_CLOSEWIN);
+
+  TCefv8ContextRef.Current.Browser.SendProcessMessage(PID_BROWSER, msg);
+end;
 
 class procedure TV8Extension.sendMsg(aMsg,aFrameName: string);
 var

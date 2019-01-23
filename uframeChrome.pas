@@ -46,23 +46,22 @@ type
     procedure Chromium1BeforeBrowse(Sender: TObject;
       const browser: ICefBrowser; const frame: ICefFrame;
       const request: ICefRequest; isRedirect: Boolean; out Result: Boolean);
-    procedure Chromium1FileDialog(Sender: TObject; const browser: ICefBrowser;
-      mode: Cardinal; const title, defaultFilePath: ustring;
-      const acceptFilters: TStrings;
-      selectedAcceptFilter: Integer; const callback: ICefFileDialogCallback;
-      out Result: Boolean);
     procedure Chromium1Jsdialog(Sender: TObject; const browser: ICefBrowser;
       const originUrl, accept_lang: ustring; dialogType: TCefJsDialogType;
       const messageText, defaultPromptText: ustring;
       const callback: ICefJsDialogCallback; out suppressMessage,
       Result: Boolean);
+    procedure Chromium1FileDialog(Sender: TObject; const browser: ICefBrowser;
+      mode: TCefFileDialogMode; const title, defaultFilePath: ustring;
+      const acceptFilters: TStrings; selectedAcceptFilter: Integer;
+      const callback: ICefFileDialogCallback; out Result: Boolean);
   private
     { Private declarations }
     FCaption: string;
     FUrl: string;
     FHeight: Integer;
     FWidth: Integer;
-
+    // 当前chrome所在窗口
     FParentForm: TForm;
 
     procedure BrowserCreatedMsg(var aMessage: TMessage);
@@ -77,6 +76,9 @@ type
     procedure ShowForm(var aMessage: TMessage); message YS_BROWSER_APP_SHOW;
     procedure ShowModalForm(var aMessage: TMessage);
       message YS_BROWSER_APP_SHOWMODAL;
+    procedure CloseForm(var aMessage: TMessage);
+      message YS_BROWSER_APP_CLOSEWIN;
+
     procedure RunWork(var aMessage: TMessage); message YS_BROWSER_APP_RUNWORK;
 
     procedure BrowserDestroyMsg(var aMessage: TMessage); message CEF_DESTROY;
@@ -241,11 +243,12 @@ begin
 
 end;
 
+
 procedure TframeChrome.Chromium1FileDialog(Sender: TObject;
-  const browser: ICefBrowser; mode: Cardinal; const title,
+  const browser: ICefBrowser; mode: TCefFileDialogMode; const title,
   defaultFilePath: ustring; const acceptFilters: TStrings;
-  selectedAcceptFilter: Integer;
-  const callback: ICefFileDialogCallback; out Result: Boolean);
+  selectedAcceptFilter: Integer; const callback: ICefFileDialogCallback;
+  out Result: Boolean);
 var
   filePaths: TStringList;
   strFunc, files: string;
@@ -280,6 +283,7 @@ begin
   finally
     filePaths.Free;
   end;
+
 end;
 
 procedure TframeChrome.Chromium1Jsdialog(Sender: TObject;
@@ -309,15 +313,27 @@ begin
         message.ArgumentList.GetString(1));
     Exit;
   end;
+  //关闭窗口
+  if (message.Name = YS_BROWSER_EXTENSION_CLOSEWIN) then
+  begin
+    PostMessage(Handle, YS_BROWSER_APP_CLOSEWIN, 0, 0);
+    Exit;
+  end;
+
   // 拓展消息响应
   FUrl := message.ArgumentList.GetString(0);
   FWidth := message.ArgumentList.GetInt(1);
   FHeight := message.ArgumentList.GetInt(2);
-
+  //打开窗口
   if (message.Name = YS_BROWSER_EXTENSION_SHOW) then
     PostMessage(Handle, YS_BROWSER_APP_SHOW, 0, 0)
   else if (message.Name = YS_BROWSER_EXTENSION_SHOWMODAL) then
     PostMessage(Handle, YS_BROWSER_APP_SHOWMODAL, 0, 0);
+end;
+
+procedure TframeChrome.CloseForm(var aMessage: TMessage);
+begin
+  Self.FParentForm.Close;
 end;
 
 procedure TframeChrome.Cont(selectedAcceptFilter: Integer;

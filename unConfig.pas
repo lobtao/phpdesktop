@@ -12,6 +12,7 @@ const
   YS_BROWSER_APP_REFRESH = WM_APP + $103; // 刷新
   YS_BROWSER_APP_SHOW = WM_APP + $104; // 显示窗口
   YS_BROWSER_APP_SHOWMODAL = WM_APP + $105; // modal显示窗口
+  YS_BROWSER_APP_CLOSEWIN = WM_APP + $110; // modal显示窗口
   YS_BROWSER_APP_PHPERROR = WM_APP + $106; // php异常消息
 //  YS_BROWSER_APP_PHPLOG = WM_APP + $107; // 显示PHP日志
   YS_BROWSER_APP_WINDOW_MSG = WM_APP + $108; // 窗口间消息传递
@@ -27,6 +28,7 @@ const
   // 拓展发送消息
   YS_BROWSER_EXTENSION_SHOW = 'extension_show'; // 显示窗口
   YS_BROWSER_EXTENSION_SHOWMODAL = 'extension_showmodal'; // modal显示窗口
+  YS_BROWSER_EXTENSION_CLOSEWIN = 'extension_closeWin'; // 关闭窗口
   YS_BROWSER_EXTENSION_WINDOW_MSG = 'windows_msg';
 
 var
