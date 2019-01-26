@@ -87,6 +87,7 @@ begin
   begin
     TerminateProcess(listProgress.Items[i], 0);
     listProgress.Remove(listProgress.Items[i]);
+    Application.ProcessMessages;
   end;
 end;
 
