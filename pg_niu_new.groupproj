@@ -4,7 +4,7 @@
 		</PropertyGroup>
 		<ItemGroup>
 			<Projects Include="niu_new.dproj">
-				<Dependencies>browse\browse.dproj;server_db\server_db.dproj</Dependencies>
+				<Dependencies>browse\browse.dproj</Dependencies>
 			</Projects>
 			<Projects Include="server_db\server_db.dproj">
 				<Dependencies/>
@@ -20,13 +20,13 @@
 				<Default.Personality/>
 			</BorlandProject>
 		</ProjectExtensions>
-		<Target DependsOnTargets="browse;server_db" Name="niu_new">
+		<Target DependsOnTargets="browse" Name="niu_new">
 			<MSBuild Projects="niu_new.dproj"/>
 		</Target>
-		<Target DependsOnTargets="browse:Clean;server_db:Clean" Name="niu_new:Clean">
+		<Target DependsOnTargets="browse:Clean" Name="niu_new:Clean">
 			<MSBuild Targets="Clean" Projects="niu_new.dproj"/>
 		</Target>
-		<Target DependsOnTargets="browse:Make;server_db:Make" Name="niu_new:Make">
+		<Target DependsOnTargets="browse:Make" Name="niu_new:Make">
 			<MSBuild Targets="Make" Projects="niu_new.dproj"/>
 		</Target>
 		<Target Name="server_db">
