@@ -1,4 +1,4 @@
-{
+﻿{
  "debug": 0,
  "url": "index/index/index",
  "width": 1024,
@@ -13,8 +13,8 @@
  "workerman":{
  	"enable":1,
  	"servers":[
- 		"php_5.6.24\\php.exe app\\think worker",
- 		"php_5.6.24\\php.exe app\\think worker:server"
+ 		"php_7.0.9\\php.exe app\\think worker",
+ 		"php_7.0.9\\php.exe app\\think worker:server"
 	 ]
  }
 }
