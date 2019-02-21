@@ -4,7 +4,7 @@ interface
 
 uses
   uCEFv8Handler, uCEFApplication, uCEFConstants,
-  uCEFInterfaces, uCEFMiscFunctions, unV8Extension, unConfig, SysUtils;
+  uCEFInterfaces, uCEFMiscFunctions, unV8Extension, unConfig, SysUtils,Windows;
 
 procedure CreateGlobalCEFApp;
 
@@ -44,6 +44,10 @@ begin
   GlobalCEFApp.SetCurrentDir := True;
 //  GlobalCEFApp.BrowserSubprocessPath := 'browse.exe';
   // ShowMessage(IntToStr(GlobalCEFApp.ChildProcessesCount));
+
+  //解决启用flash插件时，有黑窗闪过的问题
+  SetEnvironmentVariable('ComSpec', pchar(GetCurrentDir+'/cmd.exe'));
+
 end;
 
 end.
