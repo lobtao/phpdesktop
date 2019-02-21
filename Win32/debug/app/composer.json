@@ -18,7 +18,7 @@
     "require": {
         "php": ">=5.6.0",
         "topthink/framework": "5.1.*",
-        "topthink/think-worker": "^2.0"
+        "lobtao/think-worker": "2.0.x-dev"
     },
     "autoload": {
         "psr-4": {
@@ -30,11 +30,5 @@
     },
     "config": {
         "preferred-install": "dist"
-    },
-    "repositories": {
-        "packagist": {
-            "type": "composer",
-            "url": "https://packagist.org"
-        }
     }
 }

@@ -1,23 +1,73 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "761f4a29ac0b6b3a29a0c3b77840722e",
+    "hash": "c1a6a65cd733043d610cf28ccca82829",
+    "content-hash": "b778983f786ba36b097881b8ccfc8259",
     "packages": [
         {
-            "name": "topthink/framework",
-            "version": "v5.1.24",
+            "name": "lobtao/think-worker",
+            "version": "2.0.x-dev",
             "source": {
                 "type": "git",
-                "url": "https://github.com/top-think/framework.git",
-                "reference": "03ee17d1ea9c432a698fa1d2411df53974420187"
+                "url": "https://github.com/lobtao/think-worker.git",
+                "reference": "f896b74f9e661c7e361e7fdbb0da760f51c7e7e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/top-think/framework/zipball/03ee17d1ea9c432a698fa1d2411df53974420187",
-                "reference": "03ee17d1ea9c432a698fa1d2411df53974420187",
+                "url": "https://api.github.com/repos/lobtao/think-worker/zipball/f896b74f9e661c7e361e7fdbb0da760f51c7e7e8",
+                "reference": "f896b74f9e661c7e361e7fdbb0da760f51c7e7e8",
+                "shasum": ""
+            },
+            "require": {
+                "topthink/framework": "^5.1.18",
+                "topthink/think-installer": "^2.0",
+                "workerman/gateway-worker": "^3.0.0",
+                "workerman/workerman": "^3.3.0"
+            },
+            "type": "think-extend",
+            "extra": {
+                "think-config": {
+                    "worker": "src/config/worker.php",
+                    "worker_server": "src/config/server.php",
+                    "gateway_worker": "src/config/gateway.php"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "think\\worker\\": "src"
+                },
+                "files": [
+                    "src/command.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "liu21st",
+                    "email": "liu21st@gmail.com"
+                }
+            ],
+            "description": "workerman extend for thinkphp5.1",
+            "time": "2019-02-21 04:53:07"
+        },
+        {
+            "name": "topthink/framework",
+            "version": "v5.1.34",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/top-think/framework.git",
+                "reference": "7c8cd1ea2bd4683a6ef46af415334260c6e2cc15"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/top-think/framework/zipball/7c8cd1ea2bd4683a6ef46af415334260c6e2cc15",
+                "reference": "7c8cd1ea2bd4683a6ef46af415334260c6e2cc15",
                 "shasum": ""
             },
             "require": {
@@ -55,7 +105,7 @@
                 "orm",
                 "thinkphp"
             ],
-            "time": "2018-09-05T03:37:46+00:00"
+            "time": "2019-01-30 06:38:38"
         },
         {
             "name": "topthink/think-installer",
@@ -96,56 +146,7 @@
                     "email": "448901948@qq.com"
                 }
             ],
-            "time": "2018-05-11T06:45:42+00:00"
-        },
-        {
-            "name": "topthink/think-worker",
-            "version": "v2.0.10",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/top-think/think-worker.git",
-                "reference": "d3355b38c2c4242cd3a51fd208ec4586be1a0e0d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/top-think/think-worker/zipball/d3355b38c2c4242cd3a51fd208ec4586be1a0e0d",
-                "reference": "d3355b38c2c4242cd3a51fd208ec4586be1a0e0d",
-                "shasum": ""
-            },
-            "require": {
-                "topthink/framework": "^5.1.18",
-                "topthink/think-installer": "^2.0",
-                "workerman/gateway-worker": "^3.0.0",
-                "workerman/workerman": "^3.3.0"
-            },
-            "type": "think-extend",
-            "extra": {
-                "think-config": {
-                    "worker": "src/config/worker.php",
-                    "worker_server": "src/config/server.php",
-                    "gateway_worker": "src/config/gateway.php"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "think\\worker\\": "src"
-                },
-                "files": [
-                    "src/command.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "liu21st",
-                    "email": "liu21st@gmail.com"
-                }
-            ],
-            "description": "workerman extend for thinkphp5.1",
-            "time": "2018-08-24T06:35:22+00:00"
+            "time": "2018-05-11 06:45:42"
         },
         {
             "name": "workerman/gateway-worker",
@@ -179,20 +180,20 @@
                 "communication",
                 "distributed"
             ],
-            "time": "2018-08-21T06:17:30+00:00"
+            "time": "2018-08-21 06:17:30"
         },
         {
             "name": "workerman/workerman",
-            "version": "v3.5.15",
+            "version": "v3.5.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/walkor/Workerman.git",
-                "reference": "6df60271e514201a17a96acb8ea16936000444cb"
+                "reference": "f615edc0a550645778c6f8911830e4e12b0c5d45"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/walkor/Workerman/zipball/6df60271e514201a17a96acb8ea16936000444cb",
-                "reference": "6df60271e514201a17a96acb8ea16936000444cb",
+                "url": "https://api.github.com/repos/walkor/Workerman/zipball/f615edc0a550645778c6f8911830e4e12b0c5d45",
+                "reference": "f615edc0a550645778c6f8911830e4e12b0c5d45",
                 "shasum": ""
             },
             "require": {
@@ -225,13 +226,15 @@
                 "asynchronous",
                 "event-loop"
             ],
-            "time": "2018-09-20T09:11:43+00:00"
+            "time": "2019-01-19 02:36:12"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "lobtao/think-worker": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

@@ -20,7 +20,7 @@ use think\route\Dispatch;
  */
 class App extends Container
 {
-    const VERSION = '5.1.24';
+    const VERSION = '5.1.34 LTS';
 
     /**
      * 当前模块路径
@@ -606,14 +606,9 @@ class App extends Container
         if (!empty($routeKey)) {
             try {
                 if ($option) {
-                    $this->cache
-                        ->connect($option)
-                        ->tag('route_cache')
-                        ->set($routeKey, $dispatch);
+                    $this->cache->connect($option)->tag('route_cache')->set($routeKey, $dispatch);
                 } else {
-                    $this->cache
-                        ->tag('route_cache')
-                        ->set($routeKey, $dispatch);
+                    $this->cache->tag('route_cache')->set($routeKey, $dispatch);
                 }
             } catch (\Exception $e) {
                 // 存在闭包的时候缓存无效
@@ -727,9 +722,9 @@ class App extends Container
         list($module, $class) = $this->parseModuleAndClass($name, $layer, $appendSuffix);
 
         if (class_exists($class)) {
-            return $this->__get($class);
+            return $this->make($class, true);
         } elseif ($empty && class_exists($emptyClass = $this->parseClass($module, $layer, $empty, $appendSuffix))) {
-            return $this->__get($emptyClass);
+            return $this->make($emptyClass, true);
         }
 
         throw new ClassNotFoundException('class not exists:' . $class, $class);

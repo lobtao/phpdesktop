@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'ffc1d7141d4fcbaeb47a6929f0811ed1' => $vendorDir . '/topthink/think-worker/src/command.php',
+    '51dfdfc249a1c61e80e9b405eb572af0' => $vendorDir . '/lobtao/think-worker/src/command.php',
 );
