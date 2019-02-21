@@ -45,6 +45,8 @@ class Index extends Controller {
     }
 
     function file() {
+        //die('test');//会导致当前进程重启
+        throw new \Exception("出错了，兄弟");//在php7.0+会抛出异常，php7.0以下，会导致进程重启        
         return $this->fetch();
     }
 
