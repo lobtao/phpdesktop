@@ -24,7 +24,9 @@
                             class="icon icon-comments-alt"></i> Workerman </a>
             </li>
             <li class="layui-nav-item " data-url="<?= url('index/file') ?>"><a href="javascript:;"> <i
-                            class="icon icon-copy"></i> 本地文件 </a></li>
+                            class="layui-icon layui-icon-face-surprised"></i> Exception </a></li>
+            <li class="layui-nav-item " data-url="<?= url('index/curl') ?>"><a href="javascript:;"> <i
+                            class="layui-icon layui-icon-download-circle"></i> Curl测试 </a></li>
             <li class="layui-nav-item " data-url="<?= url('index/sqlite') ?>"><a href="javascript:;"> <i class="icon icon-server"></i> Sqlite </a></li>
         </ul>
     </div>
