@@ -1,4 +1,4 @@
-# php_desktop  像开发网站一样开发桌面应用软件
+# phpdesktop  像开发网站一样开发桌面应用软件
  ![](res/php_desktop.png)
 # 特性
 
