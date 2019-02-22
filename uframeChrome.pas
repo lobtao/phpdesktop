@@ -10,7 +10,7 @@ uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms,
   ExtCtrls, uCEFChromium, uCEFWindowParent, uCEFInterfaces, uCEFConstants,
   unConfig, uCEFTypes, Dialogs, StdCtrls, uCEFProcessMessage, uCEFv8Context,
-  StrUtils, spSkinShellCtrls, spMessages;
+  StrUtils, spSkinShellCtrls, spMessages, AppEvnts;
 
 type
   TframeChrome = class(TFrame)
@@ -20,6 +20,7 @@ type
     DevTools: TCEFWindowParent;
     Timer1: TTimer;
     OpenDialog1: TOpenDialog;
+    ApplicationEvents1: TApplicationEvents;
     procedure Chromium1AfterCreated(Sender: TObject;
       const browser: ICefBrowser);
     procedure Chromium1BeforeContextMenu(Sender: TObject;
@@ -55,8 +56,12 @@ type
       mode: TCefFileDialogMode; const title, defaultFilePath: ustring;
       const acceptFilters: TStrings; selectedAcceptFilter: Integer;
       const callback: ICefFileDialogCallback; out Result: Boolean);
+    procedure Chromium1PreKeyEvent(Sender: TObject; const browser: ICefBrowser;
+      const event: PCefKeyEvent; osEvent: PMsg; out isKeyboardShortcut,
+      Result: Boolean);
     procedure Chromium1KeyEvent(Sender: TObject; const browser: ICefBrowser;
       const event: PCefKeyEvent; osEvent: PMsg; out Result: Boolean);
+    procedure ApplicationEvents1Message(var Msg: tagMSG; var Handled: Boolean);
   private
     { Private declarations }
     FCaption: string;
@@ -92,6 +97,8 @@ type
     procedure ShowDevTools(aPoint: TPoint); overload;
     procedure ShowDevTools; overload;
     procedure HideDevTools;
+    procedure HandleKeyUp(const aMsg : TMsg; var aHandled : boolean);
+    procedure HandleKeyDown(const aMsg : TMsg; var aHandled : boolean);
   public
     { Public declarations }
     FClosing: Boolean; // Set to True in the CloseQuery event.
@@ -108,6 +115,18 @@ implementation
 
 uses
   ufrmModal, unChromeMessage, unCmdCli;
+
+procedure TframeChrome.ApplicationEvents1Message(var Msg: tagMSG;
+  var Handled: Boolean);
+begin
+  if unConfig.FStartup_Max = 0 then
+    Exit;
+
+  case Msg.message of
+    WM_KEYUP   : HandleKeyUp(Msg, Handled);
+    WM_KEYDOWN : HandleKeyDown(Msg, Handled);
+  end;
+end;
 
 procedure TframeChrome.BrowserCreatedMsg(var aMessage: TMessage);
 begin
@@ -304,20 +323,48 @@ end;
 procedure TframeChrome.Chromium1KeyEvent(Sender: TObject;
   const browser: ICefBrowser; const event: PCefKeyEvent; osEvent: PMsg;
   out Result: Boolean);
+var
+  TempMsg : TMsg;
 begin
-  //
-  if unConfig.FDebug = 0 then
+  Result := False;
+
+  if unConfig.FStartup_Max = 0 then
     Exit;
 
-  if (event.kind =  KEYEVENT_KEYUP) and (osEvent.wParam = 123) then
-  begin
-    if DevTools.Visible then
-      PostMessage(Handle, YS_BROWSER_APP_HIDEDEVTOOLS, 0, 0)
-    else
-      PostMessage(Handle, YS_BROWSER_APP_SHOWDEVTOOLS, 0, 0);
+  if not(Chromium1.IsSameBrowser(browser)) then exit;
 
-    Result := True;
-  end;
+  if (event <> nil) and (osEvent <> nil) then
+    case osEvent.Message of
+      WM_KEYUP :
+        begin
+          TempMsg := osEvent^;
+
+          HandleKeyUp(TempMsg, Result);
+        end;
+
+      WM_KEYDOWN :
+        begin
+          TempMsg := osEvent^;
+
+          HandleKeyDown(TempMsg, Result);
+        end;
+    end;
+end;
+
+procedure TframeChrome.Chromium1PreKeyEvent(Sender: TObject;
+  const browser: ICefBrowser; const event: PCefKeyEvent; osEvent: PMsg;
+  out isKeyboardShortcut, Result: Boolean);
+begin
+  Result := False;
+
+  if unConfig.FStartup_Max = 0 then
+    Exit;
+
+  if Chromium1.IsSameBrowser(browser) and
+     (event <> nil) and
+     (event.kind in [KEYEVENT_KEYDOWN, KEYEVENT_KEYUP]) and
+     (event.windows_key_code = VK_F12) then
+    isKeyboardShortcut := True;
 end;
 
 procedure TframeChrome.Chromium1ProcessMessageReceived(Sender: TObject;
@@ -363,13 +410,46 @@ begin
 
 end;
 
+procedure TframeChrome.HandleKeyDown(const aMsg: TMsg; var aHandled: boolean);
+var
+  TempMessage : TMessage;
+  TempKeyMsg  : TWMKey;
+begin
+  TempMessage.Msg     := aMsg.message;
+  TempMessage.wParam  := aMsg.wParam;
+  TempMessage.lParam  := aMsg.lParam;
+  TempKeyMsg          := TWMKey(TempMessage);
+
+  if (TempKeyMsg.CharCode = VK_F12) then aHandled := True;
+end;
+
+procedure TframeChrome.HandleKeyUp(const aMsg: TMsg; var aHandled: boolean);
+var
+  TempMessage : TMessage;
+  TempKeyMsg  : TWMKey;
+begin
+  TempMessage.Msg     := aMsg.message;
+  TempMessage.wParam  := aMsg.wParam;
+  TempMessage.lParam  := aMsg.lParam;
+  TempKeyMsg          := TWMKey(TempMessage);
+
+  if (TempKeyMsg.CharCode = VK_F12) then
+  begin
+    aHandled := True;
+
+    if DevTools.Visible then
+      PostMessage(Handle, YS_BROWSER_APP_HIDEDEVTOOLS, 0, 0)
+     else
+      PostMessage(Handle, YS_BROWSER_APP_SHOWDEVTOOLS, 0, 0);
+  end;
+end;
+
 procedure TframeChrome.HideDevTools;
 begin
   Chromium1.CloseDevTools(DevTools);
   Splitter1.Visible := false;
   DevTools.Visible := false;
   DevTools.width := 0;
-
 end;
 
 procedure TframeChrome.HideDevToolsMsg(var aMessage: TMessage);
@@ -411,7 +491,6 @@ begin
   TempPoint.x := low(Integer);
   TempPoint.y := low(Integer);
   ShowDevTools(TempPoint);
-
 end;
 
 procedure TframeChrome.ShowDevTools(aPoint: TPoint);
@@ -420,7 +499,6 @@ begin
   DevTools.Visible := True;
   DevTools.width := width div 4;
   Chromium1.ShowDevTools(aPoint, DevTools);
-
 end;
 
 procedure TframeChrome.ShowDevToolsMsg(var aMessage: TMessage);

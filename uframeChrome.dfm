@@ -39,6 +39,7 @@ object frameChrome: TframeChrome
     OnProcessMessageReceived = Chromium1ProcessMessageReceived
     OnBeforeContextMenu = Chromium1BeforeContextMenu
     OnContextMenuCommand = Chromium1ContextMenuCommand
+    OnPreKeyEvent = Chromium1PreKeyEvent
     OnKeyEvent = Chromium1KeyEvent
     OnJsdialog = Chromium1Jsdialog
     OnBeforePopup = Chromium1BeforePopup
@@ -61,5 +62,10 @@ object frameChrome: TframeChrome
     Options = [ofHideReadOnly, ofAllowMultiSelect, ofFileMustExist, ofEnableSizing]
     Left = 72
     Top = 232
+  end
+  object ApplicationEvents1: TApplicationEvents
+    OnMessage = ApplicationEvents1Message
+    Left = 72
+    Top = 272
   end
 end
