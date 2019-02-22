@@ -7,7 +7,8 @@ use think\Controller;
 use think\Db;
 use think\exception\HttpException;
 
-class Index extends Controller {
+class Index extends Controller
+{
     public function index() {
 //        U('index/index');
         return $this->fetch('index', [
@@ -67,17 +68,23 @@ class Index extends Controller {
     }
 
     function sqlite_data() {
-        $ds = Db::query('select EmployeeID,FirstName,LastName,Title,BirthDate,City from Employees');
+        $page       = input('page', 1);
+        $limit      = input('limit', 3);
+        $iCount     = Db::table('Employees')->count();
+        $iPageCount = ceil($iCount / $limit);
+        $page       = $page > $iPageCount && $iPageCount > 0 ? $iPageCount : $page;
+        $ds         = Db::table('Employees')->field('EmployeeID,FirstName,LastName,Title,BirthDate,City')->page($page, $limit)->cache(10)->select();
+        //$ds = Db::query('select EmployeeID,FirstName,LastName,Title,BirthDate,City from Employees');
         $data = [
             "code"  => 0,
             "msg"   => "",
-            "count" => count($ds),
+            "count" => $iCount,
             "data"  => $ds,
         ];
         return json($data, JSON_UNESCAPED_UNICODE);
     }
 
     function sqlite() {
-        return $this->fetch('sqlite');
+        return $this->fetch('index/sqlite');
     }
 }

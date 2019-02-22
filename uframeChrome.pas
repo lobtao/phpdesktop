@@ -55,6 +55,8 @@ type
       mode: TCefFileDialogMode; const title, defaultFilePath: ustring;
       const acceptFilters: TStrings; selectedAcceptFilter: Integer;
       const callback: ICefFileDialogCallback; out Result: Boolean);
+    procedure Chromium1KeyEvent(Sender: TObject; const browser: ICefBrowser;
+      const event: PCefKeyEvent; osEvent: PMsg; out Result: Boolean);
   private
     { Private declarations }
     FCaption: string;
@@ -297,6 +299,25 @@ begin
     Result := True;
   end;
 
+end;
+
+procedure TframeChrome.Chromium1KeyEvent(Sender: TObject;
+  const browser: ICefBrowser; const event: PCefKeyEvent; osEvent: PMsg;
+  out Result: Boolean);
+begin
+  //
+  if unConfig.FDebug = 0 then
+    Exit;
+
+  if (event.kind =  KEYEVENT_KEYUP) and (osEvent.wParam = 123) then
+  begin
+    if DevTools.Visible then
+      PostMessage(Handle, YS_BROWSER_APP_HIDEDEVTOOLS, 0, 0)
+    else
+      PostMessage(Handle, YS_BROWSER_APP_SHOWDEVTOOLS, 0, 0);
+
+    Result := True;
+  end;
 end;
 
 procedure TframeChrome.Chromium1ProcessMessageReceived(Sender: TObject;

@@ -39,6 +39,7 @@ object frameChrome: TframeChrome
     OnProcessMessageReceived = Chromium1ProcessMessageReceived
     OnBeforeContextMenu = Chromium1BeforeContextMenu
     OnContextMenuCommand = Chromium1ContextMenuCommand
+    OnKeyEvent = Chromium1KeyEvent
     OnJsdialog = Chromium1Jsdialog
     OnBeforePopup = Chromium1BeforePopup
     OnAfterCreated = Chromium1AfterCreated

@@ -3,7 +3,7 @@
 interface
 
 uses
-  SysUtils, Windows,
+  SysUtils, Windows,Messages,
   Classes,
   Controls, Forms, SkinData, DynamicSkinForm,
   uCEFChromium,
@@ -74,6 +74,9 @@ begin
 //    ws_server_start(unConfig.FWsPort,unConfig.FWebPort);
     // 6.启动workerman
      cmdCli := TCmdCli.Create;
+     //7. 启动检测是否最大化窗口
+     if(unConfig.FStartup_Max = 1) then
+      Self.WindowState := wsMaximized;
 
   finally
     frmSplash.Free;
@@ -96,6 +99,7 @@ procedure TfrmMain.FormShow(Sender: TObject);
 begin
   frameChrome1.setInfo(Self, unConfig.FIndexUrl);
 
+  
 end;
 
 procedure TfrmMain.loadMainConfig;

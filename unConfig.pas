@@ -44,6 +44,7 @@ var
   FDataPort: Integer; // 数据库端口
   FWebPort: Integer; // web端口
   FIcon: string; // 窗口icon
+  FStartup_Max: Integer;// 启动窗口最大化
 //  FWsPort: Integer; // websocket服务端口
 //  FWsPHPUrl: string; // websocket服务处理PHP路径
 
@@ -135,6 +136,7 @@ FDataPort := StrToIntDef(unConfig.getValue('data_port'), 46151);
 FWebPort := StrToIntDef(unConfig.getValue('web_port'), 46150);
 FIndexUrl := Format('http://127.0.0.1:%d/%s',
   [FWebPort, unConfig.getValue('url')]);
+FStartup_Max := StrToIntDef(unConfig.getValue('startup_max'), 0);
 //FWsPort := StrToIntDef(unConfig.getValue('ws_port'), 46152);
 //FWsPHPUrl := unConfig.getValue('ws_php_url');
 

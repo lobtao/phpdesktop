@@ -9,7 +9,8 @@
  "database":"database\\Demos.abs",
  "data_port": "46151",
  "skin": "skin\\niu.skn",
- "icon": "niu.icon",  
+ "icon": "niu.icon",
+ "startup_max": 0,
  "workerman":{
  	"enable":1,
  	"servers":[

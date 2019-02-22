@@ -74,7 +74,7 @@ begin
 //        begin
 //        SetForegroundWindow(TopWindow);
 //        end;
-      MessageBox(0, '该程序已经运行中！','远思应用服务器', MB_OK+MB_ICONINFORMATION);
+      MessageBox(0, '该程序已经运行中！','提示', MB_OK+MB_ICONINFORMATION);
       Application.Terminate;
       Result := True;
     end

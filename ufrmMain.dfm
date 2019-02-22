@@ -3,8 +3,8 @@ object frmMain: TfrmMain
   Top = 0
   BorderIcons = []
   Caption = #31649#29702#31995#32479
-  ClientHeight = 781
-  ClientWidth = 1039
+  ClientHeight = 741
+  ClientWidth = 1016
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -23,30 +23,31 @@ object frmMain: TfrmMain
   inline frameChrome1: TframeChrome
     Left = 0
     Top = 0
-    Width = 1039
-    Height = 781
+    Width = 1016
+    Height = 741
     Align = alClient
     DoubleBuffered = False
     ParentDoubleBuffered = False
     TabOrder = 0
-    ExplicitWidth = 1039
-    ExplicitHeight = 781
+    ExplicitWidth = 1016
+    ExplicitHeight = 741
     inherited Splitter1: TSplitter
-      Left = 936
-      Height = 781
+      Left = 913
+      Height = 741
       ExplicitLeft = 936
+      ExplicitHeight = 741
     end
     inherited CEFWindowParent1: TCEFWindowParent
-      Width = 936
-      Height = 781
-      ExplicitWidth = 936
-      ExplicitHeight = 781
+      Width = 913
+      Height = 741
+      ExplicitWidth = 913
+      ExplicitHeight = 741
     end
     inherited DevTools: TCEFWindowParent
-      Left = 939
-      Height = 781
-      ExplicitLeft = 939
-      ExplicitHeight = 781
+      Left = 916
+      Height = 741
+      ExplicitLeft = 916
+      ExplicitHeight = 741
     end
   end
   object DSF: TspDynamicSkinForm
