@@ -16,3 +16,4 @@ Win32/debug/app/Application/runtime
 Win32/debug/app/runtime
 Win32/debug/log
 server_php/server_php.identcache
+Win32/debug/app/.idea/*
