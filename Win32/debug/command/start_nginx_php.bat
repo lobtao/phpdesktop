@@ -1,14 +1,14 @@
 @echo off
 
-cd command
+cd ./command
 
 set php_home=../php_7.0.9
 set nginx_home=../nginx_1.14.2
 
-REM Windows ä¸‹æ— æ•ˆ
-REM set PHP_FCGI_CHILDREN=
+REM Windows ÏÂÎŞĞ§
+REM set PHP_FCGI_CHILDREN=5
 
-REM æ¯ä¸ªè¿›ç¨‹å¤„ç†çš„æœ€å¤§è¯·æ±‚æ•°ï¼Œæˆ–è®¾ç½®ä¸º Windows ç¯å¢ƒå˜é‡
+REM Ã¿¸ö½ø³Ì´¦ÀíµÄ×î´óÇëÇóÊı£¬»òÉèÖÃÎª Windows »·¾³±äÁ¿
 set PHP_FCGI_MAX_REQUESTS=1000
 
 RunHiddenConsole.exe %php_home%/phpdesktop_php.exe init.php
