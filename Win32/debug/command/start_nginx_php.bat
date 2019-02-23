@@ -20,3 +20,4 @@ echo Starting PHP FastCGI...
 RunHiddenConsole.exe phpdesktop_xxfpm.exe "%php_home%/phpdesktop_php-cgi.exe -c %php_home%/php.ini" -n 5 -i 127.0.0.1 -p 9000
 
 cd ..
+

@@ -20,3 +20,4 @@ Win32/debug/php_7.3.2
 Win32/debug/nginx_1.11.5/logs/*.log
 Win32/debug/nginx_1.11.5/logs/*.pid
 Win32/debug/cmd.exe
+Win32/debug/nginx_1.14.2/logs/nginx.pid
