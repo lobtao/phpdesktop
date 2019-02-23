@@ -21,3 +21,5 @@ Win32/debug/php_7.3.2
 *.log
 *.identcache
 Win32/debug/nginx_1.11.5/logs/*
+*.pid
+Win32/debug/cmd.exe
