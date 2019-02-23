@@ -1,4 +1,4 @@
-﻿{
+{
  "debug": 0,
  "url": "index.php/index/index/index",
  "width": 1024,
@@ -11,6 +11,7 @@
  "skin": "skin\\niu.skn",
  "icon": "niu.icon",
  "startup_max": 0,
+ "app_path": "app\\public", 
  "init": [
  	"command\\start_nginx_php.bat"
  ],
