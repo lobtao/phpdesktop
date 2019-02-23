@@ -12,5 +12,5 @@ $work_path           = $app_dir . '\\' . $arr_config['app_path'];
 $nginx_conf_tpl_text = str_replace('{$root}', $work_path, $nginx_conf_tpl_text);
 
 $nginx_config_file = $nginx_conf_path . '\nginx.conf';
-if(file_exists(nginx_config_file)) flink($nginx_config_file);
+if(file_exists($nginx_config_file)) flink($nginx_config_file);
 file_put_contents($nginx_config_file, $nginx_conf_tpl_text);
