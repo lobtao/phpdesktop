@@ -11,12 +11,16 @@
  "skin": "skin\\niu.skn",
  "icon": "niu.icon",
  "startup_max": 0,
+ "init": [
+ 	"command\\start_nginx_php.bat"
+ ],
+ "finish": [
+ 	"command\\stop_nginx_php.bat"
+ ],
  "workerman":{
  	"enable":1,
- 	"servers":[
- 		"nginx_1.11.5\\nginx.exe -p nginx_1.11.5",
- 		"xxfpm.exe \"php_7.0.9\\php-cgi.exe -c php_7.0.9\\php.ini\" -n 5 -i 127.0.0.1 -p 9000",
- 		"php_7.0.9\\php.exe app\\think worker:server"
+ 	"servers":[ 		
+ 		"php_7.0.9\\phpdesktop_php.exe app\\think worker:server"
 	 ]
  }
 }

@@ -45,9 +45,6 @@ begin
 //  GlobalCEFApp.BrowserSubprocessPath := 'browse.exe';
   // ShowMessage(IntToStr(GlobalCEFApp.ChildProcessesCount));
 
-  //解决启用flash插件时，有黑窗闪过的问题
-  SetEnvironmentVariable('ComSpec', pchar(GetCurrentDir+'/cmd.exe'));
-
 end;
 
 end.

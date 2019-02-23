@@ -68,6 +68,9 @@ procedure free_db_server(); stdcall; external 'server_db.dll';
 //procedure free_ws_server(); stdcall; external 'server_ws.dll';
 
 function getWorkerman(): TDValue;
+function getInit(): TDValue;
+function getFinish(): TDValue;
+function getWebServer(): TDValue;
 
 implementation
 
@@ -97,7 +100,7 @@ begin
   end;
 end;
 
-function getWorkerman(): TDValue;
+function getConfigValue(key: string): TDValue;
 var
   lvData, lvTmp: TDValue;
 begin
@@ -110,7 +113,7 @@ begin
   lvData := TDValue.Create();
   try
     JSONParseFromUtf8NoBOMFile(jsonConfigFile, lvData);
-    lvTmp := lvData.FindByName('workerman');
+    lvTmp := lvData.FindByName(key);
     if Assigned(lvTmp) then
       Result := lvTmp.Clone()
     else
@@ -118,7 +121,26 @@ begin
   finally
     lvData.Free;
   end;
+end;
 
+function getWorkerman(): TDValue;
+begin
+  Result := getConfigValue('workerman');
+end;
+
+function getInit(): TDValue;
+begin
+  Result := getConfigValue('init');
+end;
+
+function getFinish(): TDValue;
+begin
+  Result := getConfigValue('finish');
+end;
+
+function getWebServer(): TDValue;
+begin
+  Result := getConfigValue('web_server');
 end;
 
 initialization

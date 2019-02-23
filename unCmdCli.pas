@@ -24,6 +24,16 @@ type
     // 监听task发过来的消息
     procedure OmniEventMonitorTaskMessage(const task: IOmniTaskControl;
       const msg: TOmniMessage);
+    procedure runCmdLine(cmdLine: string);
+    // 清理flash  cmd.exe命令
+    procedure clearFlash();
+    procedure setFlash();
+    // 初始化配置命令
+    procedure init();
+    // 启动web服务
+    procedure startWebServer();
+    // 结束所有进程
+    procedure finish();
   public
     constructor Create;
     destructor Destroy; override;
@@ -46,6 +56,14 @@ uses
 
 { TCmdCli }
 
+procedure TCmdCli.clearFlash;
+var
+  fileName: string;
+begin
+  fileName := unConfig.FAppPath + 'cmd.exe';
+  DeleteFile(PWideChar(fileName));
+end;
+
 constructor TCmdCli.Create;
 begin
   inherited;
@@ -55,7 +73,11 @@ begin
   FWorkerman := unConfig.getWorkerman();
   OmniEventMonitor := TOmniEventMonitor.Create(nil);
   OmniEventMonitor.OnTaskMessage := OmniEventMonitorTaskMessage;
+
+  Self.init;
+  Self.startWebServer;
   Self.runWork;
+  Self.setFlash;
 end;
 
 destructor TCmdCli.Destroy;
@@ -66,7 +88,55 @@ begin
   listTask.Free;
   listProgress.Free;
 
+  Self.finish();
+
   inherited;
+end;
+
+procedure TCmdCli.finish;
+var
+  i: Integer;
+  FTmpValue: TDValue;
+  strCmdLine: string;
+begin
+  FTmpValue := unConfig.getFinish();
+  try
+    if not Assigned(FTmpValue) then
+      Exit;
+
+    for i := 0 to FTmpValue.Count - 1 do
+    begin
+      strCmdLine := FTmpValue.Items[i].AsString;
+      Self.runCmdLine(strCmdLine);
+    end;
+  finally
+    FTmpValue.Free;
+  end;
+
+end;
+
+procedure TCmdCli.init;
+var
+  i: Integer;
+  FTmpValue: TDValue;
+  strCmdLine: string;
+begin
+  FTmpValue := unConfig.getInit();
+  try
+    if not Assigned(FTmpValue) then
+      Exit;
+
+    for i := 0 to FTmpValue.Count - 1 do
+    begin
+      strCmdLine := FTmpValue.Items[i].AsString;
+      Self.runCmdLine(strCmdLine);
+    end;
+  finally
+    FTmpValue.Free;
+  end;
+
+  Application.ProcessMessages;
+  Sleep(1000);
 end;
 
 procedure TCmdCli.killWork;
@@ -190,6 +260,51 @@ begin
     listTask.Add(task);
     task.Run; // 运行任务
   end;
+end;
+
+procedure TCmdCli.setFlash;
+var
+  listStr: TStringList;
+begin
+  listStr := TStringList.Create;
+  listStr.SaveToFile(unConfig.FAppPath + 'cmd.exe');
+  listStr.Free;
+  //解决启用flash插件时，有黑窗闪过的问题
+  SetEnvironmentVariable('ComSpec', pchar(GetCurrentDir+'/cmd.exe'));
+end;
+
+procedure TCmdCli.startWebServer;
+var
+  i: Integer;
+  FTmpValue: TDValue;
+  strCmdLine: string;
+begin
+  FTmpValue := unConfig.getWebServer();
+  try
+    if not Assigned(FTmpValue) then
+      Exit;
+
+    for i := 0 to FTmpValue.Count - 1 do
+    begin
+      strCmdLine := FTmpValue.Items[i].AsString;
+      Self.runCmdLine(strCmdLine);
+    end;
+  finally
+    FTmpValue.Free;
+  end;
+
+end;
+
+procedure TCmdCli.runCmdLine(cmdLine: string);
+var
+  zAppName: array [0 .. 512] of char;
+  zCurDir: array [0 .. 255] of char;
+  WorkDir: string;
+  StartupInfo: TStartupInfo;
+  ProcessInfo: TProcessInformation;
+begin
+  Self.clearFlash;
+  ShellExecute(0,'open',PWideChar(cmdLine), nil, nil, SW_HIDE);
 end;
 
 initialization
