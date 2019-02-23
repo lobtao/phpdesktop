@@ -1,6 +1,6 @@
 ﻿{
  "debug": 0,
- "url": "index/index/index",
+ "url": "index.php/index/index/index",
  "width": 1024,
  "height": 768,
  "title": "客户端软件",
@@ -14,7 +14,8 @@
  "workerman":{
  	"enable":1,
  	"servers":[
- 		"php_7.0.9\\php.exe app\\think worker",
+ 		"nginx_1.11.5\\nginx.exe -p nginx_1.11.5",
+ 		"xxfpm.exe \"php_7.0.9\\php-cgi.exe -c php_7.0.9\\php.ini\" -n 5 -i 127.0.0.1 -p 9000",
  		"php_7.0.9\\php.exe app\\think worker:server"
 	 ]
  }
