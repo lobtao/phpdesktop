@@ -13,11 +13,15 @@ set PHP_FCGI_MAX_REQUESTS=1000
 
 RunHiddenConsole.exe %php_home%/phpdesktop_php.exe init.php
 
-echo Starting nginx...
-RunHiddenConsole.exe %nginx_home%/phpdesktop_nginx.exe -p %nginx_home%
+echo wscript.sleep 800>sleep.vbs
+start /wait sleep.vbs
+del /f /s /q sleep.vbs
 
 echo Starting PHP FastCGI...
 RunHiddenConsole.exe phpdesktop_xxfpm.exe "%php_home%/phpdesktop_php-cgi.exe -c %php_home%/php.ini" -n 5 -i 127.0.0.1 -p 9000
+
+echo Starting nginx...
+RunHiddenConsole.exe %nginx_home%/phpdesktop_nginx.exe -p %nginx_home%
 
 cd ..
 

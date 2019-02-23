@@ -136,7 +136,8 @@ begin
   end;
 
   Application.ProcessMessages;
-  Sleep(1000);
+  Sleep(2000);
+  Application.ProcessMessages;
 end;
 
 procedure TCmdCli.killWork;
