@@ -8,3 +8,5 @@ Del *.~dfm /s
 Del *.ddp /s
 Del *.log /s
 Del *.hpp /s
+Del *.identcache /s
+Del *.local /s
