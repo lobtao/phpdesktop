@@ -8,16 +8,21 @@ uses
   Controls, Forms, SkinData, DynamicSkinForm,
   uCEFChromium,
   uframeChrome,
-  Dialogs, StdCtrls;
+  Dialogs, StdCtrls, ExtCtrls, spTrayIcon, Menus, SkinMenus;
 
 type
   TfrmMain = class(TForm)
     frameChrome1: TframeChrome;
     DSF: TspDynamicSkinForm;
+    spTrayIcon1: TspTrayIcon;
+    spSkinPopupMenu1: TspSkinPopupMenu;
+    mnExitApp: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+    procedure spTrayIcon1DblClick(Sender: TObject);
+    procedure mnExitAppClick(Sender: TObject);
   private
     { Private declarations }
     // 加载主页，因为不能直接加载PHP，
@@ -98,8 +103,6 @@ end;
 procedure TfrmMain.FormShow(Sender: TObject);
 begin
   frameChrome1.setInfo(Self, unConfig.FIndexUrl);
-
-  
 end;
 
 procedure TfrmMain.loadMainConfig;
@@ -108,6 +111,18 @@ begin
   Self.Height := unConfig.FHeight;
   Self.Caption := unConfig.FCaption;
 
+end;
+
+procedure TfrmMain.mnExitAppClick(Sender: TObject);
+begin
+  Application.Terminate;
+end;
+
+procedure TfrmMain.spTrayIcon1DblClick(Sender: TObject);
+begin
+  Self.Show();
+  Self.WindowState := TWindowState.wsNormal;
+  Application.BringToFront(); // 前靠
 end;
 
 initialization

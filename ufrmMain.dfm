@@ -109,6 +109,7 @@ object frmMain: TfrmMain
     MenusAlphaBlendAnimation = False
     MenusAlphaBlendValue = 200
     SkinData = dbMoudle.spSkinData1
+    MenusSkinData = dbMoudle.spSkinData1
     MinHeight = 0
     MinWidth = 0
     MaxHeight = 0
@@ -121,5 +122,22 @@ object frmMain: TfrmMain
     BorderIcons = [biSystemMenu, biMinimize, biMaximize]
     Left = 72
     Top = 56
+  end
+  object spTrayIcon1: TspTrayIcon
+    AnimateTimerInterval = 0
+    IconIndex = 0
+    PopupMenu = spSkinPopupMenu1
+    MinimizeToTray = True
+    OnDblClick = spTrayIcon1DblClick
+    Left = 72
+    Top = 352
+  end
+  object spSkinPopupMenu1: TspSkinPopupMenu
+    Left = 72
+    Top = 416
+    object mnExitApp: TMenuItem
+      Caption = #36864#20986
+      OnClick = mnExitAppClick
+    end
   end
 end
