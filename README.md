@@ -31,34 +31,28 @@
     
     title：主窗口打开的标题，其它窗口的标题根据网页titile自动调整
     
+    skin：系统默认皮肤文件，tools\皮肤编辑器.exe可编辑自定义皮肤，群共享里分享了N套皮肤，也可在原有皮肤基础上进行修改
+    
     host：如果配置为127.0.0.1，只能本机访问，如果配置为0.0.0.0，则可以局域网访问
     
     web_port：PHP项目访问服务端口号
-    
-    database：内置数据库相对路径，管理工具tools\数据库查询分析器.exe
-    
-    data_port：内置数据库访问服务端口号
-    
-    skin：系统默认皮肤文件，tools\皮肤编辑器.exe可编辑自定义皮肤，群共享里分享了N套皮肤，也可在原有皮肤基础上进行修改
        
     workerman：可启动多个服务，如http,websocket,tcp同时支持
     
         enable：是否启动workerman服务
         
-        servers：wokerman服务启动命令列表
+        servers：wokerman服务启动命令列表，json数姐格式
         
 ## 正式发布时建议关闭debug，右键菜单，workerman控制台将隐藏
 
 
 # 编译步骤
 1. delphi 2010
-2. 依赖组件 DIOCP5   https://github.com/ymofen/diocp-v5
-3. 依赖H5神器组件 OldCEF4Delphi https://github.com/salvadordf/OldCEF4Delphi
-4. 依赖装逼UI组件 DynamicSkinForm VCL v1276 http://2ccc.com/article.asp?articleid=6110
-5. 依赖组件 Absolute Database v.7.50  ftp://uploads@uploads.2ccc.com/Absolute%20Database%20v.7.50%20-%20Multi-User%20Edition.rar
-6. 依赖组件 php4delphi.7.2   https://sourceforge.net/projects/psvlib/files/PHP4Delphi/PHP4Delphi%207.2/
-7. 依赖组件 cnvcl  http://www.cnpack.org/showdetail.php?id=830&lang=zh-cn
-8. 依赖组件 线程库OTL https://github.com/gabr42/OmniThreadLibrary/archive/release-3.07.5.zip
+2. 依赖H5神器组件 OldCEF4Delphi https://github.com/salvadordf/OldCEF4Delphi
+3. 依赖装逼UI组件 DynamicSkinForm VCL v1276 http://2ccc.com/article.asp?articleid=6110
+4. 依赖组件 cnvcl  http://www.cnpack.org/showdetail.php?id=830&lang=zh-cn
+5. 依赖组件 线程库OTL https://github.com/gabr42/OmniThreadLibrary/archive/release-3.07.5.zip
+6. 依赖组件 DIOCP5   https://github.com/ymofen/diocp-v5
 
 # FAQ
 
