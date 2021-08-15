@@ -50,8 +50,8 @@
 1. delphi 2010
 2. 依赖H5神器组件 OldCEF4Delphi https://github.com/salvadordf/OldCEF4Delphi
 3. 依赖装逼UI组件 DynamicSkinForm VCL v1276 http://2ccc.com/article.asp?articleid=6110
-4. 依赖组件 cnvcl  http://www.cnpack.org/showdetail.php?id=830&lang=zh-cn
-5. 依赖组件 线程库OTL https://github.com/gabr42/OmniThreadLibrary/archive/release-3.07.5.zip
+4. 依赖组件 cnvcl  http://www.cnpack.org/showdetail.php?id=863&lang=zh-cn
+5. 依赖组件 线程库OTL，使用多线程守护worker进程 https://github.com/gabr42/OmniThreadLibrary/archive/release-3.07.5.zip
 6. 依赖组件 DIOCP5   https://github.com/ymofen/diocp-v5
 
 # FAQ
