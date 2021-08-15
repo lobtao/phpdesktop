@@ -22,7 +22,7 @@ class Index extends Controller
     }
 
     function audio2() {
-        $this->redirect('http://www.kugou.com/song/70n9db.html?frombaidu#hash=089B020FBCCE50716835341067B91EAA&album_id=0');
+        $this->redirect('https://www.ximalaya.com/lishi/13396678/');
     }
 
     function video1() {
@@ -30,7 +30,7 @@ class Index extends Controller
     }
 
     function video2() {
-        $this->redirect('http://haokan.baidu.com/v?pd=wisenatural&vid=2553205947188257144');
+        $this->redirect('https://www.bilibili.com/video/BV1wy4y1D7JT?from=search&seid=11293568244853942486');
     }
 
     function link() {

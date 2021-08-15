@@ -14,7 +14,7 @@ const
   YS_BROWSER_APP_SHOWMODAL = WM_APP + $105; // modal显示窗口
   YS_BROWSER_APP_CLOSEWIN = WM_APP + $110; // modal显示窗口
   YS_BROWSER_APP_PHPERROR = WM_APP + $106; // php异常消息
-//  YS_BROWSER_APP_PHPLOG = WM_APP + $107; // 显示PHP日志
+  // YS_BROWSER_APP_PHPLOG = WM_APP + $107; // 显示PHP日志
   YS_BROWSER_APP_WINDOW_MSG = WM_APP + $108; // 窗口间消息传递
   YS_BROWSER_APP_RUNWORK = WM_APP + $109; // 响应启动Work消息
 
@@ -22,7 +22,7 @@ const
   YS_BROWSER_CONTEXTMENU_SHOWDEVTOOLS = MENU_ID_USER_FIRST + 1; // 显示开发工具
   YS_BROWSER_CONTEXTMENU_HIDEDEVTOOLS = MENU_ID_USER_FIRST + 2; // 隐藏开发工具
   YS_BROWSER_CONTEXTMENU_REFRESH = MENU_ID_USER_FIRST + 3; // 刷新
-//  YS_BROWSER_CONTEXTMENU_PHPLOG = MENU_ID_USER_FIRST + 4; // 显示PHP日志
+  // YS_BROWSER_CONTEXTMENU_PHPLOG = MENU_ID_USER_FIRST + 4; // 显示PHP日志
   YS_BROWSER_CONTEXTMENU_RUNWORK = MENU_ID_USER_FIRST + 5; // 启动Workerman
 
   // 拓展发送消息
@@ -44,28 +44,25 @@ var
   FDataPort: Integer; // 数据库端口
   FWebPort: Integer; // web端口
   FIcon: string; // 窗口icon
-  FStartup_Max: Integer;// 启动窗口最大化
-//  FWsPort: Integer; // websocket服务端口
-//  FWsPHPUrl: string; // websocket服务处理PHP路径
+  FStartup_Max: Integer; // 启动窗口最大化
+  // FWsPort: Integer; // websocket服务端口
+  // FWsPHPUrl: string; // websocket服务处理PHP路径
 
-// abs数据库服务器
+  // abs数据库服务器
 
-procedure create_db_server(); stdcall; external 'server_db.dll';
-
-procedure db_server_start(iPort: Integer); stdcall; external 'server_db.dll';
-
-procedure db_server_stop(); stdcall; external 'server_db.dll';
-
-procedure free_db_server(); stdcall; external 'server_db.dll';
+//procedure create_db_server(); stdcall; external 'server_db.dll';
+//procedure db_server_start(iPort: Integer); stdcall; external 'server_db.dll';
+//procedure db_server_stop(); stdcall; external 'server_db.dll';
+//procedure free_db_server(); stdcall; external 'server_db.dll';
 
 // websocket服务器
-//procedure create_ws_server(); stdcall; external 'server_ws.dll';
+// procedure create_ws_server(); stdcall; external 'server_ws.dll';
 //
-//procedure ws_server_start(iPort: Integer;iHttpPort: Integer); stdcall; external 'server_ws.dll';
+// procedure ws_server_start(iPort: Integer;iHttpPort: Integer); stdcall; external 'server_ws.dll';
 //
-//procedure ws_server_stop(); stdcall; external 'server_ws.dll';
+// procedure ws_server_stop(); stdcall; external 'server_ws.dll';
 //
-//procedure free_ws_server(); stdcall; external 'server_ws.dll';
+// procedure free_ws_server(); stdcall; external 'server_ws.dll';
 
 function getWorkerman(): TDValue;
 function getInit(): TDValue;
@@ -159,8 +156,8 @@ FWebPort := StrToIntDef(unConfig.getValue('web_port'), 46150);
 FIndexUrl := Format('http://127.0.0.1:%d/%s',
   [FWebPort, unConfig.getValue('url')]);
 FStartup_Max := StrToIntDef(unConfig.getValue('startup_max'), 0);
-//FWsPort := StrToIntDef(unConfig.getValue('ws_port'), 46152);
-//FWsPHPUrl := unConfig.getValue('ws_php_url');
+// FWsPort := StrToIntDef(unConfig.getValue('ws_port'), 46152);
+// FWsPHPUrl := unConfig.getValue('ws_php_url');
 
 finalization
 

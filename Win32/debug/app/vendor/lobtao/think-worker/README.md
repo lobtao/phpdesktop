@@ -2,7 +2,7 @@ ThinkPHP 5.1 Workerman 扩展
 ===============
 
 ## 安装
-composer require lobtao/think-worker
+composer require lobtao/think-worker:2.0.x-dev
 
 ## 使用方法
 

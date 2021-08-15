@@ -13,6 +13,7 @@ namespace think\model\concern;
 
 use think\Collection;
 use think\db\Query;
+use think\Exception;
 use think\Loader;
 use think\Model;
 use think\model\Relation;
@@ -116,6 +117,32 @@ trait RelationShip
     }
 
     /**
+     * 绑定（一对一）关联属性到当前模型
+     * @access protected
+     * @param  string   $relation    关联名称
+     * @param  array    $attrs       绑定属性
+     * @return $this
+     * @throws Exception
+     */
+    public function bindAttr($relation, array $attrs = [])
+    {
+        $relation = $this->getRelation($relation);
+
+        foreach ($attrs as $key => $attr) {
+            $key   = is_numeric($key) ? $attr : $key;
+            $value = $this->getOrigin($key);
+
+            if (!is_null($value)) {
+                throw new Exception('bind attr has exists:' . $key);
+            }
+
+            $this->setAttr($key, $relation ? $relation->getAttr($attr) : null);
+        }
+
+        return $this;
+    }
+
+    /**
      * 关联数据写入
      * @access public
      * @param  array|string $relation 关联
@@ -204,7 +231,7 @@ trait RelationShip
             $relationResult = $this->$method();
 
             if (isset($withRelationAttr[$relationName])) {
-                $relationResult->withAttr($withRelationAttr[$relationName]);
+                $relationResult->getQuery()->withAttr($withRelationAttr[$relationName]);
             }
 
             $this->relation[$relation] = $relationResult->getRelation($subRelation, $closure);
@@ -248,7 +275,7 @@ trait RelationShip
             $relationResult = $this->$relation();
 
             if (isset($withRelationAttr[$relationName])) {
-                $relationResult->withAttr($withRelationAttr[$relationName]);
+                $relationResult->getQuery()->withAttr($withRelationAttr[$relationName]);
             }
 
             $relationResult->eagerlyResultSet($resultSet, $relation, $subRelation, $closure, $join);
@@ -290,7 +317,7 @@ trait RelationShip
             $relationResult = $this->$relation();
 
             if (isset($withRelationAttr[$relationName])) {
-                $relationResult->withAttr($withRelationAttr[$relationName]);
+                $relationResult->getQuery()->withAttr($withRelationAttr[$relationName]);
             }
 
             $relationResult->eagerlyResult($result, $relation, $subRelation, $closure, $join);

@@ -38,7 +38,7 @@ class Gateway extends Worker
      *
      * @var string
      */
-    const VERSION = '3.0.12';
+    const VERSION = '3.0.19';
 
     /**
      * 本机 IP
@@ -319,7 +319,11 @@ class Gateway extends Worker
         // 如果用户有自定义 onConnect 回调，则执行
         if ($this->_onConnect) {
             call_user_func($this->_onConnect, $connection);
-        } elseif ($connection->protocol === '\Workerman\Protocols\Websocket') {
+            if (isset($connection->onWebSocketConnect)) {
+                $connection->_onWebSocketConnect = $connection->onWebSocketConnect;
+            }
+        }
+        if ($connection->protocol === '\Workerman\Protocols\Websocket' || $connection->protocol === 'Workerman\Protocols\Websocket') {
             $connection->onWebSocketConnect = array($this, 'onWebsocketConnect');
         }
 
@@ -334,6 +338,10 @@ class Gateway extends Worker
      */
     public function onWebsocketConnect($connection, $http_buffer)
     {
+        if (isset($connection->_onWebSocketConnect)) {
+            call_user_func($connection->_onWebSocketConnect, $connection, $http_buffer);
+            unset($connection->_onWebSocketConnect);
+        }
         $this->sendToWorker(GatewayProtocol::CMD_ON_WEBSOCKET_CONNECT, $connection, array('get' => $_GET, 'server' => $_SERVER, 'cookie' => $_COOKIE));
     }
     
@@ -374,7 +382,7 @@ class Gateway extends Worker
             /** @var TcpConnection $worker_connection */
             $worker_connection = call_user_func($this->router, $this->_workerConnections, $connection, $cmd, $body);
             if (false === $worker_connection->send($gateway_data)) {
-                $msg = "SendBufferToWorker fail. May be the send buffer are overflow. See http://wiki.workerman.net/Error2";
+                $msg = "SendBufferToWorker fail. May be the send buffer are overflow. See http://doc2.workerman.net/send-buffer-overflow.html";
                 static::log($msg);
                 return false;
             }
@@ -384,7 +392,7 @@ class Gateway extends Worker
             // 所以不记录日志，只是关闭连接
             $time_diff = 2;
             if (time() - $this->_startTime >= $time_diff) {
-                $msg = 'SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://wiki.workerman.net/Error3';
+                $msg = 'SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://doc2.workerman.net/send-buffer-to-worker-fail.html';
                 static::log($msg);
             }
             $connection->destroy();
@@ -484,8 +492,9 @@ class Gateway extends Worker
 
         // 初始化 gateway 内部的监听，用于监听 worker 的连接已经连接上发来的数据
         $this->_innerTcpWorker = new Worker("GatewayProtocol://{$this->lanIp}:{$this->lanPort}");
+        $this->_innerTcpWorker->reusePort = false;
         $this->_innerTcpWorker->listen();
-	$this->_innerTcpWorker->name = 'GatewayInnerWorker';
+        $this->_innerTcpWorker->name = 'GatewayInnerWorker';
 
         // 重新设置自动加载根目录
         Autoloader::setRootPath($this->_autoloadRootPath);
@@ -566,7 +575,13 @@ class Gateway extends Worker
             // 向某客户端发送数据，Gateway::sendToClient($client_id, $message);
             case GatewayProtocol::CMD_SEND_TO_ONE:
                 if (isset($this->_clientConnections[$data['connection_id']])) {
-                    $this->_clientConnections[$data['connection_id']]->send($data['body']);
+                    $raw = (bool)($data['flag'] & GatewayProtocol::FLAG_NOT_CALL_ENCODE);
+                    $body = $data['body'];
+                    if (!$raw && $this->protocolAccelerate && $this->protocol) {
+                        $body = $this->preEncodeForClient($body);
+                        $raw = true;
+                    }
+                    $this->_clientConnections[$data['connection_id']]->send($body, $raw);
                 }
                 return;
             // 踢出用户，Gateway::closeClient($client_id, $message);
@@ -757,12 +772,18 @@ class Gateway extends Worker
                 return;
             // 发送数据给 uid Gateway::sendToUid($uid, $msg);
             case GatewayProtocol::CMD_SEND_TO_UID:
+                $raw = (bool)($data['flag'] & GatewayProtocol::FLAG_NOT_CALL_ENCODE);
+                $body = $data['body'];
+                if (!$raw && $this->protocolAccelerate && $this->protocol) {
+                    $body = $this->preEncodeForClient($body);
+                    $raw = true;
+                }
                 $uid_array = json_decode($data['ext_data'], true);
                 foreach ($uid_array as $uid) {
                     if (!empty($this->_uidConnections[$uid])) {
                         foreach ($this->_uidConnections[$uid] as $connection) {
                             /** @var TcpConnection $connection */
-                            $connection->send($data['body']);
+                            $connection->send($body, $raw);
                         }
                     }
                 }

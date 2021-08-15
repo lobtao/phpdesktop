@@ -67,8 +67,8 @@ begin
       dbMoudle.spSkinData1.LoadFromCompressedFile(FSkinFile);
 
     // 4.启动db数据服务器
-    create_db_server();
-    db_server_start(unConfig.FDataPort);
+//    create_db_server();
+//    db_server_start(unConfig.FDataPort);
     // 5.启动ws服务器
 //    create_ws_server();
 //    ws_server_start(unConfig.FWsPort,unConfig.FWebPort);
@@ -86,8 +86,8 @@ end;
 procedure TfrmMain.FormDestroy(Sender: TObject);
 begin
   // 停止Abs数据服务器
-  db_server_stop();
-  free_db_server();
+//  db_server_stop();
+//  free_db_server();
   // 停止ws服务器
 //  ws_server_stop();
 //  free_ws_server();

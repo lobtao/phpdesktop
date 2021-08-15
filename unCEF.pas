@@ -42,7 +42,7 @@ begin
   // GlobalCEFApp.Cookies := 'cookies';
   GlobalCEFApp.Cache := 'cache';
   GlobalCEFApp.SetCurrentDir := True;
-//  GlobalCEFApp.BrowserSubprocessPath := 'browse.exe';
+//  GlobalCEFApp.BrowserSubprocessPath := 'browse.exe';// 多进程模式，默认不启动
   // ShowMessage(IntToStr(GlobalCEFApp.ChildProcessesCount));
 
 end;

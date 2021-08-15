@@ -682,6 +682,7 @@ class Request
                 // 判断URL里面是否有兼容模式参数
                 $pathinfo = $_GET[$this->config['var_pathinfo']];
                 unset($_GET[$this->config['var_pathinfo']]);
+                unset($this->get[$this->config['var_pathinfo']]);
             } elseif ($this->isCli()) {
                 // CLI模式下 index.php module/controller/action/params/...
                 $pathinfo = isset($_SERVER['argv'][1]) ? $_SERVER['argv'][1] : '';
@@ -700,6 +701,10 @@ class Request
                         break;
                     }
                 }
+            }
+
+            if (!empty($pathinfo)) {
+                unset($this->get[$pathinfo], $this->request[$pathinfo]);
             }
 
             $this->pathinfo = empty($pathinfo) || '/' == $pathinfo ? '' : ltrim($pathinfo, '/');
@@ -1039,7 +1044,7 @@ class Request
 
     protected function getInputData($content)
     {
-        if (false !== strpos($this->contentType(), 'application/json') || 0 === strpos($content, '{"')) {
+        if (false !== strpos($this->contentType(), 'json')) {
             return (array) json_decode($content, true);
         } elseif (strpos($content, '=')) {
             parse_str($content, $data);
@@ -1632,6 +1637,16 @@ class Request
     }
 
     /**
+     * 当前是否JSON请求
+     * @access public
+     * @return bool
+     */
+    public function isJson()
+    {
+        return false !== strpos($this->type(), 'json');
+    }
+
+    /**
      * 当前是否Ajax请求
      * @access public
      * @param  bool $ajax  true 获取原始ajax请求
@@ -1785,7 +1800,7 @@ class Request
     public function host($strict = false)
     {
         if (!$this->host) {
-            $this->host = $this->server('HTTP_X_REAL_HOST') ?: $this->server('HTTP_HOST');
+            $this->host = $this->server('HTTP_X_REAL_HOST') ?: $this->server('HTTP_X_FORWARDED_HOST') ?: $this->server('HTTP_HOST');
         }
 
         return true === $strict && strpos($this->host, ':') ? strstr($this->host, ':', true) : $this->host;

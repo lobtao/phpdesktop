@@ -74,7 +74,7 @@ begin
   OmniEventMonitor := TOmniEventMonitor.Create(nil);
   OmniEventMonitor.OnTaskMessage := OmniEventMonitorTaskMessage;
 
-  Self.init;
+//  Self.init;
   Self.startWebServer;
   Self.runWork;
   Self.setFlash;
@@ -88,7 +88,7 @@ begin
   listTask.Free;
   listProgress.Free;
 
-  Self.finish();
+//  Self.finish();
 
   inherited;
 end;
@@ -305,7 +305,7 @@ var
   ProcessInfo: TProcessInformation;
 begin
   Self.clearFlash;
-  ShellExecute(0,'open',PWideChar(cmdLine), nil, nil, SW_HIDE);
+  ShellExecute(0,'open',PWideChar(cmdLine), nil, PChar(unConfig.FAppPath), SW_HIDE);
 end;
 
 initialization

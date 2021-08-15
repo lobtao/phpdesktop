@@ -11,6 +11,7 @@
 
 namespace think\model\relation;
 
+use Closure;
 use think\Collection;
 use think\db\Query;
 use think\Exception;
@@ -18,6 +19,7 @@ use think\Loader;
 use think\Model;
 use think\model\Pivot;
 use think\model\Relation;
+use think\Paginator;
 
 class BelongsToMany extends Relation
 {
@@ -166,7 +168,7 @@ class BelongsToMany extends Relation
      */
     public function getRelation($subRelation = '', $closure = null)
     {
-        if ($closure) {
+        if ($closure instanceof Closure) {
             $closure($this->query);
         }
 
@@ -377,7 +379,7 @@ class BelongsToMany extends Relation
 
         $pk = $result->$pk;
 
-        if ($closure) {
+        if ($closure instanceof Closure) {
             $return = $closure($this->query);
 
             if ($return && is_string($return)) {
@@ -401,7 +403,7 @@ class BelongsToMany extends Relation
      */
     public function getRelationCountQuery($closure, $aggregate = 'count', $field = '*', &$aggregateAlias = '')
     {
-        if ($closure) {
+        if ($closure instanceof Closure) {
             $return = $closure($this->query);
 
             if ($return && is_string($return)) {
@@ -428,7 +430,7 @@ class BelongsToMany extends Relation
     protected function eagerlyManyToMany($where, $relation, $subRelation = '', $closure = null)
     {
         // 预载入关联查询 支持嵌套预载入
-        if ($closure) {
+        if ($closure instanceof Closure) {
             $closure($this->query);
         }
 
@@ -581,7 +583,7 @@ class BelongsToMany extends Relation
      * 判断是否存在关联数据
      * @access public
      * @param  mixed $data  数据 可以使用关联模型对象 或者 关联对象的主键
-     * @return Pivot
+     * @return Pivot|false
      * @throws Exception
      */
     public function attached($data)

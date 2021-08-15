@@ -1,6 +1,0 @@
-@echo off
-echo Stopping nginx...  
-taskkill /F /IM phpdesktop_nginx.exe > nul
-echo Stopping PHP FastCGI...
-taskkill /F /IM phpdesktop_xxfpm.exe > nul
-

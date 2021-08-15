@@ -1,27 +1,19 @@
 {
- "debug": 0,
- "url": "index.php/index/index/index",
+ "debug": 1,
+ "url": "index/index/index",
  "width": 1024,
  "height": 768,
  "title": "客户端软件",
- "host":"127.0.0.1",
- "web_port": "46150",
- "database":"database\\Demos.abs",
- "data_port": "46151",
  "skin": "skin\\niu.skn",
  "icon": "niu.icon",
  "startup_max": 0,
- "app_path": "app\\public", 
- "init": [
- 	"command\\start_nginx_php.bat"
- ],
- "finish": [
- 	"command\\stop_nginx_php.bat"
- ],
+ "host":"127.0.0.1",
+ "web_port": "46150",
  "workerman":{
  	"enable":1,
- 	"servers":[ 		
- 		"php_7.0.9\\phpdesktop_php.exe app\\think worker:server"
+ 	"servers":[
+        "php_7.0.9\\phpdesktop_php.exe app\\think worker:server",
+        "php_7.0.9\\phpdesktop_php.exe -S 127.0.0.1:46150 -t app\\public"		
 	 ]
  }
 }

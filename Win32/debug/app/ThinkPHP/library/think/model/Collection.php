@@ -24,8 +24,26 @@ class Collection extends BaseCollection
      */
     public function load($relation)
     {
-        $item = current($this->items);
-        $item->eagerlyResultSet($this->items, $relation);
+        if (!$this->isEmpty()) {
+            $item = current($this->items);
+            $item->eagerlyResultSet($this->items, $relation);
+        }
+
+        return $this;
+    }
+
+    /**
+     * 绑定（一对一）关联属性到当前模型
+     * @access protected
+     * @param  string $relation 关联名称
+     * @param  array  $attrs    绑定属性
+     * @return $this
+     */
+    public function bindAttr($relation, array $attrs = [])
+    {
+        $this->each(function (Model $model) use ($relation, $attrs) {
+            $model->bindAttr($relation, $attrs);
+        });
 
         return $this;
     }

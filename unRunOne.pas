@@ -8,10 +8,7 @@ function AppHasRun(AppHandle: THandle; MapFileName: string): Boolean;
 implementation
 
 uses
-  Windows, Forms;
-
-//const
-//  MapFileName = '{153CBD7A-C36B-4DB8-8163-2E5FE4C79E07}';
+  Windows, Forms, Messages;
 
 type
   //共享内存
@@ -55,6 +52,7 @@ begin
   CloseHandle(hMapFile);
 end;
 
+// MapFileName 当前值只允许运行一个进程，每个应用取一个不同的值
 function AppHasRun(AppHandle: THandle; MapFileName: string): Boolean;
 var
   TopWindow: HWnd;
@@ -67,14 +65,14 @@ begin
   begin
     if PSMem^.AppHandle <> 0 then
     begin
-//      SendMessage(PSMem^.AppHandle, WM_SYSCOMMAND, SC_RESTORE, 0);
-//      TopWindow := GetLastActivePopup(PSMem^.AppHandle);
-//      if (TopWindow <> 0) and (TopWindow <> PSMem^.AppHandle) and
-//        IsWindowVisible(TopWindow) and IsWindowEnabled(TopWindow) then
-//        begin
-//        SetForegroundWindow(TopWindow);
-//        end;
-      MessageBox(0, '该程序已经运行中！','提示', MB_OK+MB_ICONINFORMATION);
+      SendMessage(PSMem^.AppHandle, WM_SYSCOMMAND, SC_RESTORE, 0);
+      TopWindow := GetLastActivePopup(PSMem^.AppHandle);
+      if (TopWindow <> 0) and (TopWindow <> PSMem^.AppHandle) and
+        IsWindowVisible(TopWindow) and IsWindowEnabled(TopWindow) then
+        begin
+        SetForegroundWindow(TopWindow);
+        end;
+//      MessageBox(0, '该程序已经运行中！','提示', MB_OK+MB_ICONINFORMATION);
       Application.Terminate;
       Result := True;
     end
