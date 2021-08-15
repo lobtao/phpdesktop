@@ -47,7 +47,7 @@
 
 
 # 编译步骤
-1. delphi 2010
+1. delphi 2010  ftp://uploads@uploads.2ccc.com/  ftp里有2010简化版本
 2. 依赖H5神器组件 OldCEF4Delphi https://github.com/salvadordf/OldCEF4Delphi
 3. 依赖装逼UI组件 DynamicSkinForm VCL v1276 http://2ccc.com/article.asp?articleid=6110
 4. 依赖组件 cnvcl  http://www.cnpack.org/showdetail.php?id=863&lang=zh-cn
